@@ -1,0 +1,41 @@
+Variable names of Each class
+
+public class user(){
+	userName
+  password
+  firstName
+  lastName
+  (boolean) active
+  role
+  age
+  email
+  gender
+  address
+  String photo
+  }
+
+
+
+  public class workout(){
+  date
+  time
+  locationId
+  }
+
+  public class location(){
+name
+addressId
+  }
+
+  public class activity(){
+  title
+  description
+  image
+  workoutId
+  }
+
+  public class userWorkout(){
+  userId
+  workoutId
+
+  }
