@@ -1,5 +1,6 @@
 package com.skilldistillery.HealthApp.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -8,6 +9,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.HealthApp.entities.User;
 import com.skilldistillery.HealthApp.entities.Workout;
 
 @Service
@@ -18,37 +20,43 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 	private EntityManager em;
 
 	public HealthAppDAOImpl() {
-		
+
 	}
+
 	public HealthAppDAOImpl(EntityManager em) {
 		this.em = em;
 	}
+
 	@Override
-	public Workout searchByActivity(String activity) {
+	public List<Workout> searchByActivity(String activity) {
+
+		List<Workout> workouts = new ArrayList<>();
+
 		String query = "select w from Workout w where w.activity.title=:title";
 
-		Workout workout=new Workout();
-		workout = em.createQuery(query, Workout.class).setParameter("title", activity).getSingleResult();
+		workouts = em.createQuery(query, Workout.class).setParameter("title", activity).getResultList();
+
+		return workouts;
+	}
+
+	@Override
+	public Workout CreateWorkOut(Workout workout) {
+
+		em.persist(workout);
+
+		em.flush();
 
 		return workout;
 	}
 
 	@Override
-	public Workout CreateWorkOut(Workout workout) {
-		
-		em.persist(workout);
+	public Workout UpdateWorkOut(Workout workout, Integer id) {
 
-		em.flush();
-
-		return workout;		
-	}
-
-	@Override
-	public Workout UpdateWorkOut(Workout workout, int id) {
 		Workout workoutToChangeFromDB = em.find(Workout.class, id);
-		
+
 		workoutToChangeFromDB.setTitle(workout.getTitle());
-		workoutToChangeFromDB.setActivity(workout.getActivity());;
+		workoutToChangeFromDB.setActivity(workout.getActivity());
+		;
 		workoutToChangeFromDB.setCreatorId(workout.getCreatorId());
 		workoutToChangeFromDB.setDescription(workout.getDescription());
 		workoutToChangeFromDB.setLocation(workout.getLocation());
@@ -56,29 +64,62 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 		workoutToChangeFromDB.setUser(workout.getUser());
 		workoutToChangeFromDB.setWorkoutDate(workout.getWorkoutDate());
 		workoutToChangeFromDB.setActive(workout.isActive());
-		
+
 		em.flush();
-		
+
 		return workoutToChangeFromDB;
 	}
 
 	@Override
 	public boolean deletWorkout(Integer id) {
-		
+
 		Workout workout = em.find(Workout.class, id);
+
 		em.remove(workout);
-		
+
 		boolean status = !em.contains(workout);
-		
+
 		return status;
 
 	}
 
 	@Override
 	public List<Workout> findAll() {
+
 		String jpql = "SELECT workout FROM Workout workout";
+
 		List<Workout> results = em.createQuery(jpql, Workout.class).getResultList();
+
 		return results;
+	}
+
+	@Override
+	public List<User> findAllUser() {
+		
+		String jpql = "SELECT user FROM User user";
+
+		List<User> results = em.createQuery(jpql, User.class).getResultList();
+
+		return results;
+	}
+
+	@Override
+	public User findById(Integer id) {
+		
+		return em.find(User.class, id);
+
+	}
+
+	@Override
+	public User findByLogin(String username, String password) {
+		
+		User user = new User();
+		
+		String jpql = "Select user from User user where user.username = :username AND user.password = :password";
+		
+		user = em.createQuery(jpql, User.class).setParameter("username", username).setParameter("password", password).getSingleResult();
+		
+		return user;
 	}
 
 }
