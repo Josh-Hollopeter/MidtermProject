@@ -1,6 +1,6 @@
 package com.skilldistillery.HealthApp.entities;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -12,12 +12,13 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class UserTest {
-
+class AddressTest {
+	
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private User user;
+	private Address address;
 	
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		 emf = Persistence.createEntityManagerFactory("HealthDb");
@@ -33,7 +34,7 @@ class UserTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		user = em.find(User.class, 2);
+		address = em.find(Address.class, 1);
 	}
 
 	@AfterEach
@@ -43,8 +44,10 @@ class UserTest {
 
 	@Test
 	void test() {
-//		assertEquals("admin", user.getUsername());
-//		assertEquals("Mike", user.getUsername());
+		assertEquals("Boxsylvania", address.getCity());
+		assertEquals("Colorado", address.getState());
+		assertEquals("Boxing Way", address.getStreet());
+		assertEquals(35353, address.getZip());
 	}
 
 }
