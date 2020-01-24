@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,24 +17,205 @@
 	<header>
 		<h1>Health App Home Page</h1>
 		<div class="form-group justify-content-center " id="log">
-	
-		
-		<form:form action="login.do"><%--  modelAttribute="user" class="justify-content-center" --%>
-										<%-- Error messages --%>
-										<%-- <form:input path="userName" />
+
+
+			<form:form action="login.do">
+				<%--  modelAttribute="user" class="justify-content-center" --%>
+				<%-- Error messages --%>
+				<%-- <form:input path="userName" />
 										<form:password path="password" /> --%>
-										<input type="submit" value="Log In">
-									
-			<a href ="FIXME"><input type="button" value="Create" class ="btn-primary"></a>
-			
-		</form:form>
-		
-	
-			</div>
+				<input type="submit" value="Log In">
+
+				<a href="FIXME"><input type="button" value="Create"
+					class="btn-primary"></a>
+
+			</form:form>
+
+		</div>
 	</header>
-	<main></main>
+
+	<main>
+		<div class="card-deck">
+			<div class="card">
+				<img class="card-img-top"
+					src="https://imgix.bustle.com/uploads/image/2019/2/12/d1dbc79a-dcbe-4c1b-8d37-2ce084e50bdf-shutterstock_721928668.jpg?w=1080&h=600&fit=crop&crop=faces&auto=format&q=70"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Boxing</h5>
+					<p class="card-text">This is a longer card with supporting text
+						below as a natural lead-in to additional content. This content is
+						a little bit longer.</p>
+					<p class="card-text">
+						<small class="text-muted">Last updated 3 mins ago</small>
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img-top"
+					src="https://images.squarespace-cdn.com/content/v1/5c533c61e5f7d1726dd7a727/1553004037371-5VDR1JJN4GWYEKK8UKX7/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/IMG_0627.jpg?format=2500w"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Yoga</h5>
+					<p class="card-text">This card has supporting text below as a
+						natural lead-in to additional content.</p>
+					<p class="card-text">
+						<small class="text-muted">Last updated 3 mins ago</small>
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img-top"
+					src="https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Running/Galleries/Worst+Running+Tips/Slide+1.jpg"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Running</h5>
+					<p class="card-text">This is a wider card with supporting text
+						below as a natural lead-in to additional content. This card has
+						even longer content than the first to show that equal height
+						action.</p>
+					<p class="card-text">
+						<small class="text-muted">Last updated 3 mins ago</small>
+					</p>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="card-deck">
+			<div class="card">
+				<img class="card-img-top"
+					src="https://cdn.cnn.com/cnnnext/dam/assets/150415172730-weights-super-169.jpg"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Weight Lifting</h5>
+					<p class="card-text">This is a longer card with supporting text
+						below as a natural lead-in to additional content. This content is
+						a little bit longer.</p>
+					<p class="card-text">
+						<small class="text-muted">Last updated 3 mins ago</small>
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img-top"
+					src="http://jacksonhole-traveler-production.s3.amazonaws.com/wp-content/uploads/2014/07/1406-laurancerockefellerpreserve-132-1280x853.jpg"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Hiking</h5>
+					<p class="card-text">This card has supporting text below as a
+						natural lead-in to additional content.</p>
+					<p class="card-text">
+						<small class="text-muted">Last updated 3 mins ago</small>
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img-top"
+					src="https://www.thesnowcentre.com/snowsure/uploads/articles/thumbs/BSM_L2A.jpg"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Snowboarding</h5>
+					<p class="card-text">This is a wider card with supporting text
+						below as a natural lead-in to additional content. This card has
+						even longer content than the first to show that equal height
+						action.</p>
+					<p class="card-text">
+						<small class="text-muted">Last updated 3 mins ago</small>
+					</p>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="card-deck">
+			<div class="card">
+				<img class="card-img-top"
+					src="https://www.rollerskatedad.com/wp-content/uploads/2019/09/couple-rollerblading-outdoors-1024x681.jpg"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Roller Blading</h5>
+					<p class="card-text">This is a longer card with supporting text
+						below as a natural lead-in to additional content. This content is
+						a little bit longer.</p>
+					<p class="card-text">
+						<small class="text-muted">Last updated 3 mins ago</small>
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img-top"
+					src="https://s3.amazonaws.com/njfamily-images/wp-content/uploads/2019/11/NJF_WEB_IceSkating.jpg"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Ice Skating</h5>
+					<p class="card-text">This card has supporting text below as a
+						natural lead-in to additional content.</p>
+					<p class="card-text">
+						<small class="text-muted">Last updated 3 mins ago</small>
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img-top"
+					src="https://www.honorshaven.com/wp-content/uploads/2017/12/Healing-Tai-Chi.jpg"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Tai Chi</h5>
+					<p class="card-text">This is a wider card with supporting text
+						below as a natural lead-in to additional content. This card has
+						even longer content than the first to show that equal height
+						action.</p>
+					<p class="card-text">
+						<small class="text-muted">Last updated 3 mins ago</small>
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+		<!-- <div class="card" style="width: 18rem;">
+			<img class="card-img-top" src="https://imgix.bustle.com/uploads/image/2019/2/12/d1dbc79a-dcbe-4c1b-8d37-2ce084e50bdf-shutterstock_721928668.jpg?w=1080&h=600&fit=crop&crop=faces&auto=format&q=70" alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">Boxing</h5>
+				<p class="card-text">Some quick example text to build on the
+					card title and make up the bulk of the card's content.</p>
+				<a href="#" class="btn btn-primary">Go somewhere</a>
+			</div>
+		</div>
+		<div class="card" style="width: 18rem;">
+			<img class="card-img-top" src="https://images.squarespace-cdn.com/content/v1/5c533c61e5f7d1726dd7a727/1553004037371-5VDR1JJN4GWYEKK8UKX7/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/IMG_0627.jpg?format=2500w">
+			<div class="card-body">
+				<h5 class="card-title">Yoga</h5>
+				<p class="card-text">Some quick example text to build on the
+					card title and make up the bulk of the card's content.</p>
+				<a href="#" class="btn btn-primary">Go somewhere</a>
+			</div>
+		</div>
+		<div class="card" style="width: 18rem;">
+			<img class="card-img-top" src="https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Running/Galleries/Worst+Running+Tips/Slide+1.jpg">
+			<div class="card-body">
+				<h5 class="card-title">Running</h5>
+				<p class="card-text">Some quick example text to build on the
+					card title and make up the bulk of the card's content.</p>
+				<a href="#" class="btn btn-primary">Go somewhere</a>
+			</div>
+		</div>
+		<div class="card" style="width: 18rem;">
+			<img class="card-img-top" src="https://cdn.cnn.com/cnnnext/dam/assets/150415172730-weights-super-169.jpg">
+			<div class="card-body">
+				<h5 class="card-title">Weight Lifting</h5>
+				<p class="card-text">Some quick example text to build on the
+					card title and make up the bulk of the card's content.</p>
+				<a href="#" class="btn btn-primary">Go somewhere</a>
+			</div>
+		</div>
+ -->
+
+	</main>
 	<footer>
-		<p>kfdjgjgdf</p>
+		<p>Created by Matt Aldrete, George Moore, Josh Hollopeter, Kai Shu</p>
 	</footer>
 </body>
 </html>
