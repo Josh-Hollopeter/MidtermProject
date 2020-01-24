@@ -7,6 +7,7 @@
   <persistence-unit name="HealthDb">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
+<class>com.skilldistillery.HealthApp.entities.Activity</class>
 <class>com.skilldistillery.HealthApp.entities.User</class>
 
     <properties>
