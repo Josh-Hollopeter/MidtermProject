@@ -170,49 +170,6 @@
 			</div>
 		</div>
 
-
-
-
-
-
-		<!-- <div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="https://imgix.bustle.com/uploads/image/2019/2/12/d1dbc79a-dcbe-4c1b-8d37-2ce084e50bdf-shutterstock_721928668.jpg?w=1080&h=600&fit=crop&crop=faces&auto=format&q=70" alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">Boxing</h5>
-				<p class="card-text">Some quick example text to build on the
-					card title and make up the bulk of the card's content.</p>
-				<a href="#" class="btn btn-primary">Go somewhere</a>
-			</div>
-		</div>
-		<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="https://images.squarespace-cdn.com/content/v1/5c533c61e5f7d1726dd7a727/1553004037371-5VDR1JJN4GWYEKK8UKX7/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/IMG_0627.jpg?format=2500w">
-			<div class="card-body">
-				<h5 class="card-title">Yoga</h5>
-				<p class="card-text">Some quick example text to build on the
-					card title and make up the bulk of the card's content.</p>
-				<a href="#" class="btn btn-primary">Go somewhere</a>
-			</div>
-		</div>
-		<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Running/Galleries/Worst+Running+Tips/Slide+1.jpg">
-			<div class="card-body">
-				<h5 class="card-title">Running</h5>
-				<p class="card-text">Some quick example text to build on the
-					card title and make up the bulk of the card's content.</p>
-				<a href="#" class="btn btn-primary">Go somewhere</a>
-			</div>
-		</div>
-		<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="https://cdn.cnn.com/cnnnext/dam/assets/150415172730-weights-super-169.jpg">
-			<div class="card-body">
-				<h5 class="card-title">Weight Lifting</h5>
-				<p class="card-text">Some quick example text to build on the
-					card title and make up the bulk of the card's content.</p>
-				<a href="#" class="btn btn-primary">Go somewhere</a>
-			</div>
-		</div>
- -->
-
 	</main>
 	<footer>
 		<p>Created by Matt Aldrete, George Moore, Josh Hollopeter, Kai Shu</p>
