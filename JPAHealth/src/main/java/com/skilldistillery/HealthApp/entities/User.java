@@ -1,5 +1,6 @@
 package com.skilldistillery.HealthApp.entities;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -29,15 +31,28 @@ public class User {
 	private String email;
 	private String gender;
 	
+	@Column(name="birth_date")
+	private LocalDate birthDate;
 
+	@Column(name="create_date")
+	private LocalDate createDate;
 	
-//	@ManyToMany
-//	@JoinTable(name="user_workout",
-//	joinColumns=@JoinColumn(name="user_id"),
-//	inverseJoinColumns=@JoinColumn(name="workout_id"))
-//	private List<Workout> workouts;
-//	
+	@ManyToMany
+	@JoinTable(name="user_workout",
+	joinColumns=@JoinColumn(name="user_id"),
+	inverseJoinColumns=@JoinColumn(name="workout_id"))
+	private List<Workout> guestWorkouts;
 	
+	@OneToMany(mappedBy="user")
+	private List<Workout> workouts;
+	
+	
+	public List<Workout> getGuestWorkouts() {
+		return guestWorkouts;
+	}
+	public void setGuestWorkouts(List<Workout> guestWorkouts) {
+		this.guestWorkouts = guestWorkouts;
+	}
 	public User() {
 		super();
 	}
@@ -103,6 +118,50 @@ public class User {
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+	public LocalDate getBirthDate() {
+		return birthDate;
+	}
+	public void setBirthDate(LocalDate birthDate) {
+		this.birthDate = birthDate;
+	}
+	public LocalDate getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(LocalDate createDate) {
+		this.createDate = createDate;
+	}
+	public List<Workout> getWorkouts() {
+		return workouts;
+	}
+	public void setWorkouts(List<Workout> workouts) {
+		this.workouts = workouts;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", active=" + active + ", role=" + role + ", email=" + email + ", gender="
+				+ gender + ", birthDate=" + birthDate + ", createDate=" + createDate + "]";
 	}
 
 	
