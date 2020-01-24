@@ -1,10 +1,9 @@
 package com.skilldistillery.HealthApp.entities;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.OneToMany;
 import javax.persistence.Persistence;
 
 import org.junit.jupiter.api.AfterAll;
@@ -13,21 +12,19 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class UserTest {
-
+class AddressTest {
+	
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private User user;
+	private Address address;
 	
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		 emf = Persistence.createEntityManagerFactory("HealthDb");
 
 	}
-	@OneToMany
-	
-	
-	
+
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
 		 emf.close();
@@ -37,7 +34,7 @@ class UserTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		user = em.find(User.class, 2);
+		address = em.find(Address.class, 1);
 	}
 
 	@AfterEach
@@ -47,13 +44,10 @@ class UserTest {
 
 	@Test
 	void test() {
-
-		assertEquals("Mike", user.getUsername());
-		assertEquals("Mike", user.getPassword());
-		assertEquals("Tyson", user.getLastName());
-		assertEquals(1, user.getWorkouts().size());
-		
-
+		assertEquals("Boxsylvania", address.getCity());
+		assertEquals("Colorado", address.getState());
+		assertEquals("Boxing Way", address.getStreet());
+		assertEquals(35353, address.getZip());
 	}
 
 }
