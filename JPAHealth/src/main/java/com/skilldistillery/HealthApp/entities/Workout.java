@@ -55,9 +55,9 @@ public class Workout {
 	private boolean active;
 
 
-
-	@Column(name = "location_id")
-	private int locationId;
+	@ManyToOne
+	@JoinColumn(name = "location_id")
+	private Location location;
 
 	@ManyToMany(mappedBy="guestWorkouts")
 	private List<User> users;
@@ -66,9 +66,9 @@ public class Workout {
 
 	@Override
 	public String toString() {
-		return "Workout [Id=" + Id + ", workoutDate=" + workoutDate + ", title=" + title + ", description="
-				+ description + ", postday=" + postday + ", active=" + active + ", activity" + activity
-				+ ", locationId=" + locationId + "]";
+		return "Workout [Id=" + Id + ", activity=" + activity + ", user=" + user + ", workoutDate=" + workoutDate
+				+ ", title=" + title + ", description=" + description + ", postday=" + postday + ", active=" + active
+				+ ", location=" + location + ", users=" + users + "]";
 	}
 
 	public int getId() {
@@ -137,12 +137,13 @@ public class Workout {
 		this.activity = activity;
 	}
 
-	public int getLocationId() {
-		return locationId;
+
+	public Location getLocation() {
+		return location;
 	}
 
-	public void setLocationId(int locationId) {
-		this.locationId = locationId;
+	public void setLocation(Location location) {
+		this.location = location;
 	}
 
 	public User getUser() {

@@ -40,6 +40,9 @@ class WorkoutTest {
 	void test() {
 		assertEquals("Mike", workout.getUser().getFirstName());
 		assertEquals("Boxing", workout.getActivity().getTitle());
+		assertEquals("The Boxing Gym", workout.getLocation().getName());
 	}
+	
+	
 
 }
