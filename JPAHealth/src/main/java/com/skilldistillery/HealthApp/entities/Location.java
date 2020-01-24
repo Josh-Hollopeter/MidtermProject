@@ -3,6 +3,8 @@ package com.skilldistillery.HealthApp.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Location {
@@ -18,10 +20,15 @@ public class Location {
 	public int getId() {
 		return id;
 	}
+	
+	@ManyToOne 
+	@JoinColumn(name="address_id")
+	public Address address;
+	
 
 //CONSTRUCTOR
 	public Location() {
-	}
+		}
 
 	public Location(int id, String name, int addressId) {
 		super();
