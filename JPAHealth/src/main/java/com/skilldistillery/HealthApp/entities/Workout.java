@@ -2,10 +2,14 @@ package com.skilldistillery.HealthApp.entities;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Workout {
@@ -18,31 +22,32 @@ public class Workout {
 
 	}
 
-	public Workout(int id, int creatorId, LocalDate workoutDate, String titel, String description,
-			LocalDateTime postday, boolean active, int activityId, int locationId) {
-		super();
-		Id = id;
-		this.creatorId = creatorId;
-		this.workoutDate = workoutDate;
-		this.titel = titel;
-		this.description = description;
-		this.postday = postday;
-		this.active = active;
-		this.activityId = activityId;
-		this.locationId = locationId;
-	}
-
-	@Column(name = "creator_id")
-	private int creatorId;
+//	public Workout(int id, int creatorId, LocalDate workoutDate, String titel, String description,
+//			LocalDateTime postday, boolean active, int activityId, int locationId) {
+//		super();
+//		Id = id;
+//		this.user = creatorId;
+//		this.workoutDate = workoutDate;
+//		this.title = titel;
+//		this.description = description;
+//		this.postday = postday;
+//		this.active = active;
+//		this.activityId = activityId;
+//		this.locationId = locationId;
+//	}
+	
+	@ManyToOne
+	@JoinColumn(name = "creator_id")
+	private User user;
 
 	@Column(name = "workout_date")
 	private LocalDate workoutDate;
 
-	private String titel;
+	private String title;
 
 	private String description;
 
-	@Column(name = "post_day")
+	@Column(name = "post_date")
 	private LocalDateTime postday;
 
 	private boolean active;
@@ -53,14 +58,16 @@ public class Workout {
 	@Column(name = "location_id")
 	private int locationId;
 
+	@ManyToMany(mappedBy="guestWorkouts")
+	private List<User> users;
 	
 //METHOD
 
 	@Override
 	public String toString() {
-		return "Workout [Id=" + Id + ", creatorId=" + creatorId + ", workoutDate=" + workoutDate + ", titel=" + titel
-				+ ", description=" + description + ", postday=" + postday + ", active=" + active + ", activityId="
-				+ activityId + ", locationId=" + locationId + "]";
+		return "Workout [Id=" + Id + ", workoutDate=" + workoutDate + ", title=" + title + ", description="
+				+ description + ", postday=" + postday + ", active=" + active + ", activityId=" + activityId
+				+ ", locationId=" + locationId + "]";
 	}
 
 	public int getId() {
@@ -71,12 +78,12 @@ public class Workout {
 		Id = id;
 	}
 
-	public int getCreatorId() {
-		return creatorId;
+	public User getCreatorId() {
+		return user;
 	}
 
-	public void setCreatorId(int creatorId) {
-		this.creatorId = creatorId;
+	public void setCreatorId(User user) {
+		this.user = user;
 	}
 
 	public LocalDate getWorkoutDate() {
@@ -88,11 +95,11 @@ public class Workout {
 	}
 
 	public String getTitel() {
-		return titel;
+		return title;
 	}
 
 	public void setTitel(String titel) {
-		this.titel = titel;
+		this.title = titel;
 	}
 
 	public String getDescription() {
@@ -135,19 +142,35 @@ public class Workout {
 		this.locationId = locationId;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + Id;
-		result = prime * result + (active ? 1231 : 1237);
-		result = prime * result + activityId;
-		result = prime * result + creatorId;
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + locationId;
-		result = prime * result + ((postday == null) ? 0 : postday.hashCode());
-		result = prime * result + ((titel == null) ? 0 : titel.hashCode());
-		result = prime * result + ((workoutDate == null) ? 0 : workoutDate.hashCode());
 		return result;
 	}
 
@@ -162,34 +185,10 @@ public class Workout {
 		Workout other = (Workout) obj;
 		if (Id != other.Id)
 			return false;
-		if (active != other.active)
-			return false;
-		if (activityId != other.activityId)
-			return false;
-		if (creatorId != other.creatorId)
-			return false;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
-		if (locationId != other.locationId)
-			return false;
-		if (postday == null) {
-			if (other.postday != null)
-				return false;
-		} else if (!postday.equals(other.postday))
-			return false;
-		if (titel == null) {
-			if (other.titel != null)
-				return false;
-		} else if (!titel.equals(other.titel))
-			return false;
-		if (workoutDate == null) {
-			if (other.workoutDate != null)
-				return false;
-		} else if (!workoutDate.equals(other.workoutDate))
-			return false;
 		return true;
 	}
+
+	
+
+
 }
