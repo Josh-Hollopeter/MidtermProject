@@ -19,10 +19,9 @@
 		<div class="form-group justify-content-center " id="log">
 	
 		
-		<form:form action="login.do"><%--  modelAttribute="user" class="justify-content-center" --%>
-										<%-- Error messages --%>
-										<%-- <form:input path="userName" />
-										<form:password path="password" /> --%>
+		<form:form action="login.do" modelAttribute="user" class="justify-content-center">
+										<form:input path="username" />
+										<form:password path="password" />
 										<input type="submit" value="Log In">
 									
 			<a href ="createupdate.do"><input type="button" value="Create" class ="btn-primary"></a>
