@@ -1,10 +1,9 @@
 package com.skilldistillery.HealthApp.entities;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.OneToMany;
 import javax.persistence.Persistence;
 
 import org.junit.jupiter.api.AfterAll;
@@ -13,31 +12,27 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class UserTest {
 
+class ActivityTest {
+	
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private User user;
-	
+	private Activity activity;
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		 emf = Persistence.createEntityManagerFactory("HealthDb");
-
+		emf = Persistence.createEntityManagerFactory("HealthDb");
 	}
-	@OneToMany
-	
-	
-	
+
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
-		 emf.close();
-
+		emf.close();
 	}
 
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		user = em.find(User.class, 2);
+		activity = em.find(Activity.class, 1);
 	}
 
 	@AfterEach
@@ -47,13 +42,10 @@ class UserTest {
 
 	@Test
 	void test() {
-
-		assertEquals("Mike", user.getUsername());
-		assertEquals("Mike", user.getPassword());
-		assertEquals("Tyson", user.getLastName());
-		assertEquals(1, user.getWorkouts().size());
-		
-
+		assertEquals("12 rounds with Tyson", activity.getDescription());
+		assertEquals("Boxing", activity.getTitle());
+		String image = "https://media.gettyimages.com/photos/mike-tyson-stands-in-the-ring-during-the-fight-with-carl-williams-at-picture-id51763505";
+		assertEquals(image, activity.getImage());
 	}
 
 }
