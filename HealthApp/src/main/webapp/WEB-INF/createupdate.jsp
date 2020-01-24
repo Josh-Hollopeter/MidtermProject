@@ -11,23 +11,17 @@
 <link rel="stylesheet" href="mainStyle.css">
 <meta charset="UTF-8">
 
-<title>Home Page</title>
+<title>Account details</title>
 </head>
 <body>
 	<header>
-		<h1>Health App Home Page</h1>
-		<div class="form-group justify-content-center " id="log">
+		<h1>Health Together</h1>
+		<div class="form-group justify-content-center " >
 	
 		
-		<form:form action="login.do"><%--  modelAttribute="user" class="justify-content-center" --%>
-										<%-- Error messages --%>
-										<%-- <form:input path="userName" />
-										<form:password path="password" /> --%>
-										<input type="submit" value="Log In">
 									
-			<a href ="createupdate.do"><input type="button" value="Create" class ="btn-primary"></a>
+			<a href ="index.do"><input type="button" class ="btn-primary"></a>
 			
-		</form:form>
 		
 	
 			</div>
