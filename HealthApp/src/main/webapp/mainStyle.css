@@ -45,3 +45,13 @@ input{
 #log{
 	display: inline;
 }
+.card-deck .card {
+	max-width: 400px;
+	max-height: 400px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+main {
+	margin: 25px;
+}
