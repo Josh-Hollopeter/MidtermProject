@@ -29,26 +29,50 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 
 	@Override
 	public Workout CreateWorkOut(Workout workout) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		em.persist(workout);
+
+		em.flush();
+
+		return workout;		
 	}
 
 	@Override
 	public Workout UpdateWorkOut(Workout workout, int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Workout workoutToChangeFromDB = em.find(Workout.class, id);
+		
+		workoutToChangeFromDB.setTitle(workout.getTitle());
+		workoutToChangeFromDB.setActivity(workout.getActivity());;
+		workoutToChangeFromDB.setCreatorId(workout.getCreatorId());
+		workoutToChangeFromDB.setDescription(workout.getDescription());
+		workoutToChangeFromDB.setLocation(workout.getLocation());
+		workoutToChangeFromDB.setPostdate(workout.getPostdate());
+		workoutToChangeFromDB.setUser(workout.getUser());
+		workoutToChangeFromDB.setWorkoutDate(workout.getWorkoutDate());
+		workoutToChangeFromDB.setActive(workout.isActive());
+		
+		em.flush();
+		
+		return workoutToChangeFromDB;
 	}
 
 	@Override
-	public void deletWorkout(Workout workout) {
-		// TODO Auto-generated method stub
+	public boolean deletWorkout(Integer id) {
+		
+		Workout workout = em.find(Workout.class, id);
+		em.remove(workout);
+		
+		boolean status = !em.contains(workout);
+		
+		return status;
 
 	}
 
 	@Override
 	public List<Workout> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String jpql = "SELECT workout FROM Workout workout";
+		List<Workout> results = em.createQuery(jpql, Workout.class).getResultList();
+		return results;
 	}
 
 }
