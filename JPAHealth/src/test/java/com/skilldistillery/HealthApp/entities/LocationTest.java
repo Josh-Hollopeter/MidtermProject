@@ -17,9 +17,14 @@ class LocationTest {
 	private EntityManager em;
 	private Location location;
 
+//	@Test
+//	void test() {
+//		assertEquals(1, location.getAddressId());
+//	}
+
 	@Test
-	void test() {
-		assertEquals(1, location.getAddressId());
+	void test2() {
+		assertEquals("Boxing Way", location.getAddress().getStreet());
 	}
 
 	@BeforeAll

@@ -22,22 +22,11 @@ public class Workout {
 
 	}
 
-//	public Workout(int id, int creatorId, LocalDate workoutDate, String titel, String description,
-//			LocalDateTime postday, boolean active, int activityId, int locationId) {
-//		super();
-//		Id = id;
-//		this.user = creatorId;
-//		this.workoutDate = workoutDate;
-//		this.title = titel;
-//		this.description = description;
-//		this.postday = postday;
-//		this.active = active;
-//		this.activityId = activityId;
-//		this.locationId = locationId;
-//	}
+
 	@ManyToOne
 	@JoinColumn(name = "activity_id")
 	private Activity activity;
+	
 	@ManyToOne
 	@JoinColumn(name = "creator_id")
 	private User user;
@@ -50,7 +39,7 @@ public class Workout {
 	private String description;
 
 	@Column(name = "post_date")
-	private LocalDateTime postday;
+	private LocalDateTime postdate;
 
 	private boolean active;
 
@@ -67,7 +56,7 @@ public class Workout {
 	@Override
 	public String toString() {
 		return "Workout [Id=" + Id + ", activity=" + activity + ", user=" + user + ", workoutDate=" + workoutDate
-				+ ", title=" + title + ", description=" + description + ", postday=" + postday + ", active=" + active
+				+ ", title=" + title + ", description=" + description + ", postdate=" + postdate + ", active=" + active
 				+ ", location=" + location + ", users=" + users + "]";
 	}
 
@@ -95,12 +84,12 @@ public class Workout {
 		this.workoutDate = workoutDate;
 	}
 
-	public String getTitel() {
+	public String getTitle() {
 		return title;
 	}
 
-	public void setTitel(String titel) {
-		this.title = titel;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getDescription() {
@@ -111,12 +100,12 @@ public class Workout {
 		this.description = description;
 	}
 
-	public LocalDateTime getPostday() {
-		return postday;
+	public LocalDateTime getPostdate() {
+		return postdate;
 	}
 
-	public void setPostday(LocalDateTime postday) {
-		this.postday = postday;
+	public void setPostdate(LocalDateTime postdate) {
+		this.postdate = postdate;
 	}
 
 	public boolean isActive() {
@@ -152,14 +141,6 @@ public class Workout {
 
 	public void setUser(User user) {
 		this.user = user;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
 	}
 
 	public List<User> getUsers() {
