@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class location {
+public class Location {
 //FIELD
 	@Id
 	private int id;
@@ -20,10 +20,10 @@ public class location {
 	}
 
 //CONSTRUCTOR
-	public location() {
+	public Location() {
 	}
 
-	public location(int id, String name, int addressId) {
+	public Location(int id, String name, int addressId) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -70,7 +70,7 @@ public class location {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		location other = (location) obj;
+		Location other = (Location) obj;
 		if (addressId != other.addressId)
 			return false;
 		if (id != other.id)
