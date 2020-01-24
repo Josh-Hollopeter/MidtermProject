@@ -35,7 +35,9 @@ public class Workout {
 //		this.activityId = activityId;
 //		this.locationId = locationId;
 //	}
-	
+	@ManyToOne
+	@JoinColumn(name = "activity_id")
+	private Activity activity;
 	@ManyToOne
 	@JoinColumn(name = "creator_id")
 	private User user;
@@ -52,8 +54,7 @@ public class Workout {
 
 	private boolean active;
 
-	@Column(name = "activity_id")
-	private int activityId;
+
 
 	@Column(name = "location_id")
 	private int locationId;
@@ -66,7 +67,7 @@ public class Workout {
 	@Override
 	public String toString() {
 		return "Workout [Id=" + Id + ", workoutDate=" + workoutDate + ", title=" + title + ", description="
-				+ description + ", postday=" + postday + ", active=" + active + ", activityId=" + activityId
+				+ description + ", postday=" + postday + ", active=" + active + ", activity" + activity
 				+ ", locationId=" + locationId + "]";
 	}
 
@@ -126,12 +127,14 @@ public class Workout {
 		this.active = active;
 	}
 
-	public int getActivityId() {
-		return activityId;
+
+
+	public Activity getActivity() {
+		return activity;
 	}
 
-	public void setActivityId(int activityId) {
-		this.activityId = activityId;
+	public void setActivity(Activity activity) {
+		this.activity = activity;
 	}
 
 	public int getLocationId() {
