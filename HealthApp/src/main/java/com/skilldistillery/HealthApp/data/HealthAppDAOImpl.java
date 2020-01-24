@@ -10,21 +10,27 @@ import org.springframework.stereotype.Service;
 
 import com.skilldistillery.HealthApp.entities.Workout;
 
-
-
-
 @Service
 @Transactional
 public class HealthAppDAOImpl implements HealthAppDAO {
 
-	
 	@PersistenceContext
 	private EntityManager em;
-	
+
+	public HealthAppDAOImpl() {
+		
+	}
+	public HealthAppDAOImpl(EntityManager em) {
+		this.em = em;
+	}
 	@Override
 	public Workout searchByActivity(String activity) {
-		// TODO Auto-generated method stub
-		return null;
+		String query = "select w from Workout w where w.activity.title=:title";
+
+		Workout workout=new Workout();
+		workout = em.createQuery(query, Workout.class).setParameter("title", activity).getSingleResult();
+
+		return workout;
 	}
 
 	@Override
