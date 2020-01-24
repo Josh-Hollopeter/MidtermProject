@@ -14,35 +14,37 @@ public class Location {
 
 	private String name;
 
-	@Column(name = "address_id")
-	private int addressId;
+//	@Column(name = "address_id")
+//	private int addressId;
 
 	public int getId() {
 		return id;
 	}
-	
-	@ManyToOne 
-	@JoinColumn(name="address_id")
+
+	@ManyToOne
+	@JoinColumn(name = "address_id")
 	public Address address;
-	
 
-//CONSTRUCTOR
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	// CONSTRUCTOR
 	public Location() {
-		}
+	}
 
-	public Location(int id, String name, int addressId) {
+	public Location(int id, String name, Address address) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.addressId = addressId;
+		this.address = address;
 	}
 
 //METHOD
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -51,19 +53,20 @@ public class Location {
 		this.name = name;
 	}
 
-	public int getAddressId() {
-		return addressId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public void setAddressId(int addressId) {
-		this.addressId = addressId;
+	@Override
+	public String toString() {
+		return "Location [id=" + id + ", name=" + name + ", address=" + address + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + addressId;
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
@@ -78,7 +81,10 @@ public class Location {
 		if (getClass() != obj.getClass())
 			return false;
 		Location other = (Location) obj;
-		if (addressId != other.addressId)
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
 			return false;
 		if (id != other.id)
 			return false;
@@ -88,11 +94,6 @@ public class Location {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "location [id=" + id + ", name=" + name + ", addressId=" + addressId + "]";
 	}
 
 }
