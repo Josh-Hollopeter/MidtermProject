@@ -1,9 +1,15 @@
 package com.skilldistillery.HealthApp.entities;
 
+import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class User {
@@ -13,9 +19,26 @@ public class User {
 	private int id;
 	private String username;
 	private String password;
+	
+	@Column(name = "first_name")
+	private String firstName;
+	@Column(name="last_name")
+	private String lastName;
 	private Boolean active;
 	private String role;
+	private Integer age;
+	private String email;
+	private String gender;
 	
+	@Column(name = "address_id")
+	private Integer addressId;
+	
+//	@ManyToMany
+//	@JoinTable(name="user_workout",
+//	joinColumns=@JoinColumn(name="user_id"),
+//	inverseJoinColumns=@JoinColumn(name="workout_id"))
+//	private List<Workout> workouts;
+//	
 	
 	public User() {
 		super();
