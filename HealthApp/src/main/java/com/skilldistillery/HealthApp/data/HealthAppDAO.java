@@ -13,7 +13,7 @@ public interface HealthAppDAO {
 
 	public Workout UpdateWorkOut(Workout workout, int id);
 
-	public void deletWorkout(Workout workout);
+	public boolean deletWorkout(Integer id);
 
 	
 	
