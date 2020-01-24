@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.OneToMany;
 import javax.persistence.Persistence;
 
 import org.junit.jupiter.api.AfterAll;
@@ -23,7 +24,10 @@ class UserTest {
 		 emf = Persistence.createEntityManagerFactory("HealthDb");
 
 	}
-
+	@OneToMany
+	
+	
+	
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
 		 emf.close();
@@ -45,6 +49,10 @@ class UserTest {
 	void test() {
 //		assertEquals("admin", user.getUsername());
 		assertEquals("Mike", user.getUsername());
+		assertEquals("Mike", user.getPassword());
+		assertEquals("Tyson", user.getLastName());
+		assertEquals(1, user.getWorkouts().size());
+		
 	}
 
 }
