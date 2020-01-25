@@ -8,6 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>${user}</p>
+<p>${sessionScope.user}</p>
 </body>
 </html>
