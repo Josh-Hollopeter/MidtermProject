@@ -1,14 +1,12 @@
 package com.skilldistillery.HealthApp.entities;
 
-import javax.annotation.Generated;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
 @Entity
 public class Location {
 //FIELD
@@ -18,8 +16,6 @@ public class Location {
 
 	private String name;
 
-//	@Column(name = "address_id")
-//	private int addressId;
 
 	public int getId() {
 		return id;
