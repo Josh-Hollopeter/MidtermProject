@@ -113,11 +113,10 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 	@Override
 	public User findByLogin(String username, String password) {
 		
-		User user = new User();
 		
 		String jpql = "Select user from User user where user.username = :username AND user.password = :password";
 		
-		user = em.createQuery(jpql, User.class).setParameter("username", username).setParameter("password", password).getSingleResult();
+		User user = em.createQuery(jpql, User.class).setParameter("username", username).setParameter("password", password).getResultList().get(0);
 		
 		return user;
 	}
