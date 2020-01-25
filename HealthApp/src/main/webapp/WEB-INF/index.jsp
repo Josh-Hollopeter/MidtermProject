@@ -27,6 +27,9 @@
 
 				<a href="createupdateuser.do"><input type="button" value="Create"
 					class="btn-primary"></a>
+					
+				<a href="createworkout.do"><input type="button" value="Create Workout"
+					class="btn-success"></a>
 
 			</form:form>
 

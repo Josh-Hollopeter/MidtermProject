@@ -57,8 +57,11 @@ main {
 	margin: 25px;
 }
 
-img {
-	max-width: 340px;
+img{
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    max-width: 400px;
+    max-height: 230px;
 }
 
 
