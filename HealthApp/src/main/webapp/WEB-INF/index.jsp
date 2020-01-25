@@ -25,7 +25,7 @@
 				<form:password path="password" placeholder="password" />
 				<input type="submit" value="Log In">
 
-				<a href="createupdate.do"><input type="button" value="Create"
+				<a href="createupdateuser.do"><input type="button" value="Create"
 					class="btn-primary"></a>
 
 			</form:form>
