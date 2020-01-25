@@ -56,8 +56,7 @@ public class UserController {
 	
 	@RequestMapping(path="updateuserinfo.do" , method = RequestMethod.POST)
 	public String updateCreateUser( HttpSession session, User user, Model model) {
-//		User user1 = (User) session.getAttribute("user");
-		System.err.println(user.getPassword());
+
 		if(user.getId() == 0 ) {
 			userdao.createUser(user);
 			session.setAttribute("user", user);
