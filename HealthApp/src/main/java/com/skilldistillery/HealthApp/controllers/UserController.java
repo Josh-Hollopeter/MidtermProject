@@ -12,44 +12,40 @@ import com.skilldistillery.HealthApp.entities.User;
 
 @Controller
 public class UserController {
-	
+
 	@Autowired
 	HealthAppDAOImpl dao;
-	
-	@RequestMapping(path = {"/", "index.do"} )
+
+	@RequestMapping(path = { "/", "index.do" })
 	public String home(Model model, HttpSession session, User user) {
-		
+
 		return "index";
 	}
-	
 
-	
-	@RequestMapping(path = {"login.do"})
-	public String loginPostView( HttpSession session, User user,Model model) {
+	@RequestMapping(path = { "login.do" })
+	public String loginPostView(HttpSession session, User user, Model model) {
+		user = dao.findByLogin(user.getUsername(), user.getPassword());
 
-			user = dao.findByLogin(user.getUsername(), user.getPassword());
-
-		if ( user == null) {
+		if (user == null) {
 			model.addAttribute("error", "No user Found");
 			return "index";
-		}else {
-		session.setAttribute("user", user);
+		} else {
+			session.setAttribute("user", user);
 		}
-		
+
 		return "userhome";
-		
-	}
-	
-	@RequestMapping(path = {"createUpdateUser.do"})
-	public String createUser ( HttpSession session, User user, Model model) {
-		if (user == null) {
-			User user1 = new User();
-			session.setAttribute("user",user1);
-			return "createUpdateUser";
-		}else {
-			return "createUpdateUser";
-		}
+
 	}
 
+	@RequestMapping(path = { "createUpdateUser.do" })
+	public String createUser(HttpSession session, User user, Model model) {
+		if (user == null) {
+			User user1 = new User();
+			session.setAttribute("user", user1);
+			return "createUpdateUser";
+		} else {
+			return "createUpdateUser";
+		}
+	}
 
 }
