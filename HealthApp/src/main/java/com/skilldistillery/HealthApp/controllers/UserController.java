@@ -14,35 +14,36 @@ import com.skilldistillery.HealthApp.entities.User;
 
 @Controller
 public class UserController {
-	
+
 	@Autowired
+
 	HealthAppDAO dao;
 	@Autowired
 	AdminDAO userdao;
 	
-	@RequestMapping(path = {"/", "index.do"} )
+
+
+	@RequestMapping(path = { "/", "index.do" })
 	public String home(Model model, HttpSession session, User user) {
-		
+
 		return "index";
 	}
-	
 
-	
-	@RequestMapping(path = {"login.do"})
-	public String loginPostView( HttpSession session, User user,Model model) {
+	@RequestMapping(path = { "login.do" })
+	public String loginPostView(HttpSession session, User user, Model model) {
+		user = dao.findByLogin(user.getUsername(), user.getPassword());
 
-			user = dao.findByLogin(user.getUsername(), user.getPassword());
-
-		if ( user == null) {
+		if (user == null) {
 			model.addAttribute("error", "No user Found");
 			return "index";
-		}else {
-		session.setAttribute("user", user);
+		} else {
+			session.setAttribute("user", user);
 		}
-		
+
 		return "userhome";
-		
+
 	}
+
 	
 	@RequestMapping(path = {"createupdateuser.do"})
 	public String editForm ( HttpSession session, User user, Model model) {
@@ -53,6 +54,7 @@ public class UserController {
 			return "createupdateuser";
 		}
 	}
+
 	
 	@RequestMapping(path="updateuserinfo.do" , method = RequestMethod.POST)
 	public String updateCreateUser( HttpSession session, User user, Model model) {
@@ -68,6 +70,5 @@ public class UserController {
 		return "userhome";
 		
 	}
-
 
 }

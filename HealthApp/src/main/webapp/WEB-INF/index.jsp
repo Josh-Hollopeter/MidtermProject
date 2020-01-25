@@ -15,26 +15,37 @@
 </head>
 <body>
 	<header>
-		<h1>Health App Home Page</h1>
+	<nav class= "navbar navbar-light" style="background-color: #2F4F4F;">
+		<h1>Health Together</h1>
 		<div class="form-group justify-content-center " id="log">
-		
-		<form:form action="login.do" modelAttribute="user" class="justify-content-center">
-										<form:input path="username" />
-										<form:password path="password" />
-										<input type="submit" value="Log In">
-									
-			<a href ="createupdateuser.do"><input type="button" value="Create" class ="btn-primary"></a>
-			
-		</form:form>
-		
-	
-			</div>
 
+			<form:form action="login.do" modelAttribute="user"
+				class="justify-content-center">
+				<form:input path="username" placeholder="username" />
+				<form:password path="password" placeholder="password" />
+				<input type="submit" value="Log In">
+
+				<a href="createupdateuser.do"><input type="button" value="Create"
+					class="btn-primary"></a>
+
+			</form:form>
+
+		</div>
+</nav>
 	</header>
 
 	<main>
+		<div class="card text-white bg-secondary mb-3 text-center"
+			style="max-width: 30rem; text-align: center; margin:  auto;">
+			<div class="card-body">
+				<h5 class="card-title">Secondary card title</h5>
+				<p class="card-text">Some quick example text to build on the
+					card title and make up the bulk of the card's content.</p>
+			</div>
+		</div>
+		<br>
 		<div class="card-deck">
-			<div class="card">
+			<div class="card" style="background-color: #556B2F;">
 				<img class="card-img-top"
 					src="https://imgix.bustle.com/uploads/image/2019/2/12/d1dbc79a-dcbe-4c1b-8d37-2ce084e50bdf-shutterstock_721928668.jpg?w=1080&h=600&fit=crop&crop=faces&auto=format&q=70"
 					alt="Card image cap">
@@ -43,9 +54,7 @@
 					<p class="card-text">This is a longer card with supporting text
 						below as a natural lead-in to additional content. This content is
 						a little bit longer.</p>
-					<p class="card-text">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</p>
+					<p class="card-text"></p>
 				</div>
 			</div>
 			<div class="card">
@@ -56,12 +65,10 @@
 					<h5 class="card-title">Yoga</h5>
 					<p class="card-text">This card has supporting text below as a
 						natural lead-in to additional content.</p>
-					<p class="card-text">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</p>
+					<p class="card-text"></p>
 				</div>
 			</div>
-			<div class="card">
+			<div class="card bg-info">
 				<img class="card-img-top"
 					src="https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Running/Galleries/Worst+Running+Tips/Slide+1.jpg"
 					alt="Card image cap">
@@ -69,17 +76,14 @@
 					<h5 class="card-title">Running</h5>
 					<p class="card-text">This is a wider card with supporting text
 						below as a natural lead-in to additional content. This card has
-						even longer content than the first to show that equal height
-						action.</p>
-					<p class="card-text">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</p>
+						even longer content than the first to show </p>
+					<p class="card-text"></p>
 				</div>
 			</div>
 		</div>
 		<br>
 		<div class="card-deck">
-			<div class="card">
+			<div class="card" style="background-color: #556B2F;">
 				<img class="card-img-top"
 					src="https://cdn.cnn.com/cnnnext/dam/assets/150415172730-weights-super-169.jpg"
 					alt="Card image cap">
@@ -88,9 +92,7 @@
 					<p class="card-text">This is a longer card with supporting text
 						below as a natural lead-in to additional content. This content is
 						a little bit longer.</p>
-					<p class="card-text">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</p>
+					<p class="card-text"></p>
 				</div>
 			</div>
 			<div class="card">
@@ -102,11 +104,10 @@
 					<p class="card-text">This card has supporting text below as a
 						natural lead-in to additional content.</p>
 					<p class="card-text">
-						<small class="text-muted">Last updated 3 mins ago</small>
 					</p>
 				</div>
 			</div>
-			<div class="card">
+			<div class="card bg-info">
 				<img class="card-img-top"
 					src="https://www.thesnowcentre.com/snowsure/uploads/articles/thumbs/BSM_L2A.jpg"
 					alt="Card image cap">
@@ -116,15 +117,13 @@
 						below as a natural lead-in to additional content. This card has
 						even longer content than the first to show that equal height
 						action.</p>
-					<p class="card-text">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</p>
+					<p class="card-text"></p>
 				</div>
 			</div>
 		</div>
 		<br>
 		<div class="card-deck">
-			<div class="card">
+			<div class="card" style="background-color: #556B2F;">
 				<img class="card-img-top"
 					src="https://www.rollerskatedad.com/wp-content/uploads/2019/09/couple-rollerblading-outdoors-1024x681.jpg"
 					alt="Card image cap">
@@ -133,9 +132,7 @@
 					<p class="card-text">This is a longer card with supporting text
 						below as a natural lead-in to additional content. This content is
 						a little bit longer.</p>
-					<p class="card-text">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</p>
+					<p class="card-text"></p>
 				</div>
 			</div>
 			<div class="card">
@@ -146,12 +143,10 @@
 					<h5 class="card-title">Ice Skating</h5>
 					<p class="card-text">This card has supporting text below as a
 						natural lead-in to additional content.</p>
-					<p class="card-text">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</p>
+					<p class="card-text"></p>
 				</div>
 			</div>
-			<div class="card">
+			<div class="card bg-info">
 				<img class="card-img-top"
 					src="https://www.honorshaven.com/wp-content/uploads/2017/12/Healing-Tai-Chi.jpg"
 					alt="Card image cap">
@@ -161,9 +156,7 @@
 						below as a natural lead-in to additional content. This card has
 						even longer content than the first to show that equal height
 						action.</p>
-					<p class="card-text">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</p>
+					<p class="card-text"></p>
 				</div>
 			</div>
 		</div>
