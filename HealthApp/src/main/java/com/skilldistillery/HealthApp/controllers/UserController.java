@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.HealthApp.data.HealthAppDAOImpl;
 import com.skilldistillery.HealthApp.entities.User;
@@ -20,34 +19,16 @@ public class UserController {
 	@RequestMapping(path = {"/", "index.do"} )
 	public String home(Model model, HttpSession session, User user) {
 		
-//		User user = (User)session.getAttribute("user");
-		
-//		session.setAttribute("user", user);
-		
 		return "index";
 	}
 	
-//	@RequestMapping(path = {"login.do"}, method = RequestMethod.GET)
-//	public String loginView(Model model, HttpSession session, User user) {
-//		if (session.getAttribute("user") != null) {
-//			return "userhome";
-//		}
-//		return "index";
-//	}
+
 	
 	@RequestMapping(path = {"login.do"})
 	public String loginPostView( HttpSession session, User user,Model model) {
-		System.out.println(user);
-//		user = null;
-//		try {
+
 			user = dao.findByLogin(user.getUsername(), user.getPassword());
-			System.out.println(user);
-//			user = dao.findByLogin(user.getUsername(), user.getPassword());
-//		}catch(Exception e) {
-//			
-//		}
-	
-		
+
 		if ( user == null) {
 			model.addAttribute("error", "No user Found");
 			return "index";
@@ -57,6 +38,17 @@ public class UserController {
 		
 		return "userhome";
 		
+	}
+	
+	@RequestMapping(path = {"createUpdateUser.do"})
+	public String createUser ( HttpSession session, User user, Model model) {
+		if (user == null) {
+			User user1 = new User();
+			session.setAttribute("user",user1);
+			return "createUpdateUser";
+		}else {
+			return "createUpdateUser";
+		}
 	}
 
 
