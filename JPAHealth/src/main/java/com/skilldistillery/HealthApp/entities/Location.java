@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Location {
 //FIELD
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

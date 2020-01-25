@@ -9,5 +9,6 @@
 </head>
 <body>
 <p>${sessionScope.user}</p>
+
 </body>
 </html>
