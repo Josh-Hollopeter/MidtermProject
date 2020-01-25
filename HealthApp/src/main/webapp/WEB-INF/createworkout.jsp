@@ -18,10 +18,10 @@
 
 	<div>
 		Title: <input type="text" path="title"> Activity:
-		<selct>
+		<select>
 		<option value="Boxing">Boxing</option>
 		<option value="Running">Running</option>
-		</selct>
+		</select>
 
 
 		Date: <input type="date" path="workoutDate">
@@ -31,11 +31,14 @@
 
 
 	Location:<!-- Trigger/Open The Modal -->
-<button id="myBtn">Add a Location</button>
+	
+
+<button id="myBtn" data-toggle="modal" data-target="#myModal">Add a Location</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
 
+ 
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
@@ -101,18 +104,18 @@
 
    
    Zip: <input type="number" placeholder="80121"><br>
-   
-  
- 	 <div class="form-group">
-      <label for="inputlg">Description:</label>
+   Description:
 
  	<input type="text" name="description" placeholder="describe your activity" class="form-control input-lg" id="inputlg"><br>
     
     <input type="submit" value="Submit">
-    </div>
     </form>
   </div>
+ 	 <div class="form-group">
+      
+    </div>
+  
 
-	<div class="container">
+</div>
 </body>
 </html>
