@@ -70,5 +70,21 @@ public class UserController {
 		return "userhome";
 		
 	}
+	
+	@RequestMapping(path = "createworkout.do")
+		public String createWorkoutMapToButton() {
+		
+		return "createworkout";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
