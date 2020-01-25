@@ -7,8 +7,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body><a href ="index.do"><input type="button" class ="btn-primary"> Home </a>
 <p>${sessionScope.user}</p>
+<a href ="createupdateuser.do"><input type="button" class ="btn-primary"> Home </a>
+
+
 
 </body>
 </html>
