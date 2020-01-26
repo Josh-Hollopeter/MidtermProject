@@ -1,6 +1,6 @@
 body {
 	background-image:
-		url("https://patch.com/img/cdn20/users/22673839/20190709/024133/66644275-2419518314804164-3380315578949435392-n___09143855109.jpg");
+		url("https://images.squarespace-cdn.com/content/v1/5c533c61e5f7d1726dd7a727/1553004037371-5VDR1JJN4GWYEKK8UKX7/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/IMG_0627.jpg?format=2500w");
 	position: relative;
 	min-height: 100vh;
 	background-size: cover;
@@ -17,6 +17,10 @@ header {
 	background-color: white;
 	color: black;
 	text-align: center;
+}
+
+card {
+	margin: 70px;
 }
 
 body::before {
@@ -39,30 +43,4 @@ footer {
 	background-color: white;
 	color: black;
 	text-align: center;
-}
-
-input {
-	position: relative;
-}
-
-#log {
-	display: inline;
-}
-
-.card-deck .card {
-	max-width: 400px;
-	max-height: 400px;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-main {
-	margin: 25px;
-}
-
-img {
-	-ms-flex-negative: 0;
-	flex-shrink: 0;
-	max-width: 400px;
-	max-height: 230px;
 }
