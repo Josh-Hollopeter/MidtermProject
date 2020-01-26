@@ -56,7 +56,6 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 
 		workoutToChangeFromDB.setTitle(workout.getTitle());
 		workoutToChangeFromDB.setActivity(workout.getActivity());
-		;
 		workoutToChangeFromDB.setCreatorId(workout.getCreatorId());
 		workoutToChangeFromDB.setDescription(workout.getDescription());
 		workoutToChangeFromDB.setLocation(workout.getLocation());
@@ -123,6 +122,13 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 		}
 		
 		return user;
+	}
+	
+	@Override
+	public Workout findWorkoutById(Integer id) {
+		
+		return em.find(Workout.class, id);
+
 	}
 
 }

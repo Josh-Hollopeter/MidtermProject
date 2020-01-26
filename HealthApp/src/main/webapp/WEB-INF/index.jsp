@@ -32,10 +32,12 @@
 					</c:if>
 				<a href="createworkout.do"><input type="button" value="Create Workout"
 					class="btn-success"></a>
+
 			<c:if test ="${sessionScope.user.id > 0 }">
 				<a href="userhome.do"><input type="button" value="${sessionScope.user.username}'s Profile"
 					class="btn-success"></a>
 					</c:if>
+
 
 			</form:form>
 
