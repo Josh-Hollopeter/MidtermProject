@@ -16,7 +16,6 @@ import com.skilldistillery.HealthApp.entities.User;
 public class UserController {
 
 	@Autowired
-
 	HealthAppDAO dao;
 	@Autowired
 	AdminDAO userdao;
@@ -33,7 +32,7 @@ public class UserController {
 	public String loginPostView(HttpSession session, User user, Model model) {
 		user = dao.findByLogin(user.getUsername(), user.getPassword());
 
-		if (user == null) {
+		if (user == null || !user.getActive()) {
 			model.addAttribute("error", "No user Found");
 			return "index";
 		} else {
@@ -72,9 +71,15 @@ public class UserController {
 	}
 	
 	@RequestMapping(path = "createworkout.do")
-		public String createWorkoutMapToButton() {
+		public String createWorkoutMapToButton( HttpSession session, User user, Model model) {
+		User user1 = (User)session.getAttribute("user");
+		if(user1 == null ||user1.getId() == 0) {
+			return "redirect:createupdateuser.do";
+		}else {
+			
+			return "createworkout";
+		}
 		
-		return "createworkout";
 	}
 	
 	
