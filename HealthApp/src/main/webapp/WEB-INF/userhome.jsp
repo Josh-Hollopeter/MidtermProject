@@ -31,12 +31,16 @@
 						href="createupdateuser.do">Update Account</a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="createworkout.do"> Create Workout </a></li>
+						
 
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
 					<input class="form-control mr-sm-2" type="search"
 						placeholder="Search Workout" aria-label="Search">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					
+					<a href="workoutlistallresults.do"><input type="button" value="Show All Workouts"
+					class="btn-success"></a>
 				</form>
 			</div>
 		</nav>

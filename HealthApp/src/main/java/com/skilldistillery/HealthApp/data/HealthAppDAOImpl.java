@@ -119,5 +119,12 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 		
 		return user;
 	}
+	
+	@Override
+	public Workout findWorkoutById(Integer id) {
+		
+		return em.find(Workout.class, id);
+
+	}
 
 }

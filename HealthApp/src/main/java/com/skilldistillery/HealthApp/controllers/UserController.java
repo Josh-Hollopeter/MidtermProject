@@ -76,7 +76,6 @@ public class UserController {
 		if(user1 == null ||user1.getId() == 0) {
 			return "redirect:createupdateuser.do";
 		}else {
-			
 			return "createworkout";
 		}
 		

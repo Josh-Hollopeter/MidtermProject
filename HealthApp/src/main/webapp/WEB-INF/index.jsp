@@ -30,7 +30,7 @@
 					
 				<a href="createworkout.do"><input type="button" value="Create Workout"
 					class="btn-success"></a>
-
+					
 			</form:form>
 
 		</div>
