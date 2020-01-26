@@ -1,5 +1,7 @@
 package com.skilldistillery.HealthApp.controllers;
 
+import java.time.LocalDate;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.HealthApp.data.AdminDAO;
 import com.skilldistillery.HealthApp.data.HealthAppDAO;
@@ -31,10 +34,10 @@ public class UserController {
 	@RequestMapping(path = { "login.do" })
 	public String loginPostView(HttpSession session, User user, Model model) {
 		user = dao.findByLogin(user.getUsername(), user.getPassword());
-
-		if (user == null || !user.getActive()) {
+		
+		if (user == null || !user.getActive() || user.getId() == 0) {
 			model.addAttribute("error", "No user Found");
-			return "index";
+			return "redirect:index.do";
 		} else {
 			session.setAttribute("user", user);
 		}
@@ -56,7 +59,10 @@ public class UserController {
 
 	
 	@RequestMapping(path="updateuserinfo.do" , method = RequestMethod.POST)
-	public String updateCreateUser( HttpSession session, User user, Model model) {
+	public String updateCreateUser( HttpSession session, User user, Model model, @RequestParam(name = "userDate") String date1) {
+		LocalDate uDate = LocalDate.parse(date1);
+		user.setBirthDate(uDate);
+		
 
 		if(user.getId() == 0 ) {
 			userdao.createUser(user);
