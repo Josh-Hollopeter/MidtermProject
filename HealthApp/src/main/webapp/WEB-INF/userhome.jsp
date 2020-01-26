@@ -31,6 +31,8 @@
 						href="createupdateuser.do">Update Account</a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="createworkout.do"> Create Workout </a></li>
+					<li class="nav-item dropdown"><a class="nav-link"
+						href="logout.do"> Logout </a></li>
 
 				</ul>
 				<form class="form-inline my-2 my-lg-0">

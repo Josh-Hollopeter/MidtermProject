@@ -90,6 +90,25 @@ public class UserController {
 	
 	
 	
+
+
+@RequestMapping(path = "logout.do")
+public String logout( HttpSession session, User user, Model model) {
+	session.setAttribute("user", null);
 	
+	
+	return "redirect:index.do";
+}
+
+
+@RequestMapping(path = "userhome.do")
+public String userHome( HttpSession session, User user, Model model) {
+	User user1 = (User) session.getAttribute("user");
+	if(user1.getId() > 0) {
+		return"userhome";
+	}else {
+		return"index";
+	}
+}
 
 }

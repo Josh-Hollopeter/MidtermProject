@@ -83,7 +83,7 @@ form:before {
 								<div class="form-group">
 								<p> ${sessionScope.user}</p>
 									<form:form action="updateuserinfo.do" method="POST" modelAttribute="user" class ="">
-		<c:if test="${sessionScope.user.id == 0 }">
+		<c:if test="${empty sessionScope.user ||sessionScope.user.id == 0 }">
         Username: <input type="text" name="username" value ="username" required  maxlength="255" class="form-control text-center bg-dark text-light"> <br> 
         Password: <input type="text" name="password"  value="password" required class="form-control text-center bg-dark text-light" > <br>
         </c:if> 
