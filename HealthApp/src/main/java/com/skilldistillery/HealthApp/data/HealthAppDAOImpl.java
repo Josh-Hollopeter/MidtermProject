@@ -56,7 +56,6 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 
 		workoutToChangeFromDB.setTitle(workout.getTitle());
 		workoutToChangeFromDB.setActivity(workout.getActivity());
-		;
 		workoutToChangeFromDB.setCreatorId(workout.getCreatorId());
 		workoutToChangeFromDB.setDescription(workout.getDescription());
 		workoutToChangeFromDB.setLocation(workout.getLocation());
