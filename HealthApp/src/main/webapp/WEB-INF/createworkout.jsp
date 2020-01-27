@@ -22,47 +22,44 @@
 
 
 
-<form action="newworkout.do">
-	Location:
+	<form action="newworkout.do">
+		Location:
 
 
-	<button id="myBtn" data-toggle="modal" data-target="#myModal1">pick
-		a Location</button>
+		<button id="myBtn" data-toggle="modal" data-target="#myModal1">pick
+			a Location</button>
 
-	<!-- The Modal -->
-	<div id="myModal1" class="modal">
+		<!-- The Modal -->
+		<div id="myModal1" class="modal">
 
-		<!-- Modal content -->
-		<div class="modal-content">
-			<span class="close">&times;</span>
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
 
-			<c:forEach var="l" items="${locations}">
-				<a href="locationchoice.do?id=${ location.id}">${location.name}
-				</a>
+				<c:forEach var="l" items="${locations}">
+					<a href="locationchoice.do?id=${ location.id}">${location.name}
+					</a>
 
-			</c:forEach>
+				</c:forEach>
+			</div>
 		</div>
-	</div>
 
 
-	<button id="myBtn" data-toggle="modal" data-target="#myModal">Add
-		a Location</button>
+		<button id="myBtn" data-toggle="modal" data-target="#myModal">Add
+			a Location</button>
 
-	<!-- The Modal -->
-	<div id="myModal" class="modal">
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
 
-		<!-- Modal content -->
-		<div class="modal-content">
-			<span class="close">&times;</span>
-			
-	<form>
-			
-				Name: <input name="name" type="text" placeholder="Your wonderfull workout"
-					name="street"><br> 
-					
-	Street: <input type="text" placeholder="123 abc street" name="street"><br> 
-	City: <input type="text" placeholder="Denver" name="city"> 
-	State: <select name="state">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span> Name: <input name="name"
+					type="text" placeholder="Your wonderfull workout" name="street"><br>
+
+				Street: <input type="text" placeholder="123 abc street"
+					name="street"><br> City: <input type="text"
+					placeholder="Denver" name="city"> State: <select
+					name="state">
 					<option value="CO">CO</option>
 					<option value="AL">AL</option>
 					<option value="AK">AK</option>
@@ -115,40 +112,41 @@
 					<option value="MH">DC</option>
 
 
-				</select> 
-		Zip: <input type="number" placeholder="80121" name="zip"><br> <input
-					type="submit" value="Submit">
-			</form>
+				</select> Zip: <input type="number" placeholder="80121" name="zip"><br>
+				<input type="submit" value="Submit">
+
+			</div>
+			<div class="form-group"></div>
+
+
 		</div>
-		<div class="form-group"></div>
+		<br>
+		<div>
+			Title: <input name="title" type="text" path="title">
+			
+			
+			Activity: <select name="activity">
+				<option value="Boxing">Boxing</option>
+				<option value="Yoga">Yoga</option>
+				<option value="Weight Lift">Weight Lift</option>
+				<option value="Hiking">Hiking</option>
+				<option value="Snow Boarding">Snow Boarding</option>
+				<option value="Roller Blading">Roller Blading</option>
+				<option value="Ice Skating">Ice Skating</option>
+				<option value="Tai Chi">Tai Chi</option>
+				<option value="Running">Running</option>
 
 
-	</div>
-	<br>
-	<div>
-		Title: <input name="title" type="text" path="title"> Activity:
-		<select name="activity">
-			<option value="Boxing">Boxing</option>
-			<option value="Yoga">Yoga</option>
-			<option value="Weight Lift">Weight Lift</option>
-			<option value="Hiking">Hiking</option>
-			<option value="Snow Boarding">Snow Boarding</option>
-			<option value="Roller Blading">Roller Bladin</option>
-			<option value="Ice Skating">Ice Skating</option>
-			<option value="Tai Chi">Tai Chi</option>
-			<option value="Running">Running</option>
+			</select> Date: <input name="workoutdate" type="date" path="workout date"><br>
 
+			Description: <input type="text" name="description"
+				placeholder="describe your activity" class="form-control input-lg"
+				id="inputlg">
 
-		</select> Date: <input name="workoutDate" type="date" path="workoutDate"><br>
+		</div>
 
-		Description: <input type="text" name="description"
-			placeholder="describe your activity" class="form-control input-lg"
-			id="inputlg">
-
-	</div>
-
-	<input type="submit" value="Submit">
-</form>
+		<input type="submit" value="Submit">
+	</form>
 
 </body>
 </html>

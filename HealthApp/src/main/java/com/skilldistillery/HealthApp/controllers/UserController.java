@@ -84,6 +84,7 @@ public class UserController {
 
 	}
 
+
 	@RequestMapping(path = "logout.do")
 	public String logout(HttpSession session, User user, Model model) {
 		session.setAttribute("user", null);
@@ -99,5 +100,5 @@ public class UserController {
 			return "index";
 		}
 	}
-
 }
+
