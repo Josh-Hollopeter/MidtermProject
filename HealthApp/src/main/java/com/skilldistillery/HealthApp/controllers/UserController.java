@@ -87,14 +87,6 @@ public class UserController {
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
 
 
 @RequestMapping(path = "logout.do")
