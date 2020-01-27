@@ -1,0 +1,70 @@
+body {
+	background-image:
+		url("http://jacksonhole-traveler-production.s3.amazonaws.com/wp-content/uploads/2014/07/1406-laurancerockefellerpreserve-132-1280x853.jpg");
+	position: relative;
+	min-height: 100vh;
+	background-size: cover;
+	z-index: -1;
+	min-height: 100vh;
+}
+
+header {
+	z-index: 1;
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: white;
+	color: black;
+	text-align: center;
+}
+
+body::before {
+	content: "";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 0;
+}
+
+footer {
+	z-index: 2;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: white;
+	color: black;
+	text-align: center;
+}
+input{
+	position: relative;
+}
+#log{
+	display: inline;
+}
+
+.card {
+	box-shadow: 20px 30px 30px #000000;
+}
+
+.card-deck .card {
+	max-width: 400px;
+	max-height: 400px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+main {
+	margin: 25px;
+}
+
+img{
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    max-width: 400px;
+    max-height: 230px;
+}

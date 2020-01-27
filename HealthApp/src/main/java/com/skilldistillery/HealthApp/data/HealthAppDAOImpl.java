@@ -33,9 +33,9 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 
 		List<Workout> workouts = new ArrayList<>();
 
-		String query = "select w from Workout w where w.activity.title=:title";
+		String query = "select w from Workout w where w.activity.title LIKE :title";
 
-		workouts = em.createQuery(query, Workout.class).setParameter("title", activity).getResultList();
+		workouts = em.createQuery(query, Workout.class).setParameter("title", "%" + activity + "%").getResultList();
 
 		return workouts;
 	}
