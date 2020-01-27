@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>All Workouts</title>
 </head>
 <body>
-<h2>Search Results</h2>
+<h2>All Available Workouts</h2>
 	
 <c:forEach var="workout" items="${sessionScope.workout}">
 		<li>
