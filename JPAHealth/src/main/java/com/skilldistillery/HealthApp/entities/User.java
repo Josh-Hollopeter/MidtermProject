@@ -30,6 +30,7 @@ public class User {
 	private String role;
 	private String email;
 	private String gender;
+	private String photo;
 	
 	
 	@Column(name="birth_date")
@@ -64,6 +65,13 @@ public class User {
 		this.password = password;
 		this.active = active;
 		this.role = role;
+	}
+	
+	public String getPhoto() {
+		return photo;
+	}
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 	public int getId() {
 		return id;
