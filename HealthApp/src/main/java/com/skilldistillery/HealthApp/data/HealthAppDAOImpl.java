@@ -33,9 +33,9 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 
 		List<Workout> workouts = new ArrayList<>();
 
-		String query = "select w from Workout w where w.activity.title=:title";
+		String query = "select w from Workout w where w.activity.title LIKE :title";
 
-		workouts = em.createQuery(query, Workout.class).setParameter("title", activity).getResultList();
+		workouts = em.createQuery(query, Workout.class).setParameter("title", "%" + activity + "%").getResultList();
 
 		return workouts;
 	}
@@ -115,22 +115,20 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 
 		String jpql = "Select user from User user where user.username = :username AND user.password = :password";
 
-
-
 		User user;
-		try{
-			 user = em.createQuery(jpql, User.class).setParameter("username", username).setParameter("password", password).getResultList().get(0);
-		}catch(IndexOutOfBoundsException e) {
+		try {
+			user = em.createQuery(jpql, User.class).setParameter("username", username)
+					.setParameter("password", password).getResultList().get(0);
+		} catch (IndexOutOfBoundsException e) {
 			user = null;
 		}
-		
 
 		return user;
 	}
-	
+
 	@Override
 	public Workout findWorkoutById(Integer id) {
-		
+
 		return em.find(Workout.class, id);
 
 	}
@@ -140,6 +138,14 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 		String query = "Select l from Location l";
 		List<Location> allLocation = em.createQuery(query, Location.class).getResultList();
 		return allLocation;
+	}
+
+	@Override
+	public Location findLocationById(int id) {
+		Location location;
+		location = em.find(Location.class, id);
+
+		return location;
 	}
 
 }
