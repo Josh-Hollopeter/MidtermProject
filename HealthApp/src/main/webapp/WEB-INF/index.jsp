@@ -45,14 +45,7 @@
 
 			<c:if test ="${!empty sessionScope.user && sessionScope.user.id > 0 }">
 				<a href="userhome.do"><input type="button" value="${sessionScope.user.firstName}'s Profile"
-					class="btn-success"></a>
-					
-						test="${!empty sessionScope.user && sessionScope.user.id > 0 }">
-						<a href="userhome.do"><input type="button"
-							value="${sessionScope.user.username}'s Profile"
-							class="btn-success"></a>
-					</c:if>
-
+					class="btn-success"></a></c:if>
 
 				</form:form>
 
