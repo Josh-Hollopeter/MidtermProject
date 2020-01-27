@@ -20,7 +20,7 @@ header {
 }
 
 card {
-	margin: 70px;
+	margin: 25px 25px;
 }
 
 body::before {
@@ -34,7 +34,11 @@ body::before {
 	z-index: 0;
 }
 
-footer {
+.h5, h5 {
+	font-size: x-large;
+}
+
+/* footer {
 	z-index: 2;
 	position: fixed;
 	left: 0;
@@ -43,4 +47,4 @@ footer {
 	background-color: white;
 	color: black;
 	text-align: center;
-}
+} */

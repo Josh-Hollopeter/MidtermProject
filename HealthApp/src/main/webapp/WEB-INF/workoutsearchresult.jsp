@@ -11,6 +11,9 @@
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="workoutsearch.css">
+<meta charset="UTF-8">
+<title>Workout Details</title>
+</head>
 <body>
 	<header>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -96,6 +99,15 @@
 	<footer>
 		<p>Created by Matt Aldrete, George Moore, Josh Hollopeter, Kai Shu</p>
 	</footer>
+	
+	<c:if test="${ empty sessionScope.user }">
+		<form action="joinworkout.do" method="GET">
+			<input type="submit" value="Join" />
+		</form>
+	</c:if>
+	
+	
+	
 
 </body>
 </html>
