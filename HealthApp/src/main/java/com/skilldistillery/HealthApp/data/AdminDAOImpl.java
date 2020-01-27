@@ -27,6 +27,7 @@ public class AdminDAOImpl implements AdminDAO {
 
 	@Override
 	public Address createAddress(Address address) {
+		
 		em.persist(address);
 
 		em.flush();
