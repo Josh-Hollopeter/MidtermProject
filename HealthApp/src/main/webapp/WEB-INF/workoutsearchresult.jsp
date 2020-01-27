@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Workout Details</title>
 </head>
 <body>
 <c:choose>
@@ -26,6 +26,17 @@
 		<p>No Workout Found</p>
 	</c:otherwise>
 	</c:choose>
+	
+	<c:if test="${ empty sessionScope.user }">
+		<form action="joinworkout.do" method="GET">
+			<input type="submit" value="Join" />
+		</form>
+	</c:if>
+	
+	<form action="index.do" method="GET">
+		<input type="submit" value="Home" />
+	</form>
+	
 
 </body>
 </html>
