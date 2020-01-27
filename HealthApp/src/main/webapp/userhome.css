@@ -38,6 +38,23 @@ body::before {
 	font-size: x-large;
 }
 
+footer {
+	z-index: 2;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: white;
+	color: black;
+	text-align: center;
+}
+
+/* .container-fluid h3 {
+	color: white;
+	background-color: darkolivegreen;
+    text-align: center;
+} */
+
 /* footer {
 	z-index: 2;
 	position: fixed;
