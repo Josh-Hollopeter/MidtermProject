@@ -46,6 +46,11 @@ input{
 #log{
 	display: inline;
 }
+
+.card {
+	box-shadow: 20px 30px 30px #000000;
+}
+
 .card-deck .card {
 	max-width: 400px;
 	max-height: 400px;
@@ -57,8 +62,11 @@ main {
 	margin: 25px;
 }
 
-img {
-	max-width: 340px;
+img{
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    max-width: 400px;
+    max-height: 230px;
 }
 
 

@@ -56,7 +56,6 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 
 		workoutToChangeFromDB.setTitle(workout.getTitle());
 		workoutToChangeFromDB.setActivity(workout.getActivity());
-		;
 		workoutToChangeFromDB.setCreatorId(workout.getCreatorId());
 		workoutToChangeFromDB.setDescription(workout.getDescription());
 		workoutToChangeFromDB.setLocation(workout.getLocation());
@@ -115,10 +114,21 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 		
 		
 		String jpql = "Select user from User user where user.username = :username AND user.password = :password";
-		
-		User user = em.createQuery(jpql, User.class).setParameter("username", username).setParameter("password", password).getResultList().get(0);
+		User user;
+		try{
+			 user = em.createQuery(jpql, User.class).setParameter("username", username).setParameter("password", password).getResultList().get(0);
+		}catch(IndexOutOfBoundsException e) {
+			user = null;
+		}
 		
 		return user;
+	}
+	
+	@Override
+	public Workout findWorkoutById(Integer id) {
+		
+		return em.find(Workout.class, id);
+
 	}
 
 }
