@@ -31,6 +31,6 @@ public interface HealthAppDAO {
 	
 	public Location findLocationById(int id);
 
-
+	public Location addLocation(Location location);
 	
 }
