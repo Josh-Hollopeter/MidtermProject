@@ -59,12 +59,13 @@ public class UserController {
 			@RequestParam(name = "userDate") String date1) {
 		LocalDate uDate = LocalDate.parse(date1);
 		user.setBirthDate(uDate);
-
-		if (user.getId() == 0) {
+		User user1 = (User) session.getAttribute("user");
+		
+		if (user1 == null || user1.getId() == 0) {
 			userdao.createUser(user);
 			session.setAttribute("user", user);
 		} else {
-			User user1 = (User) session.getAttribute("user");
+		
 			userdao.updateUser(user1.getId(), user);
 		}
 

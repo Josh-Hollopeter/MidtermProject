@@ -77,6 +77,9 @@
                         <p class="card-text">
                         <table>
                             <tr>
+                                <td><strong>Host:</strong> ${myworkout.user.firstName} ${myworkout.user.lastName}</td>
+                            </tr>
+                            <tr>
                                 <td><strong>Date:</strong> ${myworkout.workoutDate}</td>
                             </tr>
                             <tr>
@@ -86,7 +89,10 @@
                                 <td><strong>Description:</strong> ${myworkout.description}</td>
                             </tr>
                         </table>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="workoutbyid.do?id=${myworkout.id}">Details</a>
+                        <%-- <form action="workoutbyid.do?id=${myworkout.id}" >
+							<input type="submit" value="Details" />
+						</form> --%>
                     </div>
                 </div>
             </c:forEach>

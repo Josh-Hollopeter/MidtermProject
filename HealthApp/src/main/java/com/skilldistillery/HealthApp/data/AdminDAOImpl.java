@@ -18,6 +18,8 @@ public class AdminDAOImpl implements AdminDAO {
 
 	@Override
 	public User createUser(User user) {
+		user.setActive(true);
+		
 		em.persist(user);
 
 		em.flush();
