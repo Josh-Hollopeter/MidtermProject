@@ -1,6 +1,7 @@
 package com.skilldistillery.HealthApp.controllers;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.HealthApp.data.AdminDAO;
 import com.skilldistillery.HealthApp.data.HealthAppDAO;
+import com.skilldistillery.HealthApp.entities.Location;
 import com.skilldistillery.HealthApp.entities.User;
 
 @Controller
@@ -74,9 +76,12 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "createworkout.do")
-	public String createWorkoutMapToButton(HttpSession session, User user, Model model) {
-		User user1 = (User) session.getAttribute("user");
-		if (user1 == null || user1.getId() == 0) {
+		public String createWorkoutMapToButton( HttpSession session, User user, Model model) {
+		User user1 = (User)session.getAttribute("user");
+		List<Location> locations = dao.allLocation();
+		model.addAttribute("locations", locations);
+		if(user1 == null ||user1.getId() == 0) {
+
 			return "redirect:createupdateuser.do";
 		} else {
 			return "createworkout";

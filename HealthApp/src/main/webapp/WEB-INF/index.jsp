@@ -17,9 +17,8 @@
 </head>
 <body>
 	<header>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="
-    display: flex;
-    justify-content: space-between">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light"
+			style="display: flex; justify-content: space-between">
 			<a class="navbar-brand" href="#">Health Together</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent"
@@ -28,8 +27,8 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="form-group justify-content-center" id="log" style="
-    margin: inherit;">
+			<div class="form-group justify-content-center" id="log"
+				style="margin: inherit;">
 				<form:form action="login.do" modelAttribute="user"
 					class="justify-content-center">
 					<c:if
@@ -44,7 +43,10 @@
 					<a href="createworkout.do"><input type="button"
 						value="Create Workout" class="btn-success"></a>
 
-					<c:if
+			<c:if test ="${!empty sessionScope.user && sessionScope.user.id > 0 }">
+				<a href="userhome.do"><input type="button" value="${sessionScope.user.firstName}'s Profile"
+					class="btn-success"></a>
+					
 						test="${!empty sessionScope.user && sessionScope.user.id > 0 }">
 						<a href="userhome.do"><input type="button"
 							value="${sessionScope.user.username}'s Profile"
@@ -54,35 +56,6 @@
 
 				</form:form>
 
-			</div>
-
-
-			<!-- 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link"
-						href="index.do">Home <span class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="createupdateuser.do">Update Account</a></li>
-					<li class="nav-item dropdown"><a class="nav-link"
-						href="createworkout.do"> Create Workout </a></li>
-					<li class="nav-item dropdown"><a class="nav-link"
-						href="workoutlistallresults.do"> Available Workouts </a></li> -->
-
-<!-- 			<li class="nav-item dropdown"><a class="nav-link"
-				href="logout.do"> Logout </a></li> -->
-
-<%-- 
-			</ul>
-			<form class="form-inline my-2 my-lg-0"
-				action="workoutsearchresults.do">
-				<input class="form-control mr-sm-2" type="search"
-					placeholder="Search Workout" aria-label="Search" name="searchterm">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-
-			</form> --%>
-			<!-- 
-					<a href="workoutlistallresults.do"><input type="button" value="Show All Workouts"
-					class="btn-success"></a> -->
 			</div>
 		</nav>
 	</header>
@@ -104,9 +77,8 @@
 					alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Boxing</h5>
-					<p class="card-text">This is a longer card with supporting text
-						below as a natural lead-in to additional content. This content is
-						a little bit longer.</p>
+					<p class="card-text">Sometimes you just want to hit something!
+						Boxing is a great way to alleviate that stress in a healthy way.</p>
 					<p class="card-text"></p>
 				</div>
 			</div>
@@ -116,8 +88,9 @@
 					alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Yoga</h5>
-					<p class="card-text">This card has supporting text below as a
-						natural lead-in to additional content.</p>
+					<p class="card-text">Yoga as exercise is a physical activity
+						consisting mainly of postures,sometimes accompanied by rhythmic
+						breathing, and often ending with relaxation or meditation.</p>
 					<p class="card-text"></p>
 				</div>
 			</div>
@@ -127,9 +100,9 @@
 					alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Running</h5>
-					<p class="card-text">This is a wider card with supporting text
-						below as a natural lead-in to additional content. This card has
-						even longer content than the first to show</p>
+					<p class="card-text">Running is an excellent way to strengthen
+						the heart and ensure the efficient flow of blood and oxygen
+						throughout the body</p>
 					<p class="card-text"></p>
 				</div>
 			</div>
@@ -142,9 +115,10 @@
 					alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Weight Lifting</h5>
-					<p class="card-text">This is a longer card with supporting text
-						below as a natural lead-in to additional content. This content is
-						a little bit longer.</p>
+					<p class="card-text">Running is an excellent way to strengthen
+						the heart and ensure the efficient flow of blood and oxygen
+						throughout the body. Benefits include improved posture, better
+						sleep, gaining bone density, maintaining weight loss</p>
 					<p class="card-text"></p>
 				</div>
 			</div>
@@ -154,8 +128,9 @@
 					alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Hiking</h5>
-					<p class="card-text">This card has supporting text below as a
-						natural lead-in to additional content.</p>
+					<p class="card-text">Our lives are busier than ever. Nine to
+						five jobs, full social calendars and everyday life admin is enough
+						to keep us at a permanent level of stress below the surface.</p>
 					<p class="card-text"></p>
 				</div>
 			</div>
@@ -165,10 +140,10 @@
 					alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Snowboarding</h5>
-					<p class="card-text">This is a wider card with supporting text
-						below as a natural lead-in to additional content. This card has
-						even longer content than the first to show that equal height
-						action.</p>
+					<p class="card-text">Shred it Bro! Snowboarding is a
+						recreational activity and Winter Olympic and Paralympic sport that
+						involves descending a snow-covered slope while standing on a
+						snowboard attached to a rider's feet.</p>
 					<p class="card-text"></p>
 				</div>
 			</div>
@@ -181,9 +156,10 @@
 					alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Roller Blading</h5>
-					<p class="card-text">This is a longer card with supporting text
-						below as a natural lead-in to additional content. This content is
-						a little bit longer.</p>
+					<p class="card-text">An extreme sport involving straping
+						rollerblades on your feet and doing stunts on urban environment.
+						rollerblading is very underground in The United States, only know
+						about by rollerbladers skateboards and some bikers.</p>
 					<p class="card-text"></p>
 				</div>
 			</div>
@@ -193,8 +169,9 @@
 					alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Ice Skating</h5>
-					<p class="card-text">This card has supporting text below as a
-						natural lead-in to additional content.</p>
+					<p class="card-text">Ice skating helps improve your balance
+						through fun and positive exercise. Travelling across an incredibly
+						slippery surface should quickly train you to stay on your feet.</p>
 					<p class="card-text"></p>
 				</div>
 			</div>
@@ -204,10 +181,9 @@
 					alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Tai Chi</h5>
-					<p class="card-text">This is a wider card with supporting text
-						below as a natural lead-in to additional content. This card has
-						even longer content than the first to show that equal height
-						action.</p>
+					<p class="card-text">Tai chi is a mind-body practice that
+						involves a series of slow, flowing exercises that combine
+						movement, meditation, and rhythmic breathing.</p>
 					<p class="card-text"></p>
 				</div>
 			</div>

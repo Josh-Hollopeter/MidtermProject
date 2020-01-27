@@ -22,8 +22,8 @@
 
 
 
-	<form action="newworkout.do">
-		Location:
+	
+		Location: 	<p>${location}</p>
 
 
 		<button id="myBtn" data-toggle="modal" data-target="#myModal1">pick
@@ -37,7 +37,7 @@
 				<span class="close">&times;</span>
 
 				<c:forEach var="l" items="${locations}">
-					<a href="locationchoice.do?id=${ location.id}">${location.name}
+					<a href="locationchoice.do?id=${ l.id}">${l.name}
 					</a>
 
 				</c:forEach>
@@ -45,7 +45,37 @@
 		</div>
 
 
-		<button id="myBtn" data-toggle="modal" data-target="#myModal">Add
+<form action="newworkout.do">
+		<br>
+		<div>
+			Title: <input name="title" type="text" >
+			
+		<input type="hidden" value="${location.id}" name="locationid">
+			
+			Activity: <select name="activityparam">
+				<option value="Boxing">Boxing</option>
+				<option value="Yoga">Yoga</option>
+				<option value="Weight Lift">Weight Lift</option>
+				<option value="Hiking">Hiking</option>
+				<option value="Snow Boarding">Snow Boarding</option>
+				<option value="Roller Blading">Roller Blading</option>
+				<option value="Ice Skating">Ice Skating</option>
+				<option value="Tai Chi">Tai Chi</option>
+				<option value="Running">Running</option>
+
+
+			</select> Date: <input name="workoutdate" type="date" path="workout date"><br>
+
+			Description: <input type="text" name="description"
+				placeholder="describe your activity" class="form-control input-lg"
+				id="inputlg">
+
+		</div>
+
+		<input type="submit" value="Submit">
+	</form >
+<!-- 	<form action="newworkout.do">
+ -->			<button id="myBtn" data-toggle="modal" data-target="#myModal">Add
 			a Location</button>
 
 		<!-- The Modal -->
@@ -53,9 +83,11 @@
 
 			<!-- Modal content -->
 			<div class="modal-content">
+<form action="newLocation.do">
+		
+
 				<span class="close">&times;</span> Name: <input name="name"
 					type="text" placeholder="Your wonderfull workout" name="street"><br>
-
 				Street: <input type="text" placeholder="123 abc street"
 					name="street"><br> City: <input type="text"
 					placeholder="Denver" name="city"> State: <select
@@ -111,42 +143,15 @@
 					<option value="DC">DC</option>
 					<option value="MH">DC</option>
 
-
 				</select> Zip: <input type="number" placeholder="80121" name="zip"><br>
-				<input type="submit" value="Submit">
-
+				<input type="submit" value="Submit" >
+			
+			</form>
 			</div>
 			<div class="form-group"></div>
 
 
 		</div>
-		<br>
-		<div>
-			Title: <input name="title" type="text" path="title">
-			
-			
-			Activity: <select name="activity">
-				<option value="Boxing">Boxing</option>
-				<option value="Yoga">Yoga</option>
-				<option value="Weight Lift">Weight Lift</option>
-				<option value="Hiking">Hiking</option>
-				<option value="Snow Boarding">Snow Boarding</option>
-				<option value="Roller Blading">Roller Blading</option>
-				<option value="Ice Skating">Ice Skating</option>
-				<option value="Tai Chi">Tai Chi</option>
-				<option value="Running">Running</option>
-
-
-			</select> Date: <input name="workoutdate" type="date" path="workout date"><br>
-
-			Description: <input type="text" name="description"
-				placeholder="describe your activity" class="form-control input-lg"
-				id="inputlg">
-
-		</div>
-
-		<input type="submit" value="Submit">
-	</form>
-
-</body>
+<!-- 	</form>
+ --></body>
 </html>
