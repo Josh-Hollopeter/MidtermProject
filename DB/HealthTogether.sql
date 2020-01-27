@@ -222,7 +222,15 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `healthtogetherdb`;
-INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (1, 'Boxing', '12 rounds with Tyson', 'https://media.gettyimages.com/photos/mike-tyson-stands-in-the-ring-during-the-fight-with-carl-williams-at-picture-id51763505');
+INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (1, 'Boxing', NULL, 'https://media.gettyimages.com/photos/mike-tyson-stands-in-the-ring-during-the-fight-with-carl-williams-at-picture-id51763505');
+INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (2, 'Running', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZeXwYvR57vFLvyzzhajY8-4GjQidZmakwdsqe2VQHxbtrzggG&s');
+INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (3, 'Yoga', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5PZtrm5OjgVC2YgYY617AyZ5MlzXMDFNNrpQhYm1qn-QfLZ0d&s');
+INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (4, 'Weight Lifting', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDQCQdzMaeX9ArfHfbeOQdj8hCvHOb05atvgTa7vPO4wQAeIqXKw&s');
+INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (5, 'Hiking', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlzr4K_RBhWqfWTriyc8AeDqfe2fJ1VeBAnE_KBXxqOBy8mXjEKA&s');
+INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (6, 'Snowboarding', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkCgAUUFbe9dEVpjqEoG49DS6bcIzP0pKIN51MZhoc2bj8FvCV&s');
+INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (7, 'Roller Blading', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThAfec1ml3Ij41cS3eyzGzINNZmA-1LV-PGZqTPGRW6a4-wAJx&s');
+INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (8, 'Ice Skating', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_WuUcBGdHnyGBB5T4JmqInb-EQ8VPCTTgZc2bef06V5Ewuowd&s');
+INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (9, 'Tai Chi', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsECKbNiC5LjJNG-qVa_J6r_0ThhdjoLOCL0qg77RWklPl6f1m&s');
 
 COMMIT;
 
