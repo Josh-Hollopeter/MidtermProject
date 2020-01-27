@@ -24,6 +24,11 @@ public interface HealthAppDAO {
 	
 	public User findByLogin(String username, String password);
 
+
+	public Workout findWorkoutById(Integer id);
+
 	public List<Location> allLocation();
+
+
 	
 }

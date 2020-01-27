@@ -31,6 +31,7 @@ public class User {
 	private String email;
 	private String gender;
 	
+	
 	@Column(name="birth_date")
 	private LocalDate birthDate;
 
