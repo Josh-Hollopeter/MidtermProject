@@ -63,13 +63,17 @@ public class WorkoutController {
 
 	@RequestMapping(path = "newworkout.do")
 	public ModelAndView createNewWorkout(@RequestParam("workoutdate") String date,
-			@RequestParam("activity") String name, Workout workout, HttpSession session, ModelAndView mv) {
+			@RequestParam("activityparam") String name, Workout workout, HttpSession session, ModelAndView mv, @RequestParam("locationid") Integer id) {
 		mv = new ModelAndView();
-
+		User user = (User) session.getAttribute("user");
+		Activity activity = dao2.findActivityByName(name);
 		LocalDate ld = LocalDate.parse(date);
+		workout.setActivity(activity);
+		workout.setLocation(dao.findLocationById(id));
+		workout.setCreatorId(user);
+		workout.setWorkoutDate(ld);
 		Workout newWorkout = dao.CreateWorkOut(workout);
 
-		Activity activity = dao2.findActivityByName(name);
 		newWorkout.setActivity(activity);
 
 		mv.addObject("newworkout", newWorkout);
@@ -85,21 +89,24 @@ public class WorkoutController {
 
 		Location newLocation;
 		newLocation = dao.findLocationById(id);
-
+		model.addAttribute("locationid", newLocation.getId());
 		model.addAttribute("location", newLocation);
+		List<Location> locations = dao.allLocation();
+		model.addAttribute("locations", locations);
 
 		return "createworkout";
 
 	}
 
-	@RequestMapping(path = "newLocation.do", method = RequestMethod.POST)
+	@RequestMapping(path = "newLocation.do")
 	public ModelAndView newLocation(@RequestParam("name") String locationName, Address address, ModelAndView mv) {
 		Location location = new Location();
 		location.setName(locationName);
+		address = dao2.createAddress(address);
 		location.setAddress(address);
 		dao.addLocation(location);
 		List<Location> locations = dao.allLocation();
-		mv.addObject("location", locations);
+		mv.addObject("locations", locations);
 		mv.addObject("location", location);
 
 		mv.setViewName("createworkout");
