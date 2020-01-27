@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@
 </head>
 <body>
 	<header>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<a class="navbar-brand" href="#">Health Together</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent"
@@ -47,73 +47,81 @@
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 					
 				</form> --%>
-					<!-- 
+				<!-- 
 					<a href="workoutlistallresults.do"><input type="button" value="Show All Workouts"
 					class="btn-success"></a> -->
 			</div>
 		</nav>
 	</header>
-		
-<main>
-<c:if test ="${!empty workouts}">
-<div class="card text-white bg-secondary mb-3 text-center"
-			style="max-width: 30rem; text-align: center; margin:  auto;">
-			<div class="card-body">
-				<h5 class="card-title">Workout List</h5>
-<!-- 				<p class="card-text"></p>
- -->			</div>
-		</div>
+
+	<main>
+		<c:if test="${!empty workouts}">
+
+			<div class="card text-white bg-secondary mb-3 text-center"
+				style="max-width: 30rem; text-align: center; margin: auto;">
+				<div class="card-body">
+					<h5 class="card-title">Workout List</h5>
+					<!-- 				<p class="card-text"></p>
+ -->
+				</div>
+			</div>
+
 		</c:if>
 		<c:choose>
-	        <c:when test="${!empty workouts}">
-            <c:forEach var="myworkout" items="${workouts}">
-            
-            
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="${myworkout.activity.image}"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">${myworkout.title}</h5>
-                        <p class="card-text">
-                        <table>
-                            <tr>
-                                <td><strong>Host:</strong> ${myworkout.user.firstName} ${myworkout.user.lastName}</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Date:</strong> ${myworkout.workoutDate}</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Workout Name:</strong> ${myworkout.location.name}</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Description:</strong> ${myworkout.description}</td>
-                            </tr>
-                        </table>
-                        <a href="workoutbyid.do?id=${myworkout.id}">Details</a>
-                        <%-- <form action="workoutbyid.do?id=${myworkout.id}" >
+			<c:when test="${!empty workouts}">
+				<section style="display: flex; justify-content: space-evenly;">
+					<c:forEach var="myworkout" items="${workouts}">
+
+						<div class="card" style="width: 18rem;">
+							<img class="card-img-top" src="${myworkout.activity.image}"
+								alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">${myworkout.title}</h5>
+								<p class="card-text">
+								<table>
+									<tr>
+										<td><strong>Host:</strong> ${myworkout.user.firstName}
+											${myworkout.user.lastName}</td>
+									</tr>
+									<tr>
+										<td><strong>Date:</strong> ${myworkout.workoutDate}</td>
+									</tr>
+									<tr>
+										<td><strong>Workout Name:</strong>
+											${myworkout.location.name}</td>
+									</tr>
+									<tr>
+										<td><strong>Description:</strong>
+											${myworkout.description}</td>
+									</tr>
+								</table>
+								<a href="workoutbyid.do?id=${myworkout.id}">Details</a>
+							</div>
+							<%-- <form action="workoutbyid.do?id=${myworkout.id}" >
 							<input type="submit" value="Details" />
 						</form> --%>
-                    </div>
-                </div>
-            </c:forEach>
-		</c:when>
-	<c:otherwise>
-		<p>No Workout Found</p>
-	</c:otherwise>
-	</c:choose>
+						</div>
+
+					</c:forEach>
+				</section>
+			</c:when>
+			<c:otherwise>
+				<p>No Workout Found</p>
+			</c:otherwise>
+		</c:choose>
 	</main>
 	<footer>
 		<p>Created by Matt Aldrete, George Moore, Josh Hollopeter, Kai Shu</p>
 	</footer>
-	
+
 	<c:if test="${ empty sessionScope.user }">
 		<form action="joinworkout.do" method="GET">
 			<input type="submit" value="Join" />
 		</form>
 	</c:if>
-	
-	
-	
+
+
+
 
 </body>
 </html>
