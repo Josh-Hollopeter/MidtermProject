@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,18 +20,24 @@
 	<nav class= "navbar navbar-light" style="background-color: #2F4F4F;">
 		<h1>Health Together</h1>
 		<div class="form-group justify-content-center " id="log">
-
 			<form:form action="login.do" modelAttribute="user"
 				class="justify-content-center">
+	<c:if test="${  empty sessionScope.user || sessionScope.user.id == 0 }">
 				<form:input path="username" placeholder="username" />
 				<form:password path="password" placeholder="password" />
 				<input type="submit" value="Log In">
 
 				<a href="createupdateuser.do"><input type="button" value="Create"
 					class="btn-primary"></a>
-					
+					</c:if>
 				<a href="createworkout.do"><input type="button" value="Create Workout"
 					class="btn-success"></a>
+
+			<c:if test ="${!empty sessionScope.user && sessionScope.user.id > 0 }">
+				<a href="userhome.do"><input type="button" value="${sessionScope.user.username}'s Profile"
+					class="btn-success"></a>
+					</c:if>
+
 
 			</form:form>
 

@@ -2,6 +2,7 @@ package com.skilldistillery.HealthApp.data;
 
 import java.util.List;
 
+import com.skilldistillery.HealthApp.entities.Location;
 import com.skilldistillery.HealthApp.entities.User;
 import com.skilldistillery.HealthApp.entities.Workout;
 
@@ -23,6 +24,11 @@ public interface HealthAppDAO {
 	
 	public User findByLogin(String username, String password);
 
-	
+
+	public Workout findWorkoutById(Integer id);
+
+	public List<Location> allLocation();
+
+
 	
 }
