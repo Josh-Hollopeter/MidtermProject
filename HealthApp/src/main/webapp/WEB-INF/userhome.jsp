@@ -98,11 +98,6 @@
 
 			</c:forEach>
 		</c:if>
-
-		<p>${sessionScope.user}</p>
-		<p>${sessionScope.user.workouts}</p>
-		<p>${sessionScope.user.guestWorkouts}</p>
-		<p>
 	</main>
 	<footer> </footer>
 
