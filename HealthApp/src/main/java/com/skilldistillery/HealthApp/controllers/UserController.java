@@ -59,12 +59,13 @@ public class UserController {
 			@RequestParam(name = "userDate") String date1) {
 		LocalDate uDate = LocalDate.parse(date1);
 		user.setBirthDate(uDate);
-
-		if (user.getId() == 0) {
+		User user1 = (User) session.getAttribute("user");
+		
+		if (user1 == null || user1.getId() == 0) {
 			userdao.createUser(user);
 			session.setAttribute("user", user);
 		} else {
-			User user1 = (User) session.getAttribute("user");
+		
 			userdao.updateUser(user1.getId(), user);
 		}
 
@@ -83,11 +84,13 @@ public class UserController {
 
 	}
 
+
 	@RequestMapping(path = "logout.do")
 	public String logout(HttpSession session, User user, Model model) {
 		session.setAttribute("user", null);
 		return "redirect:index.do";
 
+	}
 
 	@RequestMapping(path = "userhome.do")
 	public String userHome(HttpSession session, User user, Model model) {
@@ -99,5 +102,5 @@ public class UserController {
 		}
 
 	}
-
 }
+

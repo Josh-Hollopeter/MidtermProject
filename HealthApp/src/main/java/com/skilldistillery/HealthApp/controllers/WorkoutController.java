@@ -9,16 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.HealthApp.data.AdminDAO;
-
 import com.skilldistillery.HealthApp.data.HealthAppDAO;
 import com.skilldistillery.HealthApp.entities.Activity;
 import com.skilldistillery.HealthApp.entities.Address;
@@ -39,7 +34,8 @@ public class WorkoutController {
 	public String workoutSearchById(HttpSession session, User user, Integer id) {
 		Workout workout = dao.findWorkoutById(id);
 		session.setAttribute("workout", workout);
-		return "workoutsearchresult";
+		return "singleworkoutdetails";
+		
 
 	}
 

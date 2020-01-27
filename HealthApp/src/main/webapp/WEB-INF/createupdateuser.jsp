@@ -77,6 +77,23 @@
 									</form:form>
 								</div>
 								</c:if> --%>
+
+								<div class="form-group">
+								<p> ${sessionScope.user}</p>
+									<form:form action="updateuserinfo.do" method="POST" modelAttribute="user" class ="">
+		<c:if test="${empty sessionScope.user ||sessionScope.user.id == 0 }">
+        Username: <input type="text" name="username" value ="${sessionScope.user.username}" required  maxlength="255" class="form-control text-center bg-dark text-light"> <br> 
+      </c:if>
+        Password: <input type="password" name="password"  value="${sessionScope.user.password}" required class="form-control text-center bg-dark text-light" > <br>
+        First Name: <input type="text" name="firstName" value="${sessionScope.user.firstName }" required class="form-control text-center bg-dark text-light" > <br> 
+        Last Name: <input type="text" value="${sessionScope.user.lastName}" name="lastName" required class="form-control text-center bg-dark text-light"> <br>
+        Email: <input type="text" name="email"  value = "${sessionScope.user.email}" required class="form-control text-center bg-dark text-light"> <br>
+        Birth Date: <input type="date" name="userDate"  value= "${sessionScope.user.birthDate}" required class="form-control text-center bg-dark text-light"> <br>
+       <%--  <input type="hidden" value="${song.id }" name="id"> --%>
+        <input type ="hidden" value="${sessionScope.user.id}" name = "userId">
+       <input type = "Submit" value ="Submit" class="text-center btn btn-dark">
+       
+
 							<div class="form-group">
 								<p>${sessionScope.user}</p>
 								<form:form action="updateuserinfo.do" method="POST"
@@ -112,6 +129,7 @@
 										name="userId">
 									<input type="Submit" value="Submit"
 										class="text-center btn btn-dark">
+
 
 
 								</form:form>
