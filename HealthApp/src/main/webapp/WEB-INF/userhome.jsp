@@ -92,7 +92,7 @@
 						</table>
 
 						<a href="#" class="btn btn-primary">Edit</a>
-						<a href="#" class="btn btn-primary">Delete</a>
+						<a href="deleteworkout.do" class="btn btn-primary">Delete</a>
 					</div>
 				</div>
 
