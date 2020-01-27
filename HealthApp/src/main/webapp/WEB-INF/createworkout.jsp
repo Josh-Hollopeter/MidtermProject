@@ -22,7 +22,7 @@
 
 
 
-
+<form action="newworkout.do">
 	Location:
 
 
@@ -54,11 +54,15 @@
 		<!-- Modal content -->
 		<div class="modal-content">
 			<span class="close">&times;</span>
-			<form>
-				Name: <input type="text" placeholder="Your wonderfull workout"
-					name="street"><br> Street: <input type="text"
-					placeholder="123 abc street" name="street"><br> City:
-				<input type="text" placeholder="Denver"> State: <select>
+			
+	<form>
+			
+				Name: <input name="name" type="text" placeholder="Your wonderfull workout"
+					name="street"><br> 
+					
+	Street: <input type="text" placeholder="123 abc street" name="street"><br> 
+	City: <input type="text" placeholder="Denver" name="city"> 
+	State: <select name="state">
 					<option value="CO">CO</option>
 					<option value="AL">AL</option>
 					<option value="AK">AK</option>
@@ -111,7 +115,8 @@
 					<option value="MH">DC</option>
 
 
-				</select> Zip: <input type="number" placeholder="80121"><br> <input
+				</select> 
+		Zip: <input type="number" placeholder="80121" name="zip"><br> <input
 					type="submit" value="Submit">
 			</form>
 		</div>
@@ -143,7 +148,7 @@
 	</div>
 
 	<input type="submit" value="Submit">
-
+</form>
 
 </body>
 </html>

@@ -8,7 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+<<<<<<< HEAD
 import org.springframework.web.servlet.ModelAndView;
+=======
+import org.springframework.web.bind.annotation.RequestParam;
+>>>>>>> c86eb5254c48cb4f2436b1609932b47ed27688d4
 
 import com.skilldistillery.HealthApp.data.HealthAppDAO;
 import com.skilldistillery.HealthApp.entities.Activity;
@@ -31,14 +35,13 @@ public class WorkoutController {
 	}
 	
 	@RequestMapping(path = "workoutsearchresults.do")
-	public String workoutSearchMapToButton(HttpSession session, User user, Workout workout, Activity activity){
-		if(workout == null) {
-			return "noresults";
-		}else {
-			List<Workout> workout1 = dao.searchByActivity("activity");
-			session.setAttribute("workout", workout1);
+	public String workoutSearchMapToButton(HttpSession session, User user, Workout workout, Activity activity, @RequestParam("searchterm") String search,Model model){
+		
+			List<Workout> workout1 = dao.searchByActivity(search);
+			model.addAttribute("workouts", workout1);
+			System.err.println(workout1);
 			return "workoutsearchresult";
-		}
+		
 	}
 	
 	@RequestMapping(path = "workoutlistallresults.do")
