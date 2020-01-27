@@ -87,7 +87,7 @@ public class UserController {
 	public String logout(HttpSession session, User user, Model model) {
 		session.setAttribute("user", null);
 		return "redirect:index.do";
-	}
+
 
 	@RequestMapping(path = "userhome.do")
 	public String userHome(HttpSession session, User user, Model model) {
@@ -97,6 +97,7 @@ public class UserController {
 		} else {
 			return "index";
 		}
+
 	}
 
 }

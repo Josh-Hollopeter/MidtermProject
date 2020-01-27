@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.skilldistillery.HealthApp.data.AdminDAOImpl;
 import com.skilldistillery.HealthApp.data.HealthAppDAOImpl;
 import com.skilldistillery.HealthApp.entities.Workout;
 
@@ -18,6 +19,8 @@ class HealthAppApplicationTests {
 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("HealthDb");
 	EntityManager em = emf.createEntityManager();
 	HealthAppDAOImpl happ = new HealthAppDAOImpl(em);
+	AdminDAOImpl aapp = new AdminDAOImpl(em);
+
 	Workout workout = new Workout();
 
 	@BeforeEach
@@ -54,5 +57,9 @@ class HealthAppApplicationTests {
 	void findByLoginTest() {
 		assertEquals("Tyson", happ.findByLogin("Mike", "Mike").getLastName());
 		
+	}
+	@Test
+	void findActivityByName() {
+		assertEquals("12 rounds with Tyson",aapp.findActivityByName("Boxing").getDescription());
 	}
 }
