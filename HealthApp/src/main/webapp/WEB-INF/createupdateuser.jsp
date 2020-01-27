@@ -79,11 +79,16 @@
         Last Name: <input type="text" value="${sessionScope.user.lastName}" name="lastName" required class="form-control text-center bg-dark text-light"> <br>
         Email: <input type="text" name="email"  value = "${sessionScope.user.email}" required class="form-control text-center bg-dark text-light"> <br>
         Birth Date: <input type="date" name="userDate"  value= "${sessionScope.user.birthDate}" required class="form-control text-center bg-dark text-light"> <br>
-       <%--  <input type="hidden" value="${song.id }" name="id"> --%>
+     
         <input type ="hidden" value="${sessionScope.user.id}" name = "userId">
        <input type = "Submit" value ="Submit" class="text-center btn btn-dark">
+<<<<<<< HEAD
 
 								</form:form>
+=======
+       </form:form>
+       
+>>>>>>> george
 
 							</div>
 						</div>
