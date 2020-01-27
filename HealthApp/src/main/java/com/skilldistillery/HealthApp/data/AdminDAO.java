@@ -1,5 +1,6 @@
 package com.skilldistillery.HealthApp.data;
 
+import com.skilldistillery.HealthApp.entities.Activity;
 import com.skilldistillery.HealthApp.entities.Address;
 import com.skilldistillery.HealthApp.entities.User;
 
@@ -13,8 +14,8 @@ public interface AdminDAO {
 
 	public User updateUser(Integer id, User user);
 
-	public Address updateAddress(Address address,Integer id );
+	public Address updateAddress(Address address, Integer id);
 
-
+	public Activity findActivityByName(String name);
 
 }

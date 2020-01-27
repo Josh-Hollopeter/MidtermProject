@@ -148,4 +148,11 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 		return location;
 	}
 
+	@Override
+	public Location addLocation(Location location) {
+		em.persist(location);
+		em.flush();
+		return location;
+	}
+
 }
