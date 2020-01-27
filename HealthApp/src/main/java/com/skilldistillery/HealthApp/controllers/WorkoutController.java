@@ -8,10 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+<<<<<<< HEAD
+import org.springframework.web.servlet.ModelAndView;
+=======
 import org.springframework.web.bind.annotation.RequestParam;
+>>>>>>> c86eb5254c48cb4f2436b1609932b47ed27688d4
 
 import com.skilldistillery.HealthApp.data.HealthAppDAO;
 import com.skilldistillery.HealthApp.entities.Activity;
+import com.skilldistillery.HealthApp.entities.Location;
 import com.skilldistillery.HealthApp.entities.User;
 import com.skilldistillery.HealthApp.entities.Workout;
 
@@ -48,7 +53,36 @@ public class WorkoutController {
 			session.setAttribute("workout", workout1);
 			return "workoutshowallresult";
 		}
+	@RequestMapping (path="newworkout.do")
+	public ModelAndView createNewWorkout(Workout workout, HttpSession session ,ModelAndView mv) {
+		mv=new ModelAndView();
+		
+		Workout newWorkout=dao.CreateWorkOut(workout);
+		
+		mv.addObject("newworkout",newWorkout);
+		
+		mv.setViewName("userhome");
+		
+		return mv;
+	}
+	
+	@RequestMapping (path="locationchoice.do")
+	
+	public String chooseLocation (int id, Model model) {
+		 
+		Location newLocation;
+		newLocation=dao.findLocationById(id);
+		
+		
+		
+		model.addAttribute("location", newLocation);
+		
+		return "createworkout";
+	
+	
+	
+	
 	}
 	
 	
-//}
+}
