@@ -60,7 +60,7 @@ public class Location {
 
 	@Override
 	public String toString() {
-		return "Location [id=" + id + ", name=" + name + ", address=" + address + "]";
+		return name + "\t"+": "+address;
 	}
 
 	@Override
