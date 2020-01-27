@@ -48,16 +48,10 @@
 	
 	</c:forEach>
 
-	<button id="myBtn" data-toggle="modal" data-target="#myModal">Add
-		a Location</button>
+	<button id="myBtn" data-toggle="modal" data-target="#myModal">Add a Location</button>
 
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
-
-
-
-<<<<<<< HEAD
-
 
 		<!-- Modal content -->
 		<div class="modal-content">
@@ -133,7 +127,7 @@
 		placeholder="describe your activity" class="form-control input-lg"
 		id="inputlg">
 	<br>
-=======
+
 	Location:<!-- Trigger/Open The Modal -->
 <button id="myBtn">Add a Location</button>
 
@@ -218,6 +212,6 @@
   </div>
 
 	<div class="container">
->>>>>>> efe897fceac2d9b79746c5a012b0a7fcb1935cf1
+
 </body>
 </html>
