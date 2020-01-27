@@ -39,37 +39,66 @@
 
 
 				</ul>
-				<form class="form-inline my-2 my-lg-0" action ="workoutsearchresults.do">
+				<form class="form-inline my-2 my-lg-0"
+					action="workoutsearchresults.do">
 					<input class="form-control mr-sm-2" type="search"
 						placeholder="Search Workout" aria-label="Search">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-					
+
 				</form>
-					<!-- 
+				<!-- 
 					<a href="workoutlistallresults.do"><input type="button" value="Show All Workouts"
 					class="btn-success"></a> -->
 			</div>
 		</nav>
 	</header>
 
+
+
 	<main>
-		<div class="card bg-info">
-			<img class="card-img-top" src="..." alt="Card image cap">
+		<div class="card mb-3" style="max-width: 30rem; text-align: center; margin:  auto;">
+			<img class="card-img-top go-hard" src="https://i1.sndcdn.com/avatars-000369555311-i351q4-t500x500.jpg" 
+			alt="Card image cap" style="max-height: 150px;">
 			<div class="card-body">
-				<h5 class="card-title">${sessionScope.user.firstName} ${sessionScope.user.lastName} </h5>
-				<p class="card-text">Some quick example text to build on the
-					card title and make up the bulk of the card's content.</p>
-			</div>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item">Cras justo odio</li>
-				<li class="list-group-item">Dapibus ac facilisis in</li>
-				<li class="list-group-item">Vestibulum at eros</li>
-			</ul>
-			<div class="card-body">
-				<a href="#" class="card-link">Card link</a> <a href="#"
-					class="card-link">Another link</a>
+				<h5 class="card-title"><strong class="user">${sessionScope.user.firstName} ${sessionScope.user.lastName} Workouts</strong></h5>
+				<p class="card-text">
+				</p>
 			</div>
 		</div>
+
+		<c:if test="${!empty sessionScope.user.workouts}">
+			<c:forEach var="myworkout" items="${sessionScope.user.workouts}">
+
+
+				<div class="card" style="width: 23rem;">
+					<img class="card-img-top" src="${myworkout.activity.image}"
+						alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">${myworkout.title}</h5>
+						<p class="card-text">
+						<table>
+
+							<tr>
+								<td><strong>Date:</strong> ${myworkout.workoutDate}</td>
+							</tr>
+							<tr>
+								<td><strong>Workout Name:</strong>
+									${myworkout.location.name}</td>
+							</tr>
+							<tr>
+								<td><strong>Description:</strong> ${myworkout.description}</td>
+							</tr>
+
+						</table>
+
+						<a href="#" class="btn btn-primary">Edit</a>
+						<a href="#" class="btn btn-primary">Delete</a>
+					</div>
+				</div>
+
+			</c:forEach>
+		</c:if>
+
 		<p>${sessionScope.user}</p>
 		<p>${sessionScope.user.workouts}</p>
 		<p>${sessionScope.user.guestWorkouts}</p>
