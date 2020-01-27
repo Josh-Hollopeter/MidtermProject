@@ -28,6 +28,8 @@ public interface HealthAppDAO {
 	public Workout findWorkoutById(Integer id);
 
 	public List<Location> allLocation();
+	
+	public Location findLocationById(int id);
 
 
 	
