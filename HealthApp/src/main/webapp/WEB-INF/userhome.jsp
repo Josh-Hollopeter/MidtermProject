@@ -10,7 +10,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="userhome.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>User Home</title>
 </head>
 <body>
 	<header>
