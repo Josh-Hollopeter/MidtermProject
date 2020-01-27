@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` VARCHAR(45) NOT NULL,
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
-  `active` TINYINT(4) NULL DEFAULT '1',
+  `active` TINYINT(4) NOT NULL DEFAULT '1',
   `role` VARCHAR(45) NULL DEFAULT NULL,
   `birth_date` DATE NULL,
   `email` VARCHAR(100) NULL,
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `workout` (
   `workout_time` VARCHAR(45) NULL,
   `description` TEXT NULL,
   `post_date` DATETIME NULL,
-  `active` TINYINT NULL DEFAULT 1,
+  `active` TINYINT NOT NULL DEFAULT 1,
   `activity_id` INT NOT NULL,
   `location_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -190,6 +190,9 @@ USE `healthtogetherdb`;
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (1, 'admin', 'admin', NULL, NULL, 1, 'ADMIN', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (2, 'Mike', 'Mike', 'Mike', 'Tyson', 1, 'USER', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (3, 'Ivan', 'Ivan', 'Ivan', 'Drago', 1, 'USER', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (4, 'Rocky', 'Rocky', 'Rocky', 'Balboa', 1, 'USER', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (5, 'Tommy', 'Tommy', 'Tommy', 'Guns', 1, 'USER', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (6, 'Apollo', 'Apollo', 'Apollo', 'Creed', 1, 'USER', NULL, NULL, NULL, NULL, NULL);
 
 COMMIT;
 
@@ -231,6 +234,7 @@ START TRANSACTION;
 USE `healthtogetherdb`;
 INSERT INTO `workout` (`id`, `creator_id`, `workout_date`, `title`, `workout_time`, `description`, `post_date`, `active`, `activity_id`, `location_id`) VALUES (1, 2, '2020-11-11', 'Boxing with friends', NULL, 'Freinds punching each other in the face. Is fun?', NULL, 1, 1, 1);
 INSERT INTO `workout` (`id`, `creator_id`, `workout_date`, `title`, `workout_time`, `description`, `post_date`, `active`, `activity_id`, `location_id`) VALUES (2, 3, '2020-11-11', 'I Will Break You', NULL, 'Calling Rocky out!', NULL, 1, 1, 1);
+INSERT INTO `workout` (`id`, `creator_id`, `workout_date`, `title`, `workout_time`, `description`, `post_date`, `active`, `activity_id`, `location_id`) VALUES (3, 4, '2020-11-11', 'Tiger Eye', NULL, 'Bahmp Bahmp Bahmp', NULL, 1, 1, 1);
 
 COMMIT;
 
