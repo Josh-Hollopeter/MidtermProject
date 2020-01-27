@@ -1,6 +1,7 @@
 package com.skilldistillery.HealthApp.entities;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -54,6 +55,25 @@ public class User {
 	}
 	public void setGuestWorkouts(List<Workout> guestWorkouts) {
 		this.guestWorkouts = guestWorkouts;
+	}
+	
+	public void addWorkout(Workout workout) {
+		if (this.workouts == null) {
+			workouts = new ArrayList<>();
+		}
+		
+		if(!workouts.contains(workout)) {
+			workouts.add(workout);
+			workout.addUser(this);
+		}
+	}
+	
+	public void removeWorkout(Workout workout) {
+		if(workouts != null && workouts.contains(workout)) {
+			workouts.remove(workout);
+			workout.removeUser(this);
+			
+		}
 	}
 	public User() {
 		super();

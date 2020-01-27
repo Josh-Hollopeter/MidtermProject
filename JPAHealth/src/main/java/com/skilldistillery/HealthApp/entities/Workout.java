@@ -2,6 +2,7 @@ package com.skilldistillery.HealthApp.entities;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -64,6 +65,25 @@ public class Workout {
 				+ ", location=" + location + ", users=" + users + "]";
 	}
 
+	
+	public void addUser(User user) {
+		if (this.users == null) {
+			users = new ArrayList<>();
+		}
+		
+		if(!users.contains(user)) {
+			users.add(user);
+			user.addWorkout(this);
+		}
+	}
+	
+	public void removeUser(User user) {
+		if(users != null && users.contains(user)) {
+			users.remove(user);
+			user.removeWorkout(this);
+			
+		}
+	}
 	public int getId() {
 		return Id;
 	}

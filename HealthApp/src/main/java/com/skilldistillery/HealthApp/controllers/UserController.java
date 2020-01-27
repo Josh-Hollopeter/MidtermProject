@@ -67,8 +67,7 @@ public class UserController {
 			userdao.createUser(user);
 			session.setAttribute("user", user);
 		} else {
-		
-			userdao.updateUser(user1.getId(), user);
+			session.setAttribute("user", userdao.updateUser(user1.getId(), user));
 		}
 
 		return "userhome";
