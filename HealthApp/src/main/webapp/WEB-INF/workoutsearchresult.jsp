@@ -59,7 +59,7 @@
 <div class="card text-white bg-secondary mb-3 text-center"
 			style="max-width: 30rem; text-align: center; margin:  auto;">
 			<div class="card-body">
-				<h5 class="card-title">Results Found</h5>
+				<h5 class="card-title">Workout List</h5>
 <!-- 				<p class="card-text"></p>
  -->			</div>
 		</div>

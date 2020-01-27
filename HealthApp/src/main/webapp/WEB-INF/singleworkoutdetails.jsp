@@ -13,6 +13,8 @@
 			<ul>
 				<li>ID: ${workout.id}</li>
 				<li>Title: ${workout.title}</li>
+				
+				
 				<%-- <li>Name: ${workout.calories}</li>
 				<li>Grams: ${veg.grams}</li>
 				<li>Fat: ${veg.fat}</li>
