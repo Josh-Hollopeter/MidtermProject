@@ -10,7 +10,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="userhome.css">
 <meta charset="UTF-8">
-<title>User Home</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<header>
@@ -56,17 +56,13 @@
 
 
 	<main>
-		<div class="card mb-3"
-			style="max-width: 30rem; text-align: center; margin: auto;">
-			<img class="card-img-top go-hard"
-				src="https://i1.sndcdn.com/avatars-000369555311-i351q4-t500x500.jpg"
-				alt="Card image cap" style="max-height: 150px;">
+		<div class="card mb-3" style="max-width: 30rem; text-align: center; margin:  auto;">
+			<img class="card-img-top go-hard" src="https://i1.sndcdn.com/avatars-000369555311-i351q4-t500x500.jpg" 
+			alt="Card image cap" style="max-height: 150px;">
 			<div class="card-body">
-				<h5 class="card-title">
-					<strong class="user">${sessionScope.user.firstName}
-						${sessionScope.user.lastName} Workouts</strong>
-				</h5>
-				<p class="card-text"></p>
+				<h5 class="card-title"><strong class="user">${sessionScope.user.firstName} ${sessionScope.user.lastName} Workouts</strong></h5>
+				<p class="card-text">
+				</p>
 			</div>
 		</div>
 
@@ -74,7 +70,7 @@
 			<c:forEach var="myworkout" items="${sessionScope.user.workouts}">
 
 
-				<div class="card" style="width: 23rem; height: 29rem;">
+				<div class="card" style="width: 23rem;">
 					<img class="card-img-top" src="${myworkout.activity.image}"
 						alt="Card image cap">
 					<div class="card-body">
@@ -95,17 +91,20 @@
 
 						</table>
 
-						<a href="#" class="btn btn-primary">Edit</a> <a href="#"
-							class="btn btn-primary">Delete</a>
+						<a href="#" class="btn btn-primary">Edit</a>
+						<a href="deleteworkout.do" class="btn btn-primary" >Delete</a>
 					</div>
 				</div>
 
 			</c:forEach>
 		</c:if>
+
+		<p>${sessionScope.user}</p>
+		<p>${sessionScope.user.workouts}</p>
+		<p>${sessionScope.user.guestWorkouts}</p>
+		<p>
 	</main>
-	<footer>
-		<p>Created by Matt Aldrete, George Moore, Josh Hollopeter, Kai Shu</p>
-	</footer>
+	<footer> </footer>
 
 </body>
 </html>

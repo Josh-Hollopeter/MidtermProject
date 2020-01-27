@@ -105,15 +105,14 @@ CREATE TABLE IF NOT EXISTS `workout` (
   `activity_id` INT NOT NULL,
   `location_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_workout_location1_idx` (`activity_id` ASC),
-  INDEX `fk_workout_activity1_idx` (`location_id` ASC),
+  INDEX `fk_workout_activity1_idx` (`activity_id` ASC),
   CONSTRAINT `fk_workout_location1`
-    FOREIGN KEY (`activity_id`)
+    FOREIGN KEY (`location_id`)
     REFERENCES `location` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_workout_activity1`
-    FOREIGN KEY (`location_id`)
+    FOREIGN KEY (`activity_id`)
     REFERENCES `activity` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -193,6 +192,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `ac
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (4, 'Rocky', 'Rocky', 'Rocky', 'Balboa', 1, 'USER', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (5, 'Tommy', 'Tommy', 'Tommy', 'Guns', 1, 'USER', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (6, 'Apollo', 'Apollo', 'Apollo', 'Creed', 1, 'USER', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (7, 'Clubber', 'Clubber', 'Clubber', 'Lang', 1, 'USER', NULL, NULL, NULL, NULL, NULL);
 
 COMMIT;
 
@@ -243,6 +243,9 @@ USE `healthtogetherdb`;
 INSERT INTO `workout` (`id`, `creator_id`, `workout_date`, `title`, `workout_time`, `description`, `post_date`, `active`, `activity_id`, `location_id`) VALUES (1, 2, '2020-11-11', 'Boxing with friends', NULL, 'Freinds punching each other in the face. Is fun?', NULL, 1, 1, 1);
 INSERT INTO `workout` (`id`, `creator_id`, `workout_date`, `title`, `workout_time`, `description`, `post_date`, `active`, `activity_id`, `location_id`) VALUES (2, 3, '2020-11-11', 'I Will Break You', NULL, 'Calling Rocky out!', NULL, 1, 1, 1);
 INSERT INTO `workout` (`id`, `creator_id`, `workout_date`, `title`, `workout_time`, `description`, `post_date`, `active`, `activity_id`, `location_id`) VALUES (3, 4, '2020-11-11', 'Tiger Eye', NULL, 'Bahmp Bahmp Bahmp', NULL, 1, 1, 1);
+INSERT INTO `workout` (`id`, `creator_id`, `workout_date`, `title`, `workout_time`, `description`, `post_date`, `active`, `activity_id`, `location_id`) VALUES (4, 5, '2020-11-11', 'Tommy in the Streets', NULL, 'Suzie in the Sheets', NULL, 1, 1, 1);
+INSERT INTO `workout` (`id`, `creator_id`, `workout_date`, `title`, `workout_time`, `description`, `post_date`, `active`, `activity_id`, `location_id`) VALUES (5, 6, '2020-11-11', 'There is no Tomorrow', NULL, 'I\'ve been running down beaches all week in prep', NULL, 1, 1, 1);
+INSERT INTO `workout` (`id`, `creator_id`, `workout_date`, `title`, `workout_time`, `description`, `post_date`, `active`, `activity_id`, `location_id`) VALUES (6, 7, '2020-11-11', 'I pity the Foo', NULL, 'Roller Derby King ', NULL, 1, 7, 1);
 
 COMMIT;
 
@@ -253,6 +256,7 @@ COMMIT;
 START TRANSACTION;
 USE `healthtogetherdb`;
 INSERT INTO `workout_comment` (`id`, `comment`, `post_date`, `user_id`, `workout_id`) VALUES (1, 'Words about stuff', NULL, 2, 1);
+INSERT INTO `workout_comment` (`id`, `comment`, `post_date`, `user_id`, `workout_id`) VALUES (2, 'Words about more stuff', NULL, 3, 3);
 
 COMMIT;
 

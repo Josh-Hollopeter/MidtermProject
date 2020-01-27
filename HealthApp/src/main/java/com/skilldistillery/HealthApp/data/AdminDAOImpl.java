@@ -6,6 +6,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.HealthApp.entities.Activity;
 import com.skilldistillery.HealthApp.entities.Address;
 import com.skilldistillery.HealthApp.entities.User;
 
@@ -16,8 +17,18 @@ public class AdminDAOImpl implements AdminDAO {
 	@PersistenceContext
 	public EntityManager em;
 
+	public AdminDAOImpl() {
+
+	}
+
+	public AdminDAOImpl(EntityManager em) {
+		this.em = em;
+	}
+
 	@Override
 	public User createUser(User user) {
+		user.setActive(true);
+		
 		em.persist(user);
 
 		em.flush();
@@ -27,7 +38,7 @@ public class AdminDAOImpl implements AdminDAO {
 
 	@Override
 	public Address createAddress(Address address) {
-		
+
 		em.persist(address);
 
 		em.flush();
@@ -60,13 +71,22 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public Address updateAddress(Address newAddress, Integer id) {
 		Address address;
-		address=em.find(Address.class, id);
+		address = em.find(Address.class, id);
 		address.setCity(newAddress.getCity());
 		address.setState(newAddress.getState());
 		address.setStreet(newAddress.getStreet());
 		address.setZip(newAddress.getZip());
 		em.flush();
 		return address;
+	}
+
+	@Override
+	public Activity findActivityByName(String name) {
+		String query = "select a from Activity a where a.title=:name";
+		Activity activity;
+		activity = em.createQuery(query, Activity.class).setParameter("name", name).getSingleResult();
+
+		return activity;
 	}
 
 }
