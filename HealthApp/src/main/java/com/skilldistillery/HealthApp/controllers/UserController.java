@@ -24,8 +24,6 @@ public class UserController {
 	HealthAppDAO dao;
 	@Autowired
 	AdminDAO userdao;
-	
-
 
 	@RequestMapping(path = { "/", "index.do" })
 	public String home(Model model, HttpSession session, User user) {
@@ -36,7 +34,7 @@ public class UserController {
 	@RequestMapping(path = { "login.do" })
 	public String loginPostView(HttpSession session, User user, Model model) {
 		user = dao.findByLogin(user.getUsername(), user.getPassword());
-		
+
 		if (user == null || !user.getActive() || user.getId() == 0) {
 			model.addAttribute("error", "No user Found");
 			return "redirect:index.do";
@@ -48,68 +46,66 @@ public class UserController {
 
 	}
 
-	
-	@RequestMapping(path = {"createupdateuser.do"})
-	public String editForm ( HttpSession session, User user, Model model) {
-		if (session.getAttribute("user") == null ) {
-			session.setAttribute("user",user);
+	@RequestMapping(path = { "createupdateuser.do" })
+	public String editForm(HttpSession session, User user, Model model) {
+		if (session.getAttribute("user") == null) {
+			session.setAttribute("user", user);
 			return "createupdateuser";
-		}else {
+		} else {
 			return "createupdateuser";
 		}
 	}
 
-	
-	@RequestMapping(path="updateuserinfo.do" , method = RequestMethod.POST)
-	public String updateCreateUser( HttpSession session, User user, Model model, @RequestParam(name = "userDate") String date1) {
+	@RequestMapping(path = "updateuserinfo.do", method = RequestMethod.POST)
+	public String updateCreateUser(HttpSession session, User user, Model model,
+			@RequestParam(name = "userDate") String date1) {
 		LocalDate uDate = LocalDate.parse(date1);
 		user.setBirthDate(uDate);
+		User user1 = (User) session.getAttribute("user");
 		
-
-		if(user.getId() == 0 ) {
+		if (user1 == null || user1.getId() == 0) {
 			userdao.createUser(user);
 			session.setAttribute("user", user);
-		}else {
-			User user1 = (User) session.getAttribute("user");
+		} else {
+		
 			userdao.updateUser(user1.getId(), user);
 		}
-		
+
 		return "userhome";
-		
+
 	}
-	
+
 	@RequestMapping(path = "createworkout.do")
 		public String createWorkoutMapToButton( HttpSession session, User user, Model model) {
 		User user1 = (User)session.getAttribute("user");
 		List<Location> locations = dao.allLocation();
 		model.addAttribute("locations", locations);
 		if(user1 == null ||user1.getId() == 0) {
+
 			return "redirect:createupdateuser.do";
-		}else {
+		} else {
 			return "createworkout";
 		}
-		
+
 	}
-	
 
 
-@RequestMapping(path = "logout.do")
-public String logout( HttpSession session, User user, Model model) {
-	session.setAttribute("user", null);
-	
-	
-	return "redirect:index.do";
-}
+	@RequestMapping(path = "logout.do")
+	public String logout(HttpSession session, User user, Model model) {
+		session.setAttribute("user", null);
+		return "redirect:index.do";
 
+	}
 
-@RequestMapping(path = "userhome.do")
-public String userHome( HttpSession session, User user, Model model) {
-	User user1 = (User) session.getAttribute("user");
-	if(user1.getId() > 0) {
-		return"userhome";
-	}else {
-		return"index";
+	@RequestMapping(path = "userhome.do")
+	public String userHome(HttpSession session, User user, Model model) {
+		User user1 = (User) session.getAttribute("user");
+		if (user1.getId() > 0) {
+			return "userhome";
+		} else {
+			return "index";
+		}
+
 	}
 }
 
-}

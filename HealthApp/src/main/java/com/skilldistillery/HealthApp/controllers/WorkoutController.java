@@ -36,7 +36,8 @@ public class WorkoutController {
 	public String workoutSearchById(HttpSession session, User user, Integer id) {
 		Workout workout = dao.findWorkoutById(id);
 		session.setAttribute("workout", workout);
-		return "workoutsearchresult";
+		return "singleworkoutdetails";
+		
 
 	}
 
