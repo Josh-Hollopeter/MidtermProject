@@ -224,7 +224,7 @@ START TRANSACTION;
 USE `healthtogetherdb`;
 INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (1, 'Boxing', NULL, 'https://media.gettyimages.com/photos/mike-tyson-stands-in-the-ring-during-the-fight-with-carl-williams-at-picture-id51763505');
 INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (2, 'Running', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZeXwYvR57vFLvyzzhajY8-4GjQidZmakwdsqe2VQHxbtrzggG&s');
-INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (3, 'Yoga', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5PZtrm5OjgVC2YgYY617AyZ5MlzXMDFNNrpQhYm1qn-QfLZ0d&s');
+INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (3, 'Yoga', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTulJO7K3niMul1CKE2Ay6Y8yxCA7L6ZEXqICWV7QoyVrTmoPhQ&s');
 INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (4, 'Weight Lifting', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDQCQdzMaeX9ArfHfbeOQdj8hCvHOb05atvgTa7vPO4wQAeIqXKw&s');
 INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (5, 'Hiking', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlzr4K_RBhWqfWTriyc8AeDqfe2fJ1VeBAnE_KBXxqOBy8mXjEKA&s');
 INSERT INTO `activity` (`id`, `title`, `description`, `image`) VALUES (6, 'Snowboarding', NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkCgAUUFbe9dEVpjqEoG49DS6bcIzP0pKIN51MZhoc2bj8FvCV&s');
