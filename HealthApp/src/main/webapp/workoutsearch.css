@@ -40,11 +40,17 @@ footer {
 	color: black;
 	text-align: center;
 }
-input{
+
+input {
 	position: relative;
 }
-#log{
+
+#log {
 	display: inline;
+}
+
+.card-columns { @include media-breakpoint-only(lg) { column-count:3;
+	
 }
 
 .card {
@@ -58,13 +64,14 @@ input{
 	margin-left: auto;
 }
 
+}
 main {
 	margin: 25px;
 }
 
-img{
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    max-width: 400px;
-    max-height: 230px;
+img {
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	max-width: 400px;
+	max-height: 230px;
 }
