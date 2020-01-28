@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -53,37 +54,60 @@ public class Workout {
 	@JoinColumn(name = "location_id")
 	private Location location;
 
-	@ManyToMany(mappedBy="guestWorkouts")
+	@ManyToMany(mappedBy="guestWorkouts", cascade=CascadeType.PERSIST)
 	private List<User> users;
 	
 //METHOD
 
 	@Override
 	public String toString() {
-		return "Workout [Id=" + Id + ", activity=" + activity + ", user=" + user + ", workoutDate=" + workoutDate
+//		return "WORKOUT" + Id;
+		return "Workout [Id=" + Id + ", activity=" + activity + ", workoutDate=" + workoutDate
 				+ ", title=" + title + ", description=" + description + ", postdate=" + postdate + ", active=" + active
-				+ ", location=" + location + ", users=" + users + "]";
+				+ ", location=" + location + "]";
 	}
 
 	
-	public void addUser(User user) {
+	public void addGuest(User user) {
 		if (this.users == null) {
 			users = new ArrayList<>();
 		}
 		
 		if(!users.contains(user)) {
 			users.add(user);
-			user.addWorkout(this);
+			user.addGuestWorkout(this);
 		}
 	}
 	
-	public void removeUser(User user) {
+	public void removeGuest(User user) {
 		if(users != null && users.contains(user)) {
 			users.remove(user);
 			user.removeWorkout(this);
 			
 		}
 	}
+	
+//	public void addUser(User user) {
+//		if (this.users == null) {
+//			users = new ArrayList<>();
+//		}
+//		
+//		if(!users.contains(user)) {
+//			users.add(user);
+//			user.addGuestWorkout(this);
+//		}
+//	}
+//	
+//	public void removeUser(User user) {
+//		if(users != null && users.contains(user)) {
+//			users.remove(user);
+//			user.removeWorkout(this);
+//			
+//		}
+//	}
+	
+	
+	
 	public int getId() {
 		return Id;
 	}
