@@ -51,9 +51,7 @@ public class WorkoutController {
 
 	@RequestMapping(path = "workoutlistallresults.do")
 	public String workoutListAllMapToButton(HttpSession session, User user, Workout workout, Activity activity) {
-//		if(workout == null) {
-//			return "error";
-//		}else {
+
 		List<Workout> workout1 = dao.findAll();
 		session.setAttribute("workout", workout1);
 		return "workoutshowallresult";
@@ -115,6 +113,19 @@ public class WorkoutController {
 		return mv;
 
 	}
+	
+	@RequestMapping(path = "addguesttoworkout.do")
+	public String guestJoinWorkout( @RequestParam("workout")String id, HttpSession session) {
+		User user1 = (User) session.getAttribute("user");
+		Integer id1 = Integer.parseInt(id);
+		Workout workout = dao.findWorkoutById(id1);
+		workout = dao2.joinWorkout(user1, workout);
+//		model.addAttribute(user);
+		return "singleworkoutdetails";
+		
+
+	}
+	
 
 	@RequestMapping(path = "deleteworkout.do")
 	public ModelAndView deleteWorkout(int wid, ModelAndView mv, HttpSession session) {

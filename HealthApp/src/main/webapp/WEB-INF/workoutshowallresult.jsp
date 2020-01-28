@@ -10,7 +10,7 @@
 <body>
 <h2>All Available Workouts</h2>
 	
-<c:forEach var="workout" items="${sessionScope.workout}">
+<c:forEach var="workout" items="${workout}">
 		<li>
 		<a href="workoutbyid.do?id=${workout.id}">${workout.title}</a>
 		</li>
