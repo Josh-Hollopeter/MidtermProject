@@ -10,7 +10,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="userhome.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>User Home </title>
 </head>
 <body>
 	<header>
@@ -39,6 +39,14 @@
 
 
 				</ul>
+				<form class="form-inline my-2 my-lg-0"
+					action="workoutsearchresults.do">
+					<!-- <input class="" type="search"
+						aria-label="Search" name="searchterm"> -->
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchterm">Show All Workouts</button>
+					
+				
+				</form>
 				<form class="form-inline my-2 my-lg-0"
 					action="workoutsearchresults.do">
 					<input class="form-control mr-sm-2" type="search"
@@ -98,11 +106,6 @@
 
 			</c:forEach>
 		</c:if>
-
-		<p>${sessionScope.user}</p>
-		<p>${sessionScope.user.workouts}</p>
-		<p>${sessionScope.user.guestWorkouts}</p>
-		<p>
 	</main>
 	<footer> </footer>
 

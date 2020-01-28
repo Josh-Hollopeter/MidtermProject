@@ -1,6 +1,7 @@
 package com.skilldistillery.HealthApp.entities;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -30,6 +31,7 @@ public class User {
 	private String role;
 	private String email;
 	private String gender;
+	private String photo;
 	
 	
 	@Column(name="birth_date")
@@ -54,6 +56,25 @@ public class User {
 	public void setGuestWorkouts(List<Workout> guestWorkouts) {
 		this.guestWorkouts = guestWorkouts;
 	}
+	
+	public void addWorkout(Workout workout) {
+		if (this.workouts == null) {
+			workouts = new ArrayList<>();
+		}
+		
+		if(!workouts.contains(workout)) {
+			workouts.add(workout);
+			workout.addUser(this);
+		}
+	}
+	
+	public void removeWorkout(Workout workout) {
+		if(workouts != null && workouts.contains(workout)) {
+			workouts.remove(workout);
+			workout.removeUser(this);
+			
+		}
+	}
 	public User() {
 		super();
 	}
@@ -64,6 +85,13 @@ public class User {
 		this.password = password;
 		this.active = active;
 		this.role = role;
+	}
+	
+	public String getPhoto() {
+		return photo;
+	}
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 	public int getId() {
 		return id;

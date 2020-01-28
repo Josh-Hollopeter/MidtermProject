@@ -38,7 +38,7 @@
 
 				<c:forEach var="l" items="${locations}">
 					<a href="locationchoice.do?id=${ l.id}">${l.name}
-					</a>
+					</a><br>
 
 				</c:forEach>
 			</div>
@@ -55,9 +55,9 @@
 			Activity: <select name="activityparam">
 				<option value="Boxing">Boxing</option>
 				<option value="Yoga">Yoga</option>
-				<option value="Weight Lift">Weight Lift</option>
+				<option value="Weight Lifting">Weight Lift</option>
 				<option value="Hiking">Hiking</option>
-				<option value="Snow Boarding">Snow Boarding</option>
+				<option value="Snowboarding">Snow Boarding</option>
 				<option value="Roller Blading">Roller Blading</option>
 				<option value="Ice Skating">Ice Skating</option>
 				<option value="Tai Chi">Tai Chi</option>
@@ -73,9 +73,8 @@
 		</div>
 
 		<input type="submit" value="Submit">
-	</form >
-<!-- 	<form action="newworkout.do">
- -->			<button id="myBtn" data-toggle="modal" data-target="#myModal">Add
+	</form ><br><br>
+		<button id="myBtn" data-toggle="modal" data-target="#myModal">Add
 			a Location</button>
 
 		<!-- The Modal -->
@@ -152,6 +151,5 @@
 
 
 		</div>
-<!-- 	</form>
- --></body>
+</body>
 </html>
