@@ -19,6 +19,10 @@ public interface AdminDAO {
 
 	public Activity findActivityByName(String name);
 	
+
 	public Workout joinWorkout(User user, Workout workout);
+
+	public boolean deleteWorkout(int id);
+
 
 }

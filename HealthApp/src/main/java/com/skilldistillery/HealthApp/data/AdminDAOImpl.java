@@ -29,7 +29,7 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public User createUser(User user) {
 		user.setActive(true);
-		
+
 		em.persist(user);
 
 		em.flush();
@@ -103,6 +103,17 @@ public class AdminDAOImpl implements AdminDAO {
 //		em.persist(workout);
 //		em.persist(user);
 		return workout;
+	}
+	
+	@Override	
+	public boolean deleteWorkout(int id) {
+		System.out.println(id);
+		Workout workout = em.find(Workout.class, id);
+		System.out.println(workout);
+		workout.setActive(false);
+		boolean status = !workout.getActive();
+		return status;
+
 	}
 
 }

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -34,7 +35,6 @@ public class WorkoutController {
 		Workout workout = dao.findWorkoutById(id);
 		session.setAttribute("workout", workout);
 		return "singleworkoutdetails";
-		
 
 	}
 
@@ -59,7 +59,8 @@ public class WorkoutController {
 
 	@RequestMapping(path = "newworkout.do")
 	public ModelAndView createNewWorkout(@RequestParam("workoutdate") String date,
-			@RequestParam("activityparam") String name, Workout workout, HttpSession session, ModelAndView mv, @RequestParam("locationid") Integer id) {
+			@RequestParam("activityparam") String name, Workout workout, HttpSession session, ModelAndView mv,
+			@RequestParam("locationid") Integer id) {
 		mv = new ModelAndView();
 		User user = (User) session.getAttribute("user");
 		Activity activity = dao2.findActivityByName(name);
@@ -75,7 +76,7 @@ public class WorkoutController {
 		mv.addObject("newworkout", newWorkout);
 
 		mv.setViewName("userhome");
-		
+
 		user.addWorkout(newWorkout);
 
 		return mv;
@@ -125,5 +126,18 @@ public class WorkoutController {
 
 	}
 	
+
+	@RequestMapping(path = "deleteworkout.do")
+	public ModelAndView deleteWorkout(int wid, ModelAndView mv, HttpSession session) {
+//		int id = workout.getId();
+		mv = new ModelAndView();
+		if (dao2.deleteWorkout(wid)) {
+			mv.setViewName("userhome");
+		}
+		session.setAttribute("user", dao.findById(((User)session.getAttribute("user")).getId()));
+
+		return mv;
+
+	}
 
 }
