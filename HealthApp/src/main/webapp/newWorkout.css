@@ -1,41 +1,138 @@
-
-
-
-
-/* The Modal (background)-Kai added it for the bootpop up */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+body {
+	background-image:
+		url("https://www.honorshaven.com/wp-content/uploads/2017/12/Healing-Tai-Chi.jpg");
+	position: relative;
+	min-height: 100vh;
+	background-size: cover;
+	z-index: -1;
+	min-height: 100vh;
 }
 
-/* Modal Content */
+header {
+	z-index: 1;
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: white;
+	color: black;
+	text-align: center;
+}
+
+body::before {
+	content: "";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 0;
+}
+
+footer {
+	z-index: 2;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: white;
+	color: black;
+	text-align: center;
+}
+
+input {
+	position: relative;
+}
+
+#log {
+	display: inline;
+}
+
+.card {
+	box-shadow: 20px 30px 30px #000000;
+}
+
+.card-deck .card {
+	max-width: 400px;
+	max-height: 400px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+main {
+	margin: 25px;
+}
+
+img {
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	max-width: 400px;
+	max-height: 230px; . modal { display : none; Hidden by default position
+	: fixed; Stay in place z-index : 1; Sit on top padding-top : 100px;
+	Location of the box left : 0;
+	top: 0;
+	width: 100%;
+	Full
+	width
+	height
+	:
+	100%;
+	Full
+	height
+	overflow
+	:
+	auto;
+	Enable
+	scroll
+	if
+	needed
+	background-color
+	:
+	rgb(
+	0
+	,
+	0
+	,
+	0
+	);
+	Fallback
+	color
+	background-color
+	:
+	rgba(
+	0
+	,
+	0
+	,
+	0
+	,
+	0.4
+	);
+	Black
+	w/
+	opacity
+}
+/* 
+Modal Content
 .modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
 }
 
-/* The Close Button */
+The Close Button
 .close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+.close:hover, .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+} */

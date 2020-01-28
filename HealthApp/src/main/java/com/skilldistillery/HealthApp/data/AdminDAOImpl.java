@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.skilldistillery.HealthApp.entities.Activity;
 import com.skilldistillery.HealthApp.entities.Address;
 import com.skilldistillery.HealthApp.entities.User;
+import com.skilldistillery.HealthApp.entities.Workout;
 
 @Service
 @Transactional
@@ -28,7 +29,7 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public User createUser(User user) {
 		user.setActive(true);
-		
+
 		em.persist(user);
 
 		em.flush();
@@ -87,6 +88,16 @@ public class AdminDAOImpl implements AdminDAO {
 		activity = em.createQuery(query, Activity.class).setParameter("name", name).getSingleResult();
 
 		return activity;
+	}
+
+	@Override
+	public boolean deleteWorkout(int id) {
+		System.out.println(id);
+		Workout workout = em.find(Workout.class, id);
+		System.out.println(workout);
+		workout.setActive(false);
+		boolean status = !workout.getActive();
+		return status;
 	}
 
 }
