@@ -17,5 +17,7 @@ public interface AdminDAO {
 	public Address updateAddress(Address address, Integer id);
 
 	public Activity findActivityByName(String name);
+	
+	public boolean deleteWorkout(int id);
 
 }
