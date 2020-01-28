@@ -132,7 +132,7 @@ public class Workout {
 		this.postdate = postdate;
 	}
 
-	public boolean isActive() {
+	public boolean getActive() {
 		return active;
 	}
 
