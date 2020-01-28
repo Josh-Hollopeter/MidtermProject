@@ -82,13 +82,9 @@
      
         <input type ="hidden" value="${sessionScope.user.id}" name = "userId">
        <input type = "Submit" value ="Submit" class="text-center btn btn-dark">
-<<<<<<< HEAD
 
 								</form:form>
-=======
-       </form:form>
        
->>>>>>> george
 
 							</div>
 						</div>
