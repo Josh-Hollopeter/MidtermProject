@@ -30,9 +30,9 @@ public class WorkoutController {
 	AdminDAO dao2;
 
 	@RequestMapping(path = "workoutbyid.do")
-	public String workoutSearchById(HttpSession session, User user, Integer id) {
+	public String workoutSearchById(HttpSession session, User user, Integer id, Model model) {
 		Workout workout = dao.findWorkoutById(id);
-		session.setAttribute("workout", workout);
+		model.addAttribute("workout", workout);
 		return "singleworkoutdetails";
 
 	}
