@@ -21,7 +21,7 @@ header {
 	text-align: center;
 }
 
-body::before {
+ body::before {
 	content: "";
 	height: 100%;
 	width: 100%;
@@ -30,6 +30,9 @@ body::before {
 	left: 0;
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 0;
+} 
+.h5, h5 {
+	font-size: x-large;
 }
 
 footer {
@@ -55,16 +58,7 @@ footer {
 	justify-content: center;
 }
 
-header {
-	z-index: 1;
-	position: relative;
-	left: 0;
-	top: 0;
-	width: 100%;
-	background-color: white;
-	color: black;
-	text-align: center;
-}
+
 
 input {
 	position: relative;
@@ -74,72 +68,28 @@ input {
 	display: inline;
 }
 
-main {
-	margin: 25px;
-}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> e670018fb8a0c2e9ddef79bee75ba388410d519c
 
- img {
+
+
+/*  img {
 	-ms-flex-negative: 0;
 	flex-shrink: 0;
 	max-width: 400px;
-	max-height: 230px; . modal { display : none; Hidden by default position
-	: fixed; Stay in place z-index : 1; Sit on top padding-top : 100px;
-	Location of the box left : 0;
-	top: 0;
-	width: 100%;
-	Full
-	width
-	height
-	:
-	100%;
-	Full
-	height
-	overflow
-	:
-	auto;
-	Enable
-	scroll
-	if
-	needed
-	background-color
-	:
-	rgb(
-	0
-	,
-	0
-	,
-	0
-	);
-	Fallback
-	color
-	background-color
-	:
-	rgba(
-	0
-	,
-	0
-	,
-	0
-	,
-	0.4
-	);
-	Black
-	w/
-	opacity
-} 
+	max-height: 230px; 
+ } */
 
 
 
 .modal {
-	display: none;
-	Hidden by default position : fixed; 
-	Stay in place z-index: 1; Sit on top padding-top : 100px;
-	Location of the box left : 0;
+/* 	Hidden by default 
+ */	position : fixed; 
+/* 	Stay in place 
+ */	z-index: 1; 
+/*  Sit on top  */
+	padding-top : 100px;
+/* 	Location of the box 
+ */	left : 0;
 	top: 0;
 	width: 100%;
 	Fullwidthheight: 100%;
@@ -172,4 +122,44 @@ The Close Button
 	text-decoration: none;
 	cursor: pointer;
 }
+
+.modal-backdrop {
+	display: none !important; 
+}
+
+.model-dialog {
+	position: absolute;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0,0,0, 0.5);
+} 
+
+.modal-content {
+	width: 50%;
+}
+#myBtn{
+	color:black;
+}
+input{
+	color:black;
+}
+select{
+	color:black;
+}
+main{
+	opacity: 0.7;
+  filter: alpha(opacity=50);
+  background-image:
+		url("https://www.beautycolorcode.com/cdcdcd.png");
+	
+}
+section{
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+	 background-image:
+		url("https://upload.wikimedia.org/wikipedia/commons/5/50/Black_colour.jpg");
 }
