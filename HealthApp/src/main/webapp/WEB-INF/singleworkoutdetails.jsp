@@ -28,7 +28,7 @@
 	</c:choose>
 	<c:if test="${! empty workout}">
 	<form action="addguesttoworkout.do">
-		<input type="hidden" name="workout" value="${workout.id}" /> 
+		<input type="hidden" name="workout" value="${workoutusers.id}" /> 
 		<input type="submit" name="Join" value="Join" />
 	</form>
 	<form action="edit.do" method="POST">
