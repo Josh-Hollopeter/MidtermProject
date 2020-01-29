@@ -83,6 +83,57 @@ main {
 
 >>>>>>> e670018fb8a0c2e9ddef79bee75ba388410d519c
 
+ img {
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	max-width: 400px;
+	max-height: 230px; . modal { display : none; Hidden by default position
+	: fixed; Stay in place z-index : 1; Sit on top padding-top : 100px;
+	Location of the box left : 0;
+	top: 0;
+	width: 100%;
+	Full
+	width
+	height
+	:
+	100%;
+	Full
+	height
+	overflow
+	:
+	auto;
+	Enable
+	scroll
+	if
+	needed
+	background-color
+	:
+	rgb(
+	0
+	,
+	0
+	,
+	0
+	);
+	Fallback
+	color
+	background-color
+	:
+	rgba(
+	0
+	,
+	0
+	,
+	0
+	,
+	0.4
+	);
+	Black
+	w/
+	opacity
+} 
+
+
 
 .modal {
 	display: none;
@@ -97,14 +148,7 @@ main {
 	Fallbackcolorbackground-color: rgba(0, 0, 0, 0.4);
 }
 
-<<<<<<< HEAD
-=======
- 
-/* 
->>>>>>> 9445b900106127760b8df34980d0b352524f7c69
-=======
 
->>>>>>> e670018fb8a0c2e9ddef79bee75ba388410d519c
 Modal Content
 .modal-header {
 	background-color: #fefefe;
@@ -128,4 +172,4 @@ The Close Button
 	text-decoration: none;
 	cursor: pointer;
 }
-
+}
