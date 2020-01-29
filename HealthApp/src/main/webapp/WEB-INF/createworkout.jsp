@@ -1,5 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
+=======
+
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+>>>>>>> 7a83192e4d28628fcda8b0a060b2131bc84116dd
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -245,6 +250,7 @@
 =======
 </html> --%>
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8e72319dbae32a19f92d449ef8107384f0b4e0d2
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -374,3 +380,5 @@
 </body>
 >>>>>>> 9445b900106127760b8df34980d0b352524f7c69
 </html>
+=======
+>>>>>>> 7a83192e4d28628fcda8b0a060b2131bc84116dd
