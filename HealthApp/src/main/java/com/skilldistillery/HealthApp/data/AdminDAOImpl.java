@@ -94,26 +94,32 @@ public class AdminDAOImpl implements AdminDAO {
 	public Workout joinWorkout(User user, Workout workout) {
 //		User owner = em.find(User.class,workout.getCreatorId().getId());
 		workout = em.find(Workout.class, workout.getId());
-		user = em.find(User.class,user.getId());
+		user = em.find(User.class, user.getId());
 //		workout.addGuest(user);
 		user.addGuestWorkout(workout);
-		
+
 		em.persist(user);
 		em.flush();
 //		em.persist(workout);
 //		em.persist(user);
 		return workout;
 	}
-	
-	@Override	
+
+	@Override
 	public boolean deleteWorkout(int id) {
-		System.out.println(id);
 		Workout workout = em.find(Workout.class, id);
-		System.out.println(workout);
 		workout.setActive(false);
 		boolean status = !workout.getActive();
 		return status;
 
+	}
+
+	@Override
+	public Workout deleteWorkout2(int id) {
+		Workout workout = em.find(Workout.class, id);
+		workout.setTitle("D0NTEVER$HOW");
+
+		return workout;
 	}
 
 }

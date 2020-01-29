@@ -61,6 +61,7 @@
 			<<div class="card-columns">
 					<c:forEach var="myworkout" items="${workouts}">
 						<c:if test="${myworkout.active}">
+						<c:if test="${myworkout.title ne 'D0NTEVER$HOW' }">
  					<div class="card" style="width: 18rem;">
 							<img class="card-img-top" src="${myworkout.activity.image}"
 								alt="Card image cap">
@@ -87,6 +88,7 @@
 								<a href="workoutbyid.do?id=${myworkout.id}">Details</a>
 							</div>
 						</div>
+						</c:if>
 						</c:if>
  					</c:forEach>
 					</div>
