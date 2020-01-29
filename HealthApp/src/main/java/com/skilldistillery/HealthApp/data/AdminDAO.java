@@ -23,6 +23,8 @@ public interface AdminDAO {
 	public Workout joinWorkout(User user, Workout workout);
 
 	public boolean deleteWorkout(int id);
+	
+	public Workout deleteWorkout2(int id);
 
 
 }

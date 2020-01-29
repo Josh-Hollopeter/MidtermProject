@@ -198,6 +198,23 @@ public class WorkoutController {
 		return "userhome";
 		
 	}
+	@RequestMapping(path="deleteworkout2.do")
+	public ModelAndView deleteWorkout2(Integer wid,ModelAndView mv, HttpSession session) {
+		Workout workout=dao2.deleteWorkout2(wid);
+		mv.addObject("workout", workout);
+		mv.setViewName("userhome");
+		session.setAttribute("user", dao.findById(((User)session.getAttribute("user")).getId()));
+		return mv;
+		
+	}
+	@RequestMapping (path="finishedworkout.do")
+	public  ModelAndView finishedworkout(HttpSession session, ModelAndView mv) {
+		
+		
+		mv.setViewName("finishedworkout");
+		return mv;
+		
+	}
 
 
 }
