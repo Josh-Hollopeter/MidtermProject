@@ -73,6 +73,22 @@ img{
 	margin: auto;
 }
 
+/* .card:hover {
+	transform: 
+} */
 
+.fade:not(.show) {
+    opacity: 1;
+}
+
+.fade
+{
+        opacity:1;
+}
+
+.fade:hover
+{
+        opacity:0.5;
+} */
 
 
