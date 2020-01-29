@@ -126,7 +126,7 @@
 								</tr>
 							</table>
 
-							<a href="#" class="btn btn-primary">Edit</a>
+							<a href="editworkout.do?wid=${myworkout.id}" class="btn btn-primary">Edit</a>
 								<form action="workoutbyid.do">
 								<input type='hidden' value=${myworkout.id } name='id' />
 								<button type='submit' class="btn btn-primary">Detail</button>
