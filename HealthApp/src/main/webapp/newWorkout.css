@@ -79,6 +79,7 @@ main {
 }
 
 
+
 .modal {
 	display: none;
 	Hidden by default position : fixed; 
@@ -91,6 +92,7 @@ main {
 	Enablescrollifneededbackground-color: rgb(0, 0, 0);
 	Fallbackcolorbackground-color: rgba(0, 0, 0, 0.4);
 }
+
 
 Modal Content
 .modal-header {
