@@ -34,8 +34,16 @@
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="logout.do"> Logout </a></li>
 
-
+ <!-- kai added -->
 				</ul>
+					<form class="form-inline my-2 my-lg-0"
+					action="finishedworkout.do">
+					
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+						name="searchterm">Show Completed Workout</button>
+ <!-- kai added -->
+
+				</form>
 				<form class="form-inline my-2 my-lg-0"
 					action="workoutsearchresults.do">
 					<!-- <input class="" type="search"

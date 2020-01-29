@@ -207,6 +207,14 @@ public class WorkoutController {
 		return mv;
 		
 	}
+	@RequestMapping (path="finishedworkout.do")
+	public  ModelAndView finishedworkout(HttpSession session, ModelAndView mv) {
+		
+		
+		mv.setViewName("finishedworkout");
+		return mv;
+		
+	}
 
 
 }
