@@ -10,7 +10,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="userhome.css">
 <meta charset="UTF-8">
-<title>User Home</title>
+<title>User Home Page</title>
 </head>
 <body>
 	<header>
@@ -31,9 +31,6 @@
 						href="createupdateuser.do">Update Account</a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="createworkout.do"> Create Workout </a></li>
-					<li class="nav-item dropdown"><a class="nav-link"
-						href="workoutlistallresults.do"> Available Workouts </a></li>
-
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="logout.do"> Logout </a></li>
 
@@ -83,16 +80,41 @@
 			<c:forEach var="myworkout" items="${sessionScope.user.workouts}">
 
 
+				<%-- <div class="card" style="width: 23rem;">
+					<img class="card-img-top" src="${myworkout.activity.image}"
+						alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">${myworkout.title}</h5>
+						<p class="card-text">
+						<table>
+
+							<tr>
+								<td><strong>Date:</strong> ${myworkout.workoutDate}</td>
+							</tr>
+							<tr>
+								<td><strong>Workout Name:</strong>
+									${myworkout.location.name}</td>
+							</tr>
+							<tr>
+								<td><strong>Description:</strong> ${myworkout.description}</td>
+							</tr>
+
+						</table>
+
+						<a href="editworkout.do?wid=${myworkout.id}" class="btn btn-primary">Edit</a>
+						<a href="deleteworkout.do" class="btn btn-primary" >Delete</a> --%>
 				<c:if test="${myworkout.active}">
 					<div class="card" style="width: 23rem;">
 						<img class="card-img-top" src="${myworkout.activity.image}"
 							alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">${myworkout.title}</h5>
-							<p class="card-text">
+							<p class="card-text"></p>
 							<table>
 								<tr>
-									<td>${myworkout.active }</td>
+									<td><strong>Host:</strong> ${myworkout.user.firstName} ${myworkout.user.lastName}</td>
+								</tr>
+								<tr>
 									<td><strong>Date:</strong> ${myworkout.workoutDate}</td>
 								</tr>
 								<tr>
@@ -104,10 +126,55 @@
 								</tr>
 							</table>
 
-							<a href="#" class="btn btn-primary">Edit</a>
+							<a href="editworkout.do?wid=${myworkout.id}" class="btn btn-primary">Edit</a>
+								<form action="workoutbyid.do">
+								<input type='hidden' value=${myworkout.id } name='id' />
+								<button type='submit' class="btn btn-primary">Detail</button>
+								</form>
 							<form action="deleteworkout.do">
 								<input type='hidden' value=${myworkout.id } name='wid' />
 								<button type='submit' class="btn btn-primary">Delete</button>
+							</form>
+							<a href="deleteworkout.do?wid=${myworkout.id}" class="btn btn-primary">Mark as Complete</a>
+						</div>
+					</div>
+				</c:if>
+
+			</c:forEach>
+		</c:if>
+		<c:if test="${!empty sessionScope.user.guestWorkouts}">
+			<c:forEach var="myworkout" items="${sessionScope.user.guestWorkouts}">
+
+
+				<c:if test="${myworkout.active}">
+					<div class="card" style="width: 23rem;">
+						<img class="card-img-top" src="${myworkout.activity.image}"
+							alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">${myworkout.title}</h5>
+							<p class="card-text"></p>
+							<table>
+								<tr>
+									<td><strong>Host:</strong> ${myworkout.user.firstName} ${myworkout.user.lastName}</td>								
+								<tr>
+									<td><strong>Date:</strong> ${myworkout.workoutDate}</td>
+								</tr>
+								<tr>
+									<td><strong>Workout Name:</strong>
+										${myworkout.location.name}</td>
+								</tr>
+								<tr>
+									<td><strong>Description:</strong> ${myworkout.description}</td>
+								</tr>
+							</table>
+
+							<form action="workoutbyid.do">
+								<input type='hidden' value=${myworkout.id } name='id' />
+								<button type='submit' class="btn btn-primary">Detail</button>
+								</form>
+							<form action="removeguestfromworkout.do">
+								<input type='hidden' value="${myworkout.id}" name='wid' />
+								<button type='submit' class="btn btn-primary">Cancel Invitation</button>
 							</form>
 						</div>
 					</div>

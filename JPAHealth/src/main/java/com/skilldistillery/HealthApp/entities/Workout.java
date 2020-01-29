@@ -5,8 +5,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -60,30 +62,53 @@ public class Workout {
 
 	@Override
 	public String toString() {
-		return "Workout [Id=" + Id + ", activity=" + activity + ", user=" + user + ", workoutDate=" + workoutDate
+//		return "WORKOUT" + Id;
+		return "Workout [Id=" + Id + ", activity=" + activity + ", workoutDate=" + workoutDate
 				+ ", title=" + title + ", description=" + description + ", postdate=" + postdate + ", active=" + active
-				+ ", location=" + location + ", users=" + users + "]";
+				+ ", location=" + location + "user: " + this.users +"]";
 	}
 
 	
-	public void addUser(User user) {
+	public void addGuest(User user) {
 		if (this.users == null) {
 			users = new ArrayList<>();
 		}
 		
 		if(!users.contains(user)) {
 			users.add(user);
-			user.addWorkout(this);
+			user.addGuestWorkout(this);
 		}
 	}
 	
-	public void removeUser(User user) {
+	public void removeGuest(User user) {
 		if(users != null && users.contains(user)) {
 			users.remove(user);
-			user.removeWorkout(this);
+			user.removeGuestWorkout(this);
 			
 		}
 	}
+	
+//	public void addUser(User user) {
+//		if (this.users == null) {
+//			users = new ArrayList<>();
+//		}
+//		
+//		if(!users.contains(user)) {
+//			users.add(user);
+//			user.addGuestWorkout(this);
+//		}
+//	}
+//	
+//	public void removeUser(User user) {
+//		if(users != null && users.contains(user)) {
+//			users.remove(user);
+//			user.removeWorkout(this);
+//			
+//		}
+//	}
+	
+	
+	
 	public int getId() {
 		return Id;
 	}

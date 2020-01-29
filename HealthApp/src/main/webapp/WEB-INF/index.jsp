@@ -38,7 +38,7 @@
 						<input type="submit" value="Log In">
 
 						<a href="createupdateuser.do"><input type="button"
-							value="Create" class="btn-primary"></a>
+							value="Create Account" class="btn-primary"></a>
 					</c:if>
 					<a href="createworkout.do"><input type="button"
 						value="Create Workout" class="btn-success"></a>

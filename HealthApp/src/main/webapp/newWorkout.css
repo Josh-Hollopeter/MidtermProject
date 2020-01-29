@@ -1,6 +1,8 @@
+
+
 body {
 	background-image:
-		url("https://www.honorshaven.com/wp-content/uploads/2017/12/Healing-Tai-Chi.jpg");
+		url("https://images.squarespace-cdn.com/content/v1/5c533c61e5f7d1726dd7a727/1553004037371-5VDR1JJN4GWYEKK8UKX7/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/IMG_0627.jpg?format=2500w");
 	position: relative;
 	min-height: 100vh;
 	background-size: cover;
@@ -19,7 +21,7 @@ header {
 	text-align: center;
 }
 
-body::before {
+ body::before {
 	content: "";
 	height: 100%;
 	width: 100%;
@@ -28,6 +30,9 @@ body::before {
 	left: 0;
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 0;
+} 
+.h5, h5 {
+	font-size: x-large;
 }
 
 footer {
@@ -41,6 +46,20 @@ footer {
 	text-align: center;
 }
 
+.container-fluid h3 {
+	color: white;
+	background-color: darkolivegreen;
+    text-align: center;
+} 
+
+
+ .row {
+	display: flex;
+	justify-content: center;
+}
+
+
+
 input {
 	position: relative;
 }
@@ -49,80 +68,51 @@ input {
 	display: inline;
 }
 
-.card {
-	box-shadow: 20px 30px 30px #000000;
-}
-
-.card-deck .card {
-	max-width: 400px;
-	max-height: 400px;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-main {
+/* main {
 	margin: 25px;
-}
+} */
 
-img {
+
+
+
+/*  img {
 	-ms-flex-negative: 0;
 	flex-shrink: 0;
 	max-width: 400px;
-	max-height: 230px; . modal { display : none; Hidden by default position
-	: fixed; Stay in place z-index : 1; Sit on top padding-top : 100px;
-	Location of the box left : 0;
+	max-height: 230px; 
+ } */
+
+
+
+.modal {
+/* 	Hidden by default 
+ */	position : fixed; 
+/* 	Stay in place 
+ */	z-index: 1; 
+/*  Sit on top  */
+	padding-top : 100px;
+/* 	Location of the box 
+ */	left : 0;
 	top: 0;
 	width: 100%;
-	Full
-	width
-	height
-	:
-	100%;
-	Full
-	height
-	overflow
-	:
-	auto;
-	Enable
-	scroll
-	if
-	needed
-	background-color
-	:
-	rgb(
-	0
-	,
-	0
-	,
-	0
-	);
-	Fallback
-	color
-	background-color
-	:
-	rgba(
-	0
-	,
-	0
-	,
-	0
-	,
-	0.4
-	);
-	Black
-	w/
-	opacity
-}
-/* 
-Modal Content
-.modal-content {
-	background-color: #fefefe;
-	margin: auto;
-	padding: 20px;
-	border: 1px solid #888;
-	width: 80%;
+	Fullwidthheight: 100%;
+	Fullheightoverflow: auto;
+	Enablescrollifneededbackground-color: rgb(0, 0, 0);
+	Fallbackcolorbackground-color: rgba(0, 0, 0, 0.4);
 }
 
+
+Modal Content
+.modal-header {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 16px 16px;
+	border: 1px solid #888;
+	width: 50%;
+}
+.modal-dialog {
+	width: 360px;
+}
 The Close Button
 .close {
 	color: #aaaaaa;
@@ -130,9 +120,49 @@ The Close Button
 	font-size: 28px;
 	font-weight: bold;
 }
-
 .close:hover, .close:focus {
 	color: #000;
 	text-decoration: none;
 	cursor: pointer;
-} */
+}
+
+.modal-backdrop {
+	display: none !important; 
+}
+
+.model-dialog {
+	position: absolute;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0,0,0, 0.5);
+} 
+
+.modal-content {
+	width: 50%;
+}
+#myBtn{
+	color:black;
+}
+input{
+	color:black;
+}
+select{
+	color:black;
+}
+main{
+	opacity: 0.7;
+  filter: alpha(opacity=50);
+  background-image:
+		url("https://www.beautycolorcode.com/cdcdcd.png");
+	
+}
+section{
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+	 background-image:
+		url("https://upload.wikimedia.org/wikipedia/commons/5/50/Black_colour.jpg");
+}

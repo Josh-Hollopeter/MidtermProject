@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -31,9 +30,9 @@ public class WorkoutController {
 	AdminDAO dao2;
 
 	@RequestMapping(path = "workoutbyid.do")
-	public String workoutSearchById(HttpSession session, User user, Integer id) {
+	public String workoutSearchById(HttpSession session, User user, Integer id, Model model) {
 		Workout workout = dao.findWorkoutById(id);
-		session.setAttribute("workout", workout);
+		model.addAttribute("workout", workout);
 		return "singleworkoutdetails";
 
 	}
@@ -51,9 +50,7 @@ public class WorkoutController {
 
 	@RequestMapping(path = "workoutlistallresults.do")
 	public String workoutListAllMapToButton(HttpSession session, User user, Workout workout, Activity activity) {
-//		if(workout == null) {
-//			return "error";
-//		}else {
+
 		List<Workout> workout1 = dao.findAll();
 		session.setAttribute("workout", workout1);
 		return "workoutshowallresult";
@@ -95,8 +92,24 @@ public class WorkoutController {
 		List<Location> locations = dao.allLocation();
 		model.addAttribute("locations", locations);
 
+
 		return "createworkout";
 
+	}
+	@RequestMapping(path = "updatelocation.do")
+	
+	public String updateLocation(int id, Model model, @RequestParam(name="woid") Integer woid) {
+		
+		Location newLocation;
+		newLocation = dao.findLocationById(id);
+		model.addAttribute("locationid", newLocation.getId());
+		model.addAttribute("location", newLocation);
+		List<Location> locations = dao.allLocation();
+		model.addAttribute("locations", locations);
+		model.addAttribute("workout", dao.findWorkoutById(woid));
+		
+		return "editworkout";
+		
 	}
 
 	@RequestMapping(path = "newLocation.do")
@@ -115,9 +128,54 @@ public class WorkoutController {
 		return mv;
 
 	}
+	
+	@RequestMapping(path = "editworkout.do")
+	public String editWorkout(HttpSession session, @RequestParam("wid")Integer wid, Model model) {
+		Workout workout = dao.findWorkoutById(wid);
+		List <Location> locations = dao.allLocation();
+		model.addAttribute("locations", locations);
+		model.addAttribute("workout", workout);
+		
+		return"editworkout";
+	}
+	@RequestMapping(path = "updateworkout.do")
+	public String updateWorkout(@RequestParam("workoutdate") String date,
+			@RequestParam("activityparam") String name, @RequestParam("workoutid") Integer wid, Workout workoutupdate, HttpSession session, Model model, @RequestParam("locationid") Integer id) {
+		User user = (User) session.getAttribute("user");
+		Workout workout = dao.findWorkoutById(wid);
+		System.err.println(workoutupdate.getTitle());
+		Activity activity = dao2.findActivityByName(name);
+		LocalDate ld = LocalDate.parse(date);
+		workoutupdate.setActivity(activity);
+		workoutupdate.setLocation(dao.findLocationById(id));
+		workoutupdate.setWorkoutDate(ld);
+		Workout newWorkout = dao.UpdateWorkOut(workoutupdate, workout.getId());
+
+		newWorkout.setActivity(activity);
+
+		model.addAttribute("newworkout", newWorkout);
+
+		
+		session.setAttribute("user", dao.findById(user.getId()));
+		
+		return"userhome";
+	}
+	@RequestMapping(path = "addguesttoworkout.do")
+	public String guestJoinWorkout( @RequestParam("workout")String id, HttpSession session) {
+		User user1 = (User) session.getAttribute("user");
+		Integer id1 = Integer.parseInt(id);
+		Workout workout = dao.findWorkoutById(id1);
+		workout = dao2.joinWorkout(user1, workout);
+//		model.addAttribute(user);
+		session.setAttribute("user", dao.findById(user1.getId()));
+		return "userhome";
+		
+
+	}
+	
 
 	@RequestMapping(path = "deleteworkout.do")
-	public ModelAndView deleteWorkout(int wid, ModelAndView mv, HttpSession session) {
+	public ModelAndView deleteWorkout(Integer wid, ModelAndView mv, HttpSession session) {
 //		int id = workout.getId();
 		mv = new ModelAndView();
 		if (dao2.deleteWorkout(wid)) {
@@ -128,5 +186,18 @@ public class WorkoutController {
 		return mv;
 
 	}
+	@RequestMapping(path = "removeguestfromworkout.do")
+	public String removeGuest(Integer wid, ModelAndView mv, HttpSession session, Model model) {
+//		int id = workout.getId();
+		User user = (User)session.getAttribute("user");
+		System.out.println(user);
+		dao.UpdateWorkOutGuests(wid, user);
+
+		session.setAttribute("user", dao.findById(((User)session.getAttribute("user")).getId()));
+		
+		return "userhome";
+		
+	}
+
 
 }
