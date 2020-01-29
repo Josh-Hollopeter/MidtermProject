@@ -36,15 +36,7 @@
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="logout.do"> Logout </a></li>
 				</ul>
-				<%-- <form class="form-inline my-2 my-lg-0" action ="workoutsearchresults.do">
-					<input class="form-control mr-sm-2" type="search"
-						placeholder="Search Workout" aria-label="Search" name="searchterm">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-					
-				</form> --%>
-				<!-- 
-					<a href="workoutlistallresults.do"><input type="button" value="Show All Workouts"
-					class="btn-success"></a> -->
+				
 					<a href="userhome.do"><input type="button" value="${sessionScope.user.firstName}'s Profile"
 					class="btn-success"></a>
 			</div>
@@ -67,7 +59,6 @@
 		<c:choose>
 			<c:when test="${!empty workouts}">
 			<<div class="card-columns">
-				<!-- <section style="display: flex;flex-wrap: wrap;justify-content: space-evenly;"> -->
 					<c:forEach var="myworkout" items="${workouts}">
 						<c:if test="${myworkout.active}">
  					<div class="card" style="width: 18rem;">
@@ -95,14 +86,10 @@
 								</table>
 								<a href="workoutbyid.do?id=${myworkout.id}">Details</a>
 							</div>
-							<%-- <form action="workoutbyid.do?id=${myworkout.id}" >
-							<input type="submit" value="Details" />
-						</form> --%>
 						</div>
 						</c:if>
  					</c:forEach>
 					</div>
-				<!-- </section> -->
 			</c:when>
 			<c:otherwise>
 				<p>No Workout Found</p>

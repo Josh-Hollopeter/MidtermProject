@@ -100,33 +100,12 @@
           		</c:otherwise>
           	</c:choose>
           	<c:if test="${! empty workout}">
-          <%-- <<<<<<< HEAD
-          	<form action="addguesttoworkout.do">
-          		<input type="hidden" name="workout" value="${workoutusers.id}" /> 
-          		<input type="submit" name="Join" value="Join" />
-          	</form>
-          	<form action="edit.do" method="POST">
-          		<input type="hidden" name="vid" value="${workout.id}" /> 
-          		<input type="submit" name="Edit" value="Edit" />
-          	</form>
-          	<form action="delete.do">
-          		<input type="hidden" name="vid" value="${workout.id}" /> 
-          		<input type="submit" name="Delete" value="Delete" />
-          	</form>
-          ======= --%>
+    
           		<form action="addguesttoworkout.do">
           			<input type="hidden" name="workout" value="${workout.id}" /> <input
           				type="submit" name="Join" value="Join" />
           		</form>
-          		<form action="edit.do" method="POST">
-          			<input type="hidden" name="vid" value="${workout.id}" /> <input
-          				type="submit" name="Edit" value="Edit" />
-          		</form>
-          		<form action="delete.do">
-          			<input type="hidden" name="vid" value="${workout.id}" /> <input
-          				type="submit" name="Delete" value="Delete" />
-          		</form>
-
+          	
           	</c:if>
 
 							</div>

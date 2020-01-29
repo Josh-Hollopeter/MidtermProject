@@ -38,8 +38,7 @@
 				</ul>
 				<form class="form-inline my-2 my-lg-0"
 					action="workoutsearchresults.do">
-					<!-- <input class="" type="search"
-						aria-label="Search" name="searchterm"> -->
+			
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
 						name="searchterm">Show All Workouts</button>
 
@@ -52,9 +51,7 @@
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 
 				</form>
-				<!-- 
-					<a href="workoutlistallresults.do"><input type="button" value="Show All Workouts"
-					class="btn-success"></a> -->
+			
 			</div>
 		</nav>
 	</header>
@@ -70,40 +67,18 @@
 			<div class="card-body">
 				<h5 class="card-title">
 					<strong class="user">${sessionScope.user.firstName}
-						${sessionScope.user.lastName} Workouts</strong>
+						${sessionScope.user.lastName} Hosted Workouts</strong>
 				</h5>
 				<p class="card-text"></p>
 			</div>
 		</div>
+	
 
 		<c:if test="${!empty sessionScope.user.workouts}">
+		<div class="card-columns">
 			<c:forEach var="myworkout" items="${sessionScope.user.workouts}">
 
-
-				<%-- <div class="card" style="width: 23rem;">
-					<img class="card-img-top" src="${myworkout.activity.image}"
-						alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">${myworkout.title}</h5>
-						<p class="card-text">
-						<table>
-
-							<tr>
-								<td><strong>Date:</strong> ${myworkout.workoutDate}</td>
-							</tr>
-							<tr>
-								<td><strong>Workout Name:</strong>
-									${myworkout.location.name}</td>
-							</tr>
-							<tr>
-								<td><strong>Description:</strong> ${myworkout.description}</td>
-							</tr>
-
-						</table>
-
-						<a href="editworkout.do?wid=${myworkout.id}" class="btn btn-primary">Edit</a>
-						<a href="deleteworkout.do" class="btn btn-primary" >Delete</a> --%>
-				<c:if test="${myworkout.active}">
+			<c:if test="${myworkout.active}">
 					<div class="card" style="width: 23rem;">
 						<img class="card-img-top" src="${myworkout.activity.image}"
 							alt="Card image cap">
@@ -138,14 +113,30 @@
 							<a href="deleteworkout.do?wid=${myworkout.id}" class="btn btn-primary">Mark as Complete</a>
 						</div>
 					</div>
-				</c:if>
+			</c:if>
 
 			</c:forEach>
+			</div>
 		</c:if>
+		
 		<c:if test="${!empty sessionScope.user.guestWorkouts}">
+		<div class="card mb-3"
+			style="max-width: 30rem; text-align: center; margin: auto;">
+			<img class="card-img-top go-hard"
+				src="https://i1.sndcdn.com/avatars-000369555311-i351q4-t500x500.jpg"
+				alt="Card image cap" style="max-height: 150px;">
+			<div class="card-body">
+				<h5 class="card-title">
+					<strong class="user">${sessionScope.user.firstName}
+						${sessionScope.user.lastName} Joined Workouts</strong>
+				</h5>
+				<p class="card-text"></p>
+			</div>
+		</div>
+		
+			<div class="card-columns">
+		
 			<c:forEach var="myworkout" items="${sessionScope.user.guestWorkouts}">
-
-
 				<c:if test="${myworkout.active}">
 					<div class="card" style="width: 23rem;">
 						<img class="card-img-top" src="${myworkout.activity.image}"
@@ -181,6 +172,7 @@
 				</c:if>
 
 			</c:forEach>
+			</div>
 		</c:if>
 	</main>
 	<footer> </footer>
