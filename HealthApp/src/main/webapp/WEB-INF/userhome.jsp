@@ -80,6 +80,29 @@
 			<c:forEach var="myworkout" items="${sessionScope.user.workouts}">
 
 
+				<div class="card" style="width: 23rem;">
+					<img class="card-img-top" src="${myworkout.activity.image}"
+						alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">${myworkout.title}</h5>
+						<p class="card-text">
+						<table>
+
+							<tr>
+								<td><strong>Date:</strong> ${myworkout.workoutDate}</td>
+							</tr>
+							<tr>
+								<td><strong>Workout Name:</strong>
+									${myworkout.location.name}</td>
+							</tr>
+							<tr>
+								<td><strong>Description:</strong> ${myworkout.description}</td>
+							</tr>
+
+						</table>
+
+						<a href="editworkout.do?wid=${myworkout.id}" class="btn btn-primary">Edit</a>
+						<a href="deleteworkout.do" class="btn btn-primary" >Delete</a>
 				<c:if test="${myworkout.active}">
 					<div class="card" style="width: 23rem;">
 						<img class="card-img-top" src="${myworkout.activity.image}"

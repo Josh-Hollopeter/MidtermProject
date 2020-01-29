@@ -209,7 +209,7 @@
 		<div id="myModal1" class="modal">
 			<!-- Modal content -->
 			<div class="modal-content">
-				<span class="close">&times;</span>
+				<span class="close"></span>
 				<c:forEach var="l" items="${locations}">
 					<a href="locationchoice.do?id=${ l.id}">${l.name}
 					</a><br>
@@ -245,7 +245,7 @@
 			<!-- Modal content -->
 			<div class="modal-content">
 <form action="newLocation.do">
-				<span class="close">&times;</span> Name: <input name="name"
+				<span class="close"></span> Name: <input name="name"
 					type="text" placeholder="Your wonderfull workout" name="street"><br>
 				Street: <input type="text" placeholder="123 abc street"
 					name="street"><br> City: <input type="text"
