@@ -127,6 +127,10 @@
 							</table>
 
 							<a href="#" class="btn btn-primary">Edit</a>
+								<form action="workoutbyid.do">
+								<input type='hidden' value=${myworkout.id } name='id' />
+								<button type='submit' class="btn btn-primary">Detail</button>
+								</form>
 							<form action="deleteworkout.do">
 								<input type='hidden' value=${myworkout.id } name='wid' />
 								<button type='submit' class="btn btn-primary">Delete</button>
