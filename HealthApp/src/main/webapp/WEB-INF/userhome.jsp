@@ -80,7 +80,7 @@
 			<c:forEach var="myworkout" items="${sessionScope.user.workouts}">
 
 
-				<div class="card" style="width: 23rem;">
+				<%-- <div class="card" style="width: 23rem;">
 					<img class="card-img-top" src="${myworkout.activity.image}"
 						alt="Card image cap">
 					<div class="card-body">
@@ -102,7 +102,7 @@
 						</table>
 
 						<a href="editworkout.do?wid=${myworkout.id}" class="btn btn-primary">Edit</a>
-						<a href="deleteworkout.do" class="btn btn-primary" >Delete</a>
+						<a href="deleteworkout.do" class="btn btn-primary" >Delete</a> --%>
 				<c:if test="${myworkout.active}">
 					<div class="card" style="width: 23rem;">
 						<img class="card-img-top" src="${myworkout.activity.image}"
