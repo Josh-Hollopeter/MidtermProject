@@ -129,7 +129,6 @@ public class WorkoutController {
 
 	}
 	
-<<<<<<< HEAD
 	@RequestMapping(path = "editworkout.do")
 	public String editWorkout(HttpSession session, @RequestParam("wid")Integer wid, Model model) {
 		Workout workout = dao.findWorkoutById(wid);
@@ -160,7 +159,7 @@ public class WorkoutController {
 		session.setAttribute("user", dao.findById(user.getId()));
 		
 		return"userhome";
-=======
+	}
 	@RequestMapping(path = "addguesttoworkout.do")
 	public String guestJoinWorkout( @RequestParam("workout")String id, HttpSession session) {
 		User user1 = (User) session.getAttribute("user");
@@ -176,7 +175,7 @@ public class WorkoutController {
 	
 
 	@RequestMapping(path = "deleteworkout.do")
-	public ModelAndView deleteWorkout(int wid, ModelAndView mv, HttpSession session) {
+	public ModelAndView deleteWorkout(Integer wid, ModelAndView mv, HttpSession session) {
 //		int id = workout.getId();
 		mv = new ModelAndView();
 		if (dao2.deleteWorkout(wid)) {
@@ -186,7 +185,6 @@ public class WorkoutController {
 
 		return mv;
 
->>>>>>> 6f14891124c2f890bcc7d461d0741f13e29de695
 	}
 
 }

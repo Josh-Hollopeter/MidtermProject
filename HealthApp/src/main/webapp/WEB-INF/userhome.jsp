@@ -80,7 +80,6 @@
 			<c:forEach var="myworkout" items="${sessionScope.user.workouts}">
 
 
-<<<<<<< HEAD
 				<div class="card" style="width: 23rem;">
 					<img class="card-img-top" src="${myworkout.activity.image}"
 						alt="Card image cap">
@@ -104,7 +103,6 @@
 
 						<a href="editworkout.do?wid=${myworkout.id}" class="btn btn-primary">Edit</a>
 						<a href="deleteworkout.do" class="btn btn-primary" >Delete</a>
-=======
 				<c:if test="${myworkout.active}">
 					<div class="card" style="width: 23rem;">
 						<img class="card-img-top" src="${myworkout.activity.image}"
@@ -171,7 +169,6 @@
 								<button type='submit' class="btn btn-primary">UnJoin</button>
 							</form>
 						</div>
->>>>>>> 6f14891124c2f890bcc7d461d0741f13e29de695
 					</div>
 				</c:if>
 
