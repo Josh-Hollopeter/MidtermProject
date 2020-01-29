@@ -3,6 +3,7 @@ package com.skilldistillery.HealthApp.data;
 import com.skilldistillery.HealthApp.entities.Activity;
 import com.skilldistillery.HealthApp.entities.Address;
 import com.skilldistillery.HealthApp.entities.User;
+import com.skilldistillery.HealthApp.entities.Workout;
 
 public interface AdminDAO {
 
@@ -17,5 +18,11 @@ public interface AdminDAO {
 	public Address updateAddress(Address address, Integer id);
 
 	public Activity findActivityByName(String name);
+	
+
+	public Workout joinWorkout(User user, Workout workout);
+
+	public boolean deleteWorkout(int id);
+
 
 }

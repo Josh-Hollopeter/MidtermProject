@@ -10,7 +10,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="userhome.css">
 <meta charset="UTF-8">
-<title>User Home </title>
+<title>User Home</title>
 </head>
 <body>
 	<header>
@@ -32,9 +32,6 @@
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="createworkout.do"> Create Workout </a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
-						href="workoutlistallresults.do"> Available Workouts </a></li>
-
-					<li class="nav-item dropdown"><a class="nav-link"
 						href="logout.do"> Logout </a></li>
 
 
@@ -43,9 +40,10 @@
 					action="workoutsearchresults.do">
 					<!-- <input class="" type="search"
 						aria-label="Search" name="searchterm"> -->
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchterm">Show All Workouts</button>
-					
-				
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+						name="searchterm">Show All Workouts</button>
+
+
 				</form>
 				<form class="form-inline my-2 my-lg-0"
 					action="workoutsearchresults.do">
@@ -64,13 +62,17 @@
 
 
 	<main>
-		<div class="card mb-3" style="max-width: 30rem; text-align: center; margin:  auto;">
-			<img class="card-img-top go-hard" src="https://i1.sndcdn.com/avatars-000369555311-i351q4-t500x500.jpg" 
-			alt="Card image cap" style="max-height: 150px;">
+		<div class="card mb-3"
+			style="max-width: 30rem; text-align: center; margin: auto;">
+			<img class="card-img-top go-hard"
+				src="https://i1.sndcdn.com/avatars-000369555311-i351q4-t500x500.jpg"
+				alt="Card image cap" style="max-height: 150px;">
 			<div class="card-body">
-				<h5 class="card-title"><strong class="user">${sessionScope.user.firstName} ${sessionScope.user.lastName} Workouts</strong></h5>
-				<p class="card-text">
-				</p>
+				<h5 class="card-title">
+					<strong class="user">${sessionScope.user.firstName}
+						${sessionScope.user.lastName} Workouts</strong>
+				</h5>
+				<p class="card-text"></p>
 			</div>
 		</div>
 
@@ -78,6 +80,7 @@
 			<c:forEach var="myworkout" items="${sessionScope.user.workouts}">
 
 
+<<<<<<< HEAD
 				<div class="card" style="width: 23rem;">
 					<img class="card-img-top" src="${myworkout.activity.image}"
 						alt="Card image cap">
@@ -101,8 +104,76 @@
 
 						<a href="editworkout.do?wid=${myworkout.id}" class="btn btn-primary">Edit</a>
 						<a href="deleteworkout.do" class="btn btn-primary" >Delete</a>
+=======
+				<c:if test="${myworkout.active}">
+					<div class="card" style="width: 23rem;">
+						<img class="card-img-top" src="${myworkout.activity.image}"
+							alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">${myworkout.title}</h5>
+							<p class="card-text"></p>
+							<table>
+								<tr>
+									<td><strong>Host:</strong> ${myworkout.user.firstName} ${myworkout.user.lastName}</td>
+								</tr>
+								<tr>
+									<td><strong>Date:</strong> ${myworkout.workoutDate}</td>
+								</tr>
+								<tr>
+									<td><strong>Workout Name:</strong>
+										${myworkout.location.name}</td>
+								</tr>
+								<tr>
+									<td><strong>Description:</strong> ${myworkout.description}</td>
+								</tr>
+							</table>
+
+							<a href="#" class="btn btn-primary">Edit</a>
+							<form action="deleteworkout.do">
+								<input type='hidden' value=${myworkout.id } name='wid' />
+								<button type='submit' class="btn btn-primary">Delete</button>
+							</form>
+						</div>
 					</div>
-				</div>
+				</c:if>
+
+			</c:forEach>
+		</c:if>
+		<c:if test="${!empty sessionScope.user.guestWorkouts}">
+			<c:forEach var="myworkout" items="${sessionScope.user.guestWorkouts}">
+
+
+				<c:if test="${myworkout.active}">
+					<div class="card" style="width: 23rem;">
+						<img class="card-img-top" src="${myworkout.activity.image}"
+							alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">${myworkout.title}</h5>
+							<p class="card-text"></p>
+							<table>
+								<tr>
+									<td><strong>Host:</strong> ${myworkout.user.firstName} ${myworkout.user.lastName}</td>								
+								<tr>
+									<td><strong>Date:</strong> ${myworkout.workoutDate}</td>
+								</tr>
+								<tr>
+									<td><strong>Workout Name:</strong>
+										${myworkout.location.name}</td>
+								</tr>
+								<tr>
+									<td><strong>Description:</strong> ${myworkout.description}</td>
+								</tr>
+							</table>
+
+							<a href="#" class="btn btn-primary">Edit</a>
+							<form action="removeguestfromworkout">
+								<input type='hidden' value="${myworkout.id}" name='wid' />
+								<button type='submit' class="btn btn-primary">UnJoin</button>
+							</form>
+						</div>
+>>>>>>> 6f14891124c2f890bcc7d461d0741f13e29de695
+					</div>
+				</c:if>
 
 			</c:forEach>
 		</c:if>

@@ -43,6 +43,7 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 	@Override
 	public Workout CreateWorkOut(Workout workout) {
 
+		workout.setActive(true);
 		em.persist(workout);
 
 		em.flush();
@@ -60,6 +61,10 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 		workoutToChangeFromDB.setDescription(workout.getDescription());
 		workoutToChangeFromDB.setLocation(workout.getLocation());
 		workoutToChangeFromDB.setWorkoutDate(workout.getWorkoutDate());
+<<<<<<< HEAD
+=======
+		workoutToChangeFromDB.setActive(workout.getActive());
+>>>>>>> 6f14891124c2f890bcc7d461d0741f13e29de695
 
 		em.flush();
 

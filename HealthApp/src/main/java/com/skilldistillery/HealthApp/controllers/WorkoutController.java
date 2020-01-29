@@ -34,7 +34,6 @@ public class WorkoutController {
 		Workout workout = dao.findWorkoutById(id);
 		session.setAttribute("workout", workout);
 		return "singleworkoutdetails";
-		
 
 	}
 
@@ -51,9 +50,7 @@ public class WorkoutController {
 
 	@RequestMapping(path = "workoutlistallresults.do")
 	public String workoutListAllMapToButton(HttpSession session, User user, Workout workout, Activity activity) {
-//		if(workout == null) {
-//			return "error";
-//		}else {
+
 		List<Workout> workout1 = dao.findAll();
 		session.setAttribute("workout", workout1);
 		return "workoutshowallresult";
@@ -61,7 +58,8 @@ public class WorkoutController {
 
 	@RequestMapping(path = "newworkout.do")
 	public ModelAndView createNewWorkout(@RequestParam("workoutdate") String date,
-			@RequestParam("activityparam") String name, Workout workout, HttpSession session, ModelAndView mv, @RequestParam("locationid") Integer id) {
+			@RequestParam("activityparam") String name, Workout workout, HttpSession session, ModelAndView mv,
+			@RequestParam("locationid") Integer id) {
 		mv = new ModelAndView();
 		User user = (User) session.getAttribute("user");
 		Activity activity = dao2.findActivityByName(name);
@@ -77,7 +75,7 @@ public class WorkoutController {
 		mv.addObject("newworkout", newWorkout);
 
 		mv.setViewName("userhome");
-		
+
 		user.addWorkout(newWorkout);
 
 		return mv;
@@ -131,6 +129,7 @@ public class WorkoutController {
 
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping(path = "editworkout.do")
 	public String editWorkout(HttpSession session, @RequestParam("wid")Integer wid, Model model) {
 		Workout workout = dao.findWorkoutById(wid);
@@ -161,6 +160,33 @@ public class WorkoutController {
 		session.setAttribute("user", dao.findById(user.getId()));
 		
 		return"userhome";
+=======
+	@RequestMapping(path = "addguesttoworkout.do")
+	public String guestJoinWorkout( @RequestParam("workout")String id, HttpSession session) {
+		User user1 = (User) session.getAttribute("user");
+		Integer id1 = Integer.parseInt(id);
+		Workout workout = dao.findWorkoutById(id1);
+		workout = dao2.joinWorkout(user1, workout);
+//		model.addAttribute(user);
+		session.setAttribute("user", dao.findById(id1));
+		return "userhome";
+		
+
+	}
+	
+
+	@RequestMapping(path = "deleteworkout.do")
+	public ModelAndView deleteWorkout(int wid, ModelAndView mv, HttpSession session) {
+//		int id = workout.getId();
+		mv = new ModelAndView();
+		if (dao2.deleteWorkout(wid)) {
+			mv.setViewName("userhome");
+		}
+		session.setAttribute("user", dao.findById(((User)session.getAttribute("user")).getId()));
+
+		return mv;
+
+>>>>>>> 6f14891124c2f890bcc7d461d0741f13e29de695
 	}
 
 }

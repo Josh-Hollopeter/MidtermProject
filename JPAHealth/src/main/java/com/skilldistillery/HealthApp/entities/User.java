@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -40,7 +41,7 @@ public class User {
 	@Column(name="create_date")
 	private LocalDate createDate;
 	
-	@ManyToMany
+	@ManyToMany(cascade=CascadeType.PERSIST)
 	@JoinTable(name="user_workout",
 	joinColumns=@JoinColumn(name="user_id"),
 	inverseJoinColumns=@JoinColumn(name="workout_id"))
@@ -64,14 +65,33 @@ public class User {
 		
 		if(!workouts.contains(workout)) {
 			workouts.add(workout);
-			workout.addUser(this);
+			workout.setCreatorId(this);
 		}
 	}
 	
 	public void removeWorkout(Workout workout) {
 		if(workouts != null && workouts.contains(workout)) {
 			workouts.remove(workout);
-			workout.removeUser(this);
+			workout.setCreatorId(this);
+		}
+	}
+	
+	
+	public void addGuestWorkout(Workout workout) {
+		if (this.guestWorkouts == null) {
+			guestWorkouts = new ArrayList<>();
+		}
+		
+		if(!guestWorkouts.contains(workout)) {
+			guestWorkouts.add(workout);
+			workout.addGuest(this);
+		}
+	}
+	
+	public void removeGuestWorkout(Workout workout) {
+		if(workouts != null && workouts.contains(workout)) {
+			workouts.remove(workout);
+			workout.removeGuest(this);
 			
 		}
 	}
