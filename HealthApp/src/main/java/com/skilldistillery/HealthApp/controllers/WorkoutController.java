@@ -94,8 +94,24 @@ public class WorkoutController {
 		List<Location> locations = dao.allLocation();
 		model.addAttribute("locations", locations);
 
+
 		return "createworkout";
 
+	}
+	@RequestMapping(path = "updatelocation.do")
+	
+	public String updateLocation(int id, Model model, @RequestParam(name="woid") Integer woid) {
+		
+		Location newLocation;
+		newLocation = dao.findLocationById(id);
+		model.addAttribute("locationid", newLocation.getId());
+		model.addAttribute("location", newLocation);
+		List<Location> locations = dao.allLocation();
+		model.addAttribute("locations", locations);
+		model.addAttribute("workout", dao.findWorkoutById(woid));
+		
+		return "editworkout";
+		
 	}
 
 	@RequestMapping(path = "newLocation.do")
@@ -113,6 +129,38 @@ public class WorkoutController {
 
 		return mv;
 
+	}
+	
+	@RequestMapping(path = "editworkout.do")
+	public String editWorkout(HttpSession session, @RequestParam("wid")Integer wid, Model model) {
+		Workout workout = dao.findWorkoutById(wid);
+		List <Location> locations = dao.allLocation();
+		model.addAttribute("locations", locations);
+		model.addAttribute("workout", workout);
+		
+		return"editworkout";
+	}
+	@RequestMapping(path = "updateworkout.do")
+	public String updateWorkout(@RequestParam("workoutdate") String date,
+			@RequestParam("activityparam") String name, @RequestParam("workoutid") Integer wid, Workout workoutupdate, HttpSession session, Model model, @RequestParam("locationid") Integer id) {
+		User user = (User) session.getAttribute("user");
+		Workout workout = dao.findWorkoutById(wid);
+		System.err.println(workoutupdate.getTitle());
+		Activity activity = dao2.findActivityByName(name);
+		LocalDate ld = LocalDate.parse(date);
+		workoutupdate.setActivity(activity);
+		workoutupdate.setLocation(dao.findLocationById(id));
+		workoutupdate.setWorkoutDate(ld);
+		Workout newWorkout = dao.UpdateWorkOut(workoutupdate, workout.getId());
+
+		newWorkout.setActivity(activity);
+
+		model.addAttribute("newworkout", newWorkout);
+
+		
+		session.setAttribute("user", dao.findById(user.getId()));
+		
+		return"userhome";
 	}
 
 }

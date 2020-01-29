@@ -99,7 +99,7 @@
 
 						</table>
 
-						<a href="#" class="btn btn-primary">Edit</a>
+						<a href="editworkout.do?wid=${myworkout.id}" class="btn btn-primary">Edit</a>
 						<a href="deleteworkout.do" class="btn btn-primary" >Delete</a>
 					</div>
 				</div>
