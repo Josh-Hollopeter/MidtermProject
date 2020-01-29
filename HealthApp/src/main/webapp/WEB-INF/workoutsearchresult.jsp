@@ -72,7 +72,8 @@
 			<<div class="card-columns">
 				<!-- <section style="display: flex;flex-wrap: wrap;justify-content: space-evenly;"> -->
 					<c:forEach var="myworkout" items="${workouts}">
-						<div class="card" style="width: 18rem;">
+						<c:if test="${myworkout.active}">
+ 					<div class="card" style="width: 18rem;">
 							<img class="card-img-top" src="${myworkout.activity.image}"
 								alt="Card image cap">
 							<div class="card-body">
@@ -101,7 +102,8 @@
 							<input type="submit" value="Details" />
 						</form> --%>
 						</div>
-					</c:forEach>
+						</c:if>
+ 					</c:forEach>
 					</div>
 				<!-- </section> -->
 			</c:when>
