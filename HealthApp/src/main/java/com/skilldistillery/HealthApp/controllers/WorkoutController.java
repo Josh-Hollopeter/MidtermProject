@@ -186,5 +186,18 @@ public class WorkoutController {
 		return mv;
 
 	}
+	@RequestMapping(path = "removeguestfromworkout.do")
+	public String removeGuest(Integer wid, ModelAndView mv, HttpSession session, Model model) {
+//		int id = workout.getId();
+		User user = (User)session.getAttribute("user");
+		System.out.println(user);
+		dao.UpdateWorkOutGuests(wid, user);
+
+		session.setAttribute("user", dao.findById(((User)session.getAttribute("user")).getId()));
+		
+		return "userhome";
+		
+	}
+
 
 }

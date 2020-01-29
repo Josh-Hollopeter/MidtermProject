@@ -135,6 +135,7 @@
 								<input type='hidden' value=${myworkout.id } name='wid' />
 								<button type='submit' class="btn btn-primary">Delete</button>
 							</form>
+							<a href="deleteworkout.do?wid=${myworkout.id}" class="btn btn-primary">Mark as Complete</a>
 						</div>
 					</div>
 				</c:if>
@@ -167,10 +168,13 @@
 								</tr>
 							</table>
 
-							<a href="#" class="btn btn-primary">Edit</a>
-							<form action="removeguestfromworkout">
+							<form action="workoutbyid.do">
+								<input type='hidden' value=${myworkout.id } name='id' />
+								<button type='submit' class="btn btn-primary">Detail</button>
+								</form>
+							<form action="removeguestfromworkout.do">
 								<input type='hidden' value="${myworkout.id}" name='wid' />
-								<button type='submit' class="btn btn-primary">UnJoin</button>
+								<button type='submit' class="btn btn-primary">Cancel Invitation</button>
 							</form>
 						</div>
 					</div>

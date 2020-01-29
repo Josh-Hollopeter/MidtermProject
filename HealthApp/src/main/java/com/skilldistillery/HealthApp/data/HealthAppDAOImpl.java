@@ -61,7 +61,7 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 		workoutToChangeFromDB.setDescription(workout.getDescription());
 		workoutToChangeFromDB.setLocation(workout.getLocation());
 		workoutToChangeFromDB.setWorkoutDate(workout.getWorkoutDate());
-		workoutToChangeFromDB.setActive(workout.getActive());
+		
 
 		em.flush();
 
@@ -151,6 +151,14 @@ public class HealthAppDAOImpl implements HealthAppDAO {
 		em.persist(location);
 		em.flush();
 		return location;
+	}
+	@Override
+	public boolean UpdateWorkOutGuests(Integer id, User user) {
+		User manageUser= em.find(User.class, user.getId());
+		Workout manageWork = em.find(Workout.class, id);
+		manageUser.removeGuestWorkout(manageWork);
+		
+		return true;
 	}
 
 }

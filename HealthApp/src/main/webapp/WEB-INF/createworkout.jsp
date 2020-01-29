@@ -11,8 +11,8 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 <link rel="stylesheet" href="newWorkout.css">
 <meta charset="UTF-8">
 <title>Create Your Work Out</title>
@@ -68,15 +68,15 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		</nav>
 	</header>
 
-	<main class="bg-info">
+	<main >
 		<section id="cover" class="min-vh-100">
 			<div id="cover-caption">
 				<div class="container">
 					<div class="row text-white">
 						<div
 							class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
-							<h1 class="display-4 py-2 text-truncate">Account Info</h1>
-							<div class="px-2"> -->
+<!-- 							<h1 class="display-4 py-2 text-truncate">Account Info</h1>
+ -->							<div class="px-2"> 
 
 
 
@@ -88,7 +88,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 									Location:
 									<p>${location}</p>
 
-									<button id="myBtn" data-toggle="modal" data-target="#myModal1">pick
+									<button id="myBtn" data-toggle="modal" data-target="#myModal1">Pick
 										a Location</button>
 
 									<!-- The Modal -->
@@ -100,14 +100,14 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 										<div class="modal-header">
 										</div>
 										<div class="modal-body">
-											<span class="close">&times;</span>
+											<span class="close" data-dismiss="modal"> &times; </span>
 
 											<c:forEach var="l" items="${locations}">
 												<a href="locationchoice.do?id=${ l.id}">${l.name} </a>
 												<br>
-
 											</c:forEach>
-											</div>
+<!-- 					different impl for  close button							<button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
+ -->											</div>
 											</div>
 										</div>
 									</div>
@@ -153,7 +153,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 											<form action="newLocation.do">
 
 
-												<span class="close">&times;</span> Name: <input name="name"
+												<span class="close" data-dismiss="modal">&times;</span> Name: <input name="name"
 													type="text" placeholder="Your wonderfull workout"
 													name="street"><br> Street: <input type="text"
 													placeholder="123 abc street" name="street"><br>
@@ -242,13 +242,12 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 			$('[data-toggle="popover"]').popover();
 		});
 	</script>
+	<script>   $('#submit').click( function () {
+$('#myModal').modal('hide');     }); </script>
 </body>
 
 
 </html>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 
