@@ -9,26 +9,28 @@
 </head>
 <body>
 <c:choose>
-		<c:when test="${! empty sessionScope.workout}">
+		<c:when test="${! empty workout}">
+				<img class="card-img-top"
+					src="${workout.user.photo}"
+					alt="Card image cap">
 			<ul>
-				<li>ID: ${workout.id}</li>
+				<li>Host: ${workout.user.firstName} ${workout.user.lastName}</li>
 				<li>Title: ${workout.title}</li>
-				
-				
-				<%-- <li>Name: ${workout.calories}</li>
-				<li>Grams: ${veg.grams}</li>
-				<li>Fat: ${veg.fat}</li>
-				<li>Protein: ${veg.protein}</li>
-				<li>Carbs: ${veg.carbs}</li>
-				<li>Fiber: ${veg.fiber}</li>
-				<li>Type: ${veg.type}</li> --%>
 			</ul>
+				Attendees: <c:forEach var = "workoutusers" items = "${workout.users}"><ul><li>${workoutusers.firstName} ${workoutusers.lastName}</li></ul></c:forEach>
+	
+			
+			
 		</c:when>
 	<c:otherwise>
 		<p>No Workout Found</p>
 	</c:otherwise>
 	</c:choose>
 	<c:if test="${! empty workout}">
+	<form action="addguesttoworkout.do">
+		<input type="hidden" name="workout" value="${workout.id}" /> 
+		<input type="submit" name="Join" value="Join" />
+	</form>
 	<form action="edit.do" method="POST">
 		<input type="hidden" name="vid" value="${workout.id}" /> 
 		<input type="submit" name="Edit" value="Edit" />
