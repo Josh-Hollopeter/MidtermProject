@@ -32,5 +32,8 @@ public interface HealthAppDAO {
 	public Location findLocationById(int id);
 
 	public Location addLocation(Location location);
+
+
+	boolean UpdateWorkOutGuests(Integer workoutId, User user);
 	
 }

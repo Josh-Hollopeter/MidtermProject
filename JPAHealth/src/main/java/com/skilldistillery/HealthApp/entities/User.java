@@ -41,7 +41,7 @@ public class User {
 	@Column(name="create_date")
 	private LocalDate createDate;
 	
-	@ManyToMany(cascade=CascadeType.PERSIST)
+	@ManyToMany
 	@JoinTable(name="user_workout",
 	joinColumns=@JoinColumn(name="user_id"),
 	inverseJoinColumns=@JoinColumn(name="workout_id"))
@@ -89,8 +89,8 @@ public class User {
 	}
 	
 	public void removeGuestWorkout(Workout workout) {
-		if(workouts != null && workouts.contains(workout)) {
-			workouts.remove(workout);
+		if(guestWorkouts != null && guestWorkouts.contains(workout)) {
+			guestWorkouts.remove(workout);
 			workout.removeGuest(this);
 			
 		}

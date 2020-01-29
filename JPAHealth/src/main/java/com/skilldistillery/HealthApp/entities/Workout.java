@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -54,7 +55,7 @@ public class Workout {
 	@JoinColumn(name = "location_id")
 	private Location location;
 
-	@ManyToMany(mappedBy="guestWorkouts", cascade=CascadeType.PERSIST)
+	@ManyToMany(mappedBy="guestWorkouts")
 	private List<User> users;
 	
 //METHOD
@@ -64,7 +65,7 @@ public class Workout {
 //		return "WORKOUT" + Id;
 		return "Workout [Id=" + Id + ", activity=" + activity + ", workoutDate=" + workoutDate
 				+ ", title=" + title + ", description=" + description + ", postdate=" + postdate + ", active=" + active
-				+ ", location=" + location + "]";
+				+ ", location=" + location + "user: " + this.users +"]";
 	}
 
 	
@@ -82,7 +83,7 @@ public class Workout {
 	public void removeGuest(User user) {
 		if(users != null && users.contains(user)) {
 			users.remove(user);
-			user.removeWorkout(this);
+			user.removeGuestWorkout(this);
 			
 		}
 	}

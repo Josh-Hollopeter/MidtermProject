@@ -80,7 +80,7 @@
 			<c:forEach var="myworkout" items="${sessionScope.user.workouts}">
 
 
-				<div class="card" style="width: 23rem;">
+				<%-- <div class="card" style="width: 23rem;">
 					<img class="card-img-top" src="${myworkout.activity.image}"
 						alt="Card image cap">
 					<div class="card-body">
@@ -102,7 +102,7 @@
 						</table>
 
 						<a href="editworkout.do?wid=${myworkout.id}" class="btn btn-primary">Edit</a>
-						<a href="deleteworkout.do" class="btn btn-primary" >Delete</a>
+						<a href="deleteworkout.do" class="btn btn-primary" >Delete</a> --%>
 				<c:if test="${myworkout.active}">
 					<div class="card" style="width: 23rem;">
 						<img class="card-img-top" src="${myworkout.activity.image}"
@@ -126,11 +126,16 @@
 								</tr>
 							</table>
 
-							<a href="#" class="btn btn-primary">Edit</a>
+							<a href="editworkout.do?wid=${myworkout.id}" class="btn btn-primary">Edit</a>
+								<form action="workoutbyid.do">
+								<input type='hidden' value=${myworkout.id } name='id' />
+								<button type='submit' class="btn btn-primary">Detail</button>
+								</form>
 							<form action="deleteworkout.do">
 								<input type='hidden' value=${myworkout.id } name='wid' />
 								<button type='submit' class="btn btn-primary">Delete</button>
 							</form>
+							<a href="deleteworkout.do?wid=${myworkout.id}" class="btn btn-primary">Mark as Complete</a>
 						</div>
 					</div>
 				</c:if>
@@ -163,10 +168,13 @@
 								</tr>
 							</table>
 
-							<a href="#" class="btn btn-primary">Edit</a>
-							<form action="removeguestfromworkout">
+							<form action="workoutbyid.do">
+								<input type='hidden' value=${myworkout.id } name='id' />
+								<button type='submit' class="btn btn-primary">Detail</button>
+								</form>
+							<form action="removeguestfromworkout.do">
 								<input type='hidden' value="${myworkout.id}" name='wid' />
-								<button type='submit' class="btn btn-primary">UnJoin</button>
+								<button type='submit' class="btn btn-primary">Cancel Invitation</button>
 							</form>
 						</div>
 					</div>
