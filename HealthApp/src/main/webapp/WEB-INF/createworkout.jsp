@@ -90,9 +90,12 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 									
 									<p>Location: ${location.name}</p>
-
-									Pick a Location: <input id="myBtn"  data-toggle="modal" data-target="#myModal1" value ="${location.name}"required>
-
+													
+								
+								
+								
+									Pick a Location: <input id="myBtn"  data-toggle="modal" data-target="#myModal1" value ="${location.name}" required/>
+															
 									<!-- The Modal -->
 									<div id="myModal1" class="modal">
 
@@ -105,8 +108,9 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 											<span class="close" data-dismiss="modal"> &times; </span>
 
 											<c:forEach var="l" items="${locations}">
-												<a href="locationchoice.do?id=${ l.id}">${l.name} </a>
 											
+												<a href="locationchoice.do?id=${ l.id}">${l.name} </a>
+												
 												<br>
 											</c:forEach>
 <!-- 					different impl for  close button							<button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
@@ -120,11 +124,11 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 										<br>
 										<div class ="input-form">
 											Title: <input name="title" type="text"> <input
-												type="hidden" value="${location.id}" name="locationid" required><br><br>
+												type="hidden" value="${location.id}" name="locationid" required/><br><br>
 
 										    Description: <input
 															type="text" name="description"
-															placeholder="describe your activity" required><br><br>
+															placeholder="describe your activity" required/><br><br>
 															
 											Activity: <select name="activityparam" required>
 												<option value="Boxing">Boxing</option>
@@ -142,8 +146,11 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 															path="workout date" required><br>
 															
 										</div>
-
-										<br><input type="submit" value="Submit">
+										<br>
+										<div class ="bg-danger text-white" >
+											<c:if test="${empty location }"> Must Select A Location</c:if>
+											</div>
+										<c:if test="${!empty location }"><input type="submit" value="Submit"></c:if>
 									</form>
 									<br> <br>
 									<button id="myBtn" data-toggle="modal" data-target="#myModal">Add
@@ -216,7 +223,9 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 													<option value="MH">DC</option>
 
 												</select> Zip: <input type="number" placeholder="80121" name="zip"><br>
+												
 												<input type="submit" value="Submit">
+												
 
 											</form>
 											</div>
