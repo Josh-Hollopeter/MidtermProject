@@ -144,7 +144,7 @@
 		<div class="card mb-3"
 			style="max-width: 30rem; text-align: center; margin: auto;">
 			<img class="card-img-top go-hard"
-				src="https://i1.sndcdn.com/avatars-000369555311-i351q4-t500x500.jpg"
+				src="https://i.pinimg.com/originals/ca/13/d7/ca13d709f44fb8937dc5cc86c2d3f0f3.jpg"
 				alt="Card image cap" style="max-height: 150px;">
 			<div class="card-body">
 				<h5 class="card-title">
