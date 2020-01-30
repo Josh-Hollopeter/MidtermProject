@@ -15,7 +15,7 @@
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Health Together</a>
+			<a class="navbar-brand" href="index.do">Health Together</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -26,27 +26,21 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
-						href="index.do">Home <span class="sr-only">(current)</span></a></li>
+						href="userhome.do"> ${sessionScope.user.firstName}'s Profile<span class="sr-only"></span></a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="createupdateuser.do">Update Account</a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="createworkout.do"> Create Workout </a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
+						href="finishedworkout.do"> Workout History </a></li>
+					<li class="nav-item dropdown"><a class="nav-link"
 						href="logout.do"> Logout </a></li>
 
- <!-- kai added -->
-				</ul>
-					<form class="form-inline my-2 my-lg-0"
-					action="finishedworkout.do">
-					
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
-						name="searchterm">Show Completed Workout</button>
- <!-- kai added -->
 
-				</form>
+				</ul>
+					
 				<form class="form-inline my-2 my-lg-0"
 					action="workoutsearchresults.do">
-			
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
 						name="searchterm">Show All Workouts</button>
 
@@ -86,36 +80,12 @@
 		<div class="card-columns">
 			<c:forEach var="myworkout" items="${sessionScope.user.workouts}">
 
-<<<<<<< HEAD
+
 			<c:if test="${myworkout.active}">
-=======
 
-				<%-- <div class="card" style="width: 23rem;">
-					<img class="card-img-top" src="${myworkout.activity.image}"
-						alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">${myworkout.title}</h5>
-						<p class="card-text">
-						<table>
-
-							<tr>
-								<td><strong>Date:</strong> ${myworkout.workoutDate}</td>
-							</tr>
-							<tr>
-								<td><strong>Workout Name:</strong>
-									${myworkout.location.name}</td>
-							</tr>
-							<tr>
-								<td><strong>Description:</strong> ${myworkout.description}</td>
-							</tr>
-
-						</table>
-
-						<a href="editworkout.do?wid=${myworkout.id}" class="btn btn-primary">Edit</a>
-						<a href="deleteworkout.do" class="btn btn-primary" >Delete</a> --%>
 				<c:if test="${myworkout.active}">
 					<c:if test="${myworkout.title ne 'D0NTEVER$HOW' }">
->>>>>>> 884ff61675bd5f847e73c848468f89a9df5da28d
+
 					<div class="card" style="width: 23rem;">
 						<img class="card-img-top" src="${myworkout.activity.image}"
 							alt="Card image cap">
@@ -147,7 +117,7 @@
 								<input type='hidden' value=${myworkout.id } name='wid' />
 								<button type='submit' class="btn btn-primary">Delete</button>
 							</form>
-							<a href="deleteworkout.do?wid=${myworkout.id}" class="btn btn-primary">Mark as Complete</a>
+							<a href="deleteworkout.do?wid=${myworkout.id}" class="btn btn-primary">Completed</a>
 						</div>
 					</div>
 			</c:if>

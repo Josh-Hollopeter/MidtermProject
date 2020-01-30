@@ -49,6 +49,14 @@ footer {
 	text-align: center;
 }
 
+.card-body form {
+	display: inline;
+}
+
+.card-body a {
+	display: inline;
+}
+
 /* .container-fluid h3 {
 	color: white;
 	background-color: darkolivegreen;

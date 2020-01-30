@@ -14,13 +14,13 @@
 integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 <link rel="stylesheet" href="newWorkout.css">
 <meta charset="UTF-8">
-<title>Create Your Work Out</title>
+<title>Create A Workout</title>
 </head>
 
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Health Together</a>
+			<a class="navbar-brand" href="index.do">Health Together</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -31,14 +31,13 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
-						href="index.do">Home <span class="sr-only">(current)</span></a></li>
+						href="userhome.do"> ${sessionScope.user.firstName}'s Profile<span class="sr-only"></span></a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="createupdateuser.do">Update Account</a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="createworkout.do"> Create Workout </a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
-						href="workoutlistallresults.do"> Available Workouts </a></li>
-
+						href="workoutlistallresults.do">Workout History</a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="logout.do"> Logout </a></li>
 
@@ -79,13 +78,14 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 
 
-								<div class="form-group">
+								<div class="form-group" >
 								
 
-									<h2>Create Your Own Work out Connect to the community</h2>
+									<h2>Create A Workout</h2>
+									<h3>Connect to the community</h3>
 
-									Location:
-									<p>${location}</p>
+									
+									<p>Location: ${location.name}</p>
 
 									<button id="myBtn" data-toggle="modal" data-target="#myModal1">Pick
 										a Location</button>
@@ -114,10 +114,14 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 									<form action="newworkout.do">
 										<br>
-										<div>
+										<div class ="input-form">
 											Title: <input name="title" type="text"> <input
-												type="hidden" value="${location.id}" name="locationid">
+												type="hidden" value="${location.id}" name="locationid"><br><br>
 
+										    Description: <input
+															type="text" name="description"
+															placeholder="describe your activity"><br><br>
+															
 											Activity: <select name="activityparam">
 												<option value="Boxing">Boxing</option>
 												<option value="Yoga">Yoga</option>
@@ -128,17 +132,14 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 												<option value="Ice Skating">Ice Skating</option>
 												<option value="Tai Chi">Tai Chi</option>
 												<option value="Running">Running</option>
-
-
-											</select> <br> Date: <input name="workoutdate" type="date"
-												path="workout date"><br> Description: <input
-												type="text" name="description"
-												placeholder="describe your activity"
-												class="form-control input-lg" id="inputlg">
-
+											</select><br><br>
+											
+											Date: <input name="workoutdate" type="date"
+															path="workout date"><br>
+															
 										</div>
 
-										<input type="submit" value="Submit">
+										<br><input type="submit" value="Submit">
 									</form>
 									<br> <br>
 									<button id="myBtn" data-toggle="modal" data-target="#myModal">Add
