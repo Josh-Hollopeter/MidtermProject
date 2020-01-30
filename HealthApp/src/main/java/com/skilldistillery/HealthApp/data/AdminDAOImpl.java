@@ -119,6 +119,7 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public Workout deleteWorkout2(int id) {
 		Workout workout = em.find(Workout.class, id);
+		workout.setActive(false);
 		workout.setTitle("D0NTEVER$HOW");
 
 		return workout;
