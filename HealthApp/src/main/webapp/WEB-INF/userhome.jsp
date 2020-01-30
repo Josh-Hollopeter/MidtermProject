@@ -35,7 +35,7 @@
 						href="createworkout.do"> Create Workout </a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="finishedworkout.do">Workout History</a></li>
-				<c:if test="${! empty sessionScope.user.firstName}">
+				<c:if test="${! empty sessionScope.user}">
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="logout.do"> Logout </a></li>
 				</c:if>
