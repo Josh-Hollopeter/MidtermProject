@@ -67,6 +67,9 @@
 
 
 	<main>
+	
+
+		<c:if test="${!empty activeWorkout}">
 		<div class="card mb-3"
 			style="max-width: 30rem; text-align: center; margin: auto;">
 			<img class="card-img-top go-hard"
@@ -80,10 +83,10 @@
 				<p class="card-text"></p>
 			</div>
 		</div>
-	
-
-		<c:if test="${!empty sessionScope.user.workouts}">
+		
+		</c:if>
 		<div class="card-columns">
+		<c:if test="${!empty sessionScope.user.workouts}">
 			<c:forEach var="myworkout" items="${sessionScope.user.workouts}">
 
 
@@ -126,6 +129,7 @@
 							<a href="deleteworkout.do?wid=${myworkout.id}" class="btn btn-primary">Completed</a>
 						</div>
 					</div>
+					
 			</c:if>
 
 
@@ -133,10 +137,10 @@
 </c:if>
 
 			</c:forEach>
+			</c:if>
 			</div>
-		</c:if>
 		
-		<c:if test="${!empty sessionScope.user.guestWorkouts}">
+		<c:if test="${!empty activeGuestWorkout}">
 		<div class="card mb-3"
 			style="max-width: 30rem; text-align: center; margin: auto;">
 			<img class="card-img-top go-hard"
@@ -150,7 +154,8 @@
 				<p class="card-text"></p>
 			</div>
 		</div>
-		
+			</c:if>
+				<c:if test="${!empty sessionScope.user.guestWorkouts}">
 			<div class="card-columns">
 		
 			<c:forEach var="myworkout" items="${sessionScope.user.guestWorkouts}">
@@ -192,10 +197,11 @@
 							</div>
 						</div>
 					</c:if>
-				</c:if>
+			
+		</c:if>
 			</c:forEach>
 			</div>
-		</c:if>
+			</c:if>
 	</main>
 	<footer> </footer>
 
