@@ -78,7 +78,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 
 
-								<div class="form-group" >
+								<div class="input-form" >
 								
 
 									<h2>Create A Workout</h2>
@@ -87,8 +87,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 									
 									<p>Location: ${location.name}</p>
 
-									<button id="myBtn" data-toggle="modal" data-target="#myModal1">Pick
-										a Location</button>
+									Pick a Location: <input id="myBtn"  data-toggle="modal" data-target="#myModal1" value ="${location.name}"required>
 
 									<!-- The Modal -->
 									<div id="myModal1" class="modal">
@@ -103,6 +102,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 											<c:forEach var="l" items="${locations}">
 												<a href="locationchoice.do?id=${ l.id}">${l.name} </a>
+											
 												<br>
 											</c:forEach>
 <!-- 					different impl for  close button							<button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
@@ -116,13 +116,13 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 										<br>
 										<div class ="input-form">
 											Title: <input name="title" type="text"> <input
-												type="hidden" value="${location.id}" name="locationid"><br><br>
+												type="hidden" value="${location.id}" name="locationid" required><br><br>
 
 										    Description: <input
 															type="text" name="description"
-															placeholder="describe your activity"><br><br>
+															placeholder="describe your activity" required><br><br>
 															
-											Activity: <select name="activityparam">
+											Activity: <select name="activityparam" required>
 												<option value="Boxing">Boxing</option>
 												<option value="Yoga">Yoga</option>
 												<option value="Weight Lifting">Weight Lifting</option>
@@ -135,7 +135,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 											</select><br><br>
 											
 											Date: <input name="workoutdate" type="date"
-															path="workout date"><br>
+															path="workout date" required><br>
 															
 										</div>
 
@@ -150,6 +150,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 										<!-- Modal content -->
 										<div class="modal-content">
+										<div class ="input-form">
 											<form action="newLocation.do">
 
 
@@ -214,8 +215,9 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 												<input type="submit" value="Submit">
 
 											</form>
+											</div>
 										</div>
-										<div class="form-group"></div>
+									<!-- 	<div class="form-group"></div> -->
 
 
 									</div>
