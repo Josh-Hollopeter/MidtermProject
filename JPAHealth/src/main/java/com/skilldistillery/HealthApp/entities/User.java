@@ -4,9 +4,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,13 +41,13 @@ public class User {
 	@Column(name="create_date")
 	private LocalDate createDate;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER )
 	@JoinTable(name="user_workout",
 	joinColumns=@JoinColumn(name="user_id"),
 	inverseJoinColumns=@JoinColumn(name="workout_id"))
 	private List<Workout> guestWorkouts;
 	
-	@OneToMany(mappedBy="user")
+	@OneToMany(mappedBy="user", fetch = FetchType.EAGER )
 	private List<Workout> workouts;
 	
 	

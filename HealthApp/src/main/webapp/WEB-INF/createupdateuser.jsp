@@ -28,8 +28,10 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
+				<c:if test="${! empty sessionScope.user.firstName}">
 					<li class="nav-item active"><a class="nav-link"
 						href="userhome.do"> ${sessionScope.user.firstName}'s Profile<span class="sr-only"></span></a></li>
+				</c:if>
 					<li class="nav-item"><a class="nav-link"
 						href="createupdateuser.do">Update Account</a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
