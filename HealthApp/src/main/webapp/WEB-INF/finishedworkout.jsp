@@ -108,6 +108,10 @@
 										<td><strong>Description:</strong>
 											${myworkout.description}</td>
 									</tr>
+									<tr>
+										<td class="text-success"><strong>Completed Workout! (Hosted)</strong>
+											</td>
+									</tr>
 								</table>
 
 							
@@ -152,6 +156,10 @@
 									<tr>
 										<td><strong>Description:</strong>
 											${myworkout.description}</td>
+									</tr>
+									<tr>
+										<td class="text-success"><strong>Completed Workout! (Guest)</strong>
+											</td>
 									</tr>
 								</table>
 
