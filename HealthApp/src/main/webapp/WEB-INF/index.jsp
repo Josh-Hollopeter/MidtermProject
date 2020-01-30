@@ -19,7 +19,7 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light"
 			style="display: flex; justify-content: space-between">
-			<a class="navbar-brand" href="#">Health Together</a>
+			<a class="navbar-brand" href="index.do">Health Together</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -29,6 +29,7 @@
 
 			<div class="form-group justify-content-center" id="log"
 				style="margin: inherit;">
+				<c:if test="${!empty error }"><p>${error}</p></c:if>
 				<form:form action="login.do" modelAttribute="user"
 					class="justify-content-center">
 					<c:if

@@ -16,6 +16,7 @@ import com.skilldistillery.HealthApp.data.AdminDAO;
 import com.skilldistillery.HealthApp.data.HealthAppDAO;
 import com.skilldistillery.HealthApp.entities.Location;
 import com.skilldistillery.HealthApp.entities.User;
+import com.skilldistillery.HealthApp.entities.Workout;
 
 @Controller
 public class UserController {
@@ -27,7 +28,10 @@ public class UserController {
 
 	@RequestMapping(path = { "/", "index.do" })
 	public String home(Model model, HttpSession session, User user) {
-
+//		if(
+//		model.getAttribute("error")!=null) {
+//			model.addAttribute("error", "No user Found");
+//		}
 		return "index";
 	}
 
@@ -37,7 +41,7 @@ public class UserController {
 
 		if (user == null || !user.getActive() || user.getId() == 0) {
 			model.addAttribute("error", "No user Found");
-			return "redirect:index.do";
+			return "index";
 		} else {
 			session.setAttribute("user", user);
 		}
@@ -62,7 +66,7 @@ public class UserController {
 		LocalDate uDate = LocalDate.parse(date1);
 		user.setBirthDate(uDate);
 		User user1 = (User) session.getAttribute("user");
-		
+
 		if (user1 == null || user1.getId() == 0) {
 			userdao.createUser(user);
 			session.setAttribute("user", user);
@@ -75,10 +79,12 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "createworkout.do")
-		public String createWorkoutMapToButton( HttpSession session, User user, Model model) {
+
+		public String createWorkoutMapToButton( HttpSession session, User user, Model model, Workout workout) {
 		User user1 = (User)session.getAttribute("user");
 		List<Location> locations = dao.allLocation();
 		model.addAttribute("locations", locations);
+		
 		if(user1 == null ||user1.getId() == 0) {
 
 			return "redirect:createupdateuser.do";
@@ -87,7 +93,6 @@ public class UserController {
 		}
 
 	}
-
 
 	@RequestMapping(path = "logout.do")
 	public String logout(HttpSession session, User user, Model model) {
@@ -107,4 +112,3 @@ public class UserController {
 
 	}
 }
-
