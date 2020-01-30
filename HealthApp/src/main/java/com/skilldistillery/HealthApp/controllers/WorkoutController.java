@@ -64,6 +64,13 @@ public class WorkoutController {
 		User user = (User) session.getAttribute("user");
 		Activity activity = dao2.findActivityByName(name);
 		LocalDate ld = LocalDate.parse(date);
+		if(LocalDate.now().isAfter(ld)) {
+			mv.addObject("error", "Please enter a valid date");
+			mv.setViewName("createworkout");
+			List<Location>locations = dao.allLocation();
+			mv.addObject("locations", locations);
+			return mv;
+		}
 		workout.setActivity(activity);
 		workout.setLocation(dao.findLocationById(id));
 		workout.setCreatorId(user);

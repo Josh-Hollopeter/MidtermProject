@@ -16,6 +16,7 @@ import com.skilldistillery.HealthApp.data.AdminDAO;
 import com.skilldistillery.HealthApp.data.HealthAppDAO;
 import com.skilldistillery.HealthApp.entities.Location;
 import com.skilldistillery.HealthApp.entities.User;
+import com.skilldistillery.HealthApp.entities.Workout;
 
 @Controller
 public class UserController {
@@ -75,12 +76,12 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "createworkout.do")
-		public String createWorkoutMapToButton( HttpSession session, User user, Model model) {
+		public String createWorkoutMapToButton( HttpSession session, User user, Model model, Workout workout) {
 		User user1 = (User)session.getAttribute("user");
 		List<Location> locations = dao.allLocation();
 		model.addAttribute("locations", locations);
+		
 		if(user1 == null ||user1.getId() == 0) {
-
 			return "redirect:createupdateuser.do";
 		} else {
 			return "createworkout";
