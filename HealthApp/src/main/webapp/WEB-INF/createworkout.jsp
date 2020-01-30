@@ -37,7 +37,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="createworkout.do"> Create Workout </a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
-						href="workoutlistallresults.do">Workout History</a></li>
+						href="finishedworkout.do">Workout History</a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="logout.do"> Logout </a></li>
 
