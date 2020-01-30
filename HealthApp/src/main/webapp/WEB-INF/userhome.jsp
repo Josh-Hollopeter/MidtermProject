@@ -38,7 +38,13 @@
 
 
 				</ul>
-					
+
+				<c:if test="${sessionScope.user.id==1}">
+					<form class="form-inline my-2 my-lg-0" action="admin.do">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+							name="searchterm">Admin Function</button>
+					</form>
+				</c:if>
 				<form class="form-inline my-2 my-lg-0"
 					action="workoutsearchresults.do">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"

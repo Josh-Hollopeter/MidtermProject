@@ -1,5 +1,7 @@
 package com.skilldistillery.HealthApp.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -121,6 +123,26 @@ public class AdminDAOImpl implements AdminDAO {
 		workout.setTitle("D0NTEVER$HOW");
 
 		return workout;
+	}
+
+	@Override
+	public List<User> showAllUser() {
+		List<User> allUser;
+		String query = "Select u from User";
+		allUser = em.createQuery(query, User.class).getResultList();
+		
+		System.out.println("********"+allUser.size());
+
+		return allUser;
+	}
+
+	@Override
+	public boolean retrieveUser(Integer id) {
+		User user;
+		user = em.find(User.class, id);
+		user.setActive(true);
+		boolean status = user.getActive();
+		return status;	
 	}
 
 }

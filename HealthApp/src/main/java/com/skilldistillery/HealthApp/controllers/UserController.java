@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.HealthApp.data.AdminDAO;
 import com.skilldistillery.HealthApp.data.HealthAppDAO;
@@ -28,7 +29,10 @@ public class UserController {
 
 	@RequestMapping(path = { "/", "index.do" })
 	public String home(Model model, HttpSession session, User user) {
-
+//		if(
+//		model.getAttribute("error")!=null) {
+//			model.addAttribute("error", "No user Found");
+//		}
 		return "index";
 	}
 
@@ -38,7 +42,7 @@ public class UserController {
 
 		if (user == null || !user.getActive() || user.getId() == 0) {
 			model.addAttribute("error", "No user Found");
-			return "redirect:index.do";
+			return "index";
 		} else {
 			session.setAttribute("user", user);
 		}
@@ -76,12 +80,14 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "createworkout.do")
+
 	public String createWorkoutMapToButton(HttpSession session, User user, Model model, Workout workout) {
 		User user1 = (User) session.getAttribute("user");
 		List<Location> locations = dao.allLocation();
 		model.addAttribute("locations", locations);
 
 		if (user1 == null || user1.getId() == 0) {
+
 			return "redirect:createupdateuser.do";
 		} else {
 			return "createworkout";
@@ -135,4 +141,32 @@ public class UserController {
 		}
 
 	}
+
+
+	@RequestMapping(path = "admin.do")
+	public String admin(HttpSession session, Model model) {
+		List<User> allUser = dao.findAllUser();
+		model.addAttribute("allUser", allUser);
+
+		return "admin";
+
+	}
+	
+	@RequestMapping(path="deleteuser.do")
+	public  ModelAndView deleteUser(Integer userid,HttpSession session, ModelAndView mv) {
+		
+		userdao.deletedUser(userid);
+		mv.setViewName("redirect:admin.do");
+		return mv;
+	}
+	@RequestMapping(path="retriveuser.do")
+	public  ModelAndView retriveUser(Integer userid,HttpSession session, ModelAndView mv) {
+		userdao.retrieveUser(userid);
+		mv.setViewName("redirect:admin.do");
+		return mv;
+		
+		
+	}
+
+
 }
