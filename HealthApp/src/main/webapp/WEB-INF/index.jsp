@@ -29,6 +29,7 @@
 
 			<div class="form-group justify-content-center" id="log"
 				style="margin: inherit;">
+				<c:if test="${!empty error }"><p>${error}</p></c:if>
 				<form:form action="login.do" modelAttribute="user"
 					class="justify-content-center">
 					<c:if
