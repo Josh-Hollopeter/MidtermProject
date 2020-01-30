@@ -17,7 +17,7 @@
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Health Together</a>
+			<a class="navbar-brand" href="index.do">Health Together</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -28,23 +28,17 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
-						href="index.do">Home <span class="sr-only">(current)</span></a></li>
+						href="userhome.do"> ${sessionScope.user.firstName}'s Profile<span class="sr-only"></span></a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="createupdateuser.do">Update Account</a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="createworkout.do"> Create Workout </a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
+						href="finishedworkout.do"> Workout History</a></li>
+					<li class="nav-item dropdown"><a class="nav-link"
 						href="logout.do"> Logout </a></li>
 				</ul>
-				<%-- <form class="form-inline my-2 my-lg-0" action ="workoutsearchresults.do">
-					<input class="form-control mr-sm-2" type="search"
-						placeholder="Search Workout" aria-label="Search" name="searchterm">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-					
-				</form> --%>
-				<!-- 
-					<a href="workoutlistallresults.do"><input type="button" value="Show All Workouts"
-					class="btn-success"></a> -->
+				
 					<a href="userhome.do"><input type="button" value="${sessionScope.user.firstName}'s Profile"
 					class="btn-success"></a>
 			</div>
@@ -67,7 +61,6 @@
 		<c:choose>
 			<c:when test="${!empty workouts}">
 			<<div class="card-columns">
-				<!-- <section style="display: flex;flex-wrap: wrap;justify-content: space-evenly;"> -->
 					<c:forEach var="myworkout" items="${workouts}">
 						<c:if test="${myworkout.active}">
 						<c:if test="${myworkout.title ne 'D0NTEVER$HOW' }">
@@ -96,15 +89,11 @@
 								</table>
 								<a href="workoutbyid.do?id=${myworkout.id}">Details</a>
 							</div>
-							<%-- <form action="workoutbyid.do?id=${myworkout.id}" >
-							<input type="submit" value="Details" />
-						</form> --%>
 						</div>
 						</c:if>
 						</c:if>
  					</c:forEach>
 					</div>
-				<!-- </section> -->
 			</c:when>
 			<c:otherwise>
 				<p>No Workout Found</p>

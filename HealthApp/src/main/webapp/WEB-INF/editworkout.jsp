@@ -18,7 +18,7 @@
 <body>
 <header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Health Together</a>
+			<a class="navbar-brand" href="index.do">Health Together</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -29,14 +29,13 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
-						href="index.do">Home <span class="sr-only">(current)</span></a></li>
+						href="userhome.do"> ${sessionScope.user.firstName}'s Profile<span class="sr-only"></span></a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="createupdateuser.do">Update Account</a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="createworkout.do"> Create Workout </a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
-						href="workoutlistallresults.do"> Available Workouts </a></li>
-
+						href="finishedworkout.do">Workout History</a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="logout.do"> Logout </a></li>
 
@@ -44,8 +43,7 @@
 				</ul>
 				<form class="form-inline my-2 my-lg-0"
 					action="workoutsearchresults.do">
-					<!-- <input class="" type="search"
-						aria-label="Search" name="searchterm"> -->
+					
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
 						name="searchterm">Show All Workouts</button>
 
@@ -82,12 +80,14 @@
 
 
 		
-		Current Location: 	
-		<c:if test="${!empty location }"> <p>${location}</p> </c:if>
-		<br>
-		Orginal Location: <p> ${workout.location} </p>
+		 	
+			<p>Original Location: ${workout.location.name} </p>
+		<c:if test="${!empty location }"> 
+			<p>New Location: ${location.name}</p> 
+		</c:if>
+		
 
-		<button id="myBtn" data-toggle="modal" data-target="#myModal1">pick
+		<button id="myBtn" data-toggle="modal" data-target="#myModal1">Pick
 			a Location</button>
 
 		<!-- The Modal -->
@@ -115,8 +115,8 @@
 
 <form action="updateworkout.do">
 		<br>
-		<div>
-			Title: <input name="title" type="text" value ="${workout.title}" >
+		<div class ="input-form">
+			Title: <input name="title" type="text" value ="${workout.title}" ><br>
 			
 		<input type="hidden" value="${workout.location.id}" name="locationid">
 		<input type="hidden" value="${workout.id}" name ="workoutid">
@@ -134,15 +134,16 @@
 				<option value="${workout.activity.title}" selected >${workout.activity.title}</option>
 
 
-			</select> Date: <input name="workoutdate" type="date" path="workout date" value ="${workout.workoutDate }"><br>
+			</select><br>
+			
+			Date: <input name="workoutdate" type="date" path="workout date" value ="${workout.workoutDate }"><br>
 
 			Description: <input type="text" name="description"
-				value="${workout.description}" class="form-control input-lg"
-				id="inputlg">
+				value="${workout.description}">
 
 		</div>
 
-		<input type="submit" value="Submit">
+		<br><input type="submit" value="Submit">
 	</form ><br><br>
 <!-- 		<button id="myBtn" data-toggle="modal" data-target="#myModal">Add
 			a Location</button>
