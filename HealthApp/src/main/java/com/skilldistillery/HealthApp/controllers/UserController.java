@@ -43,7 +43,7 @@ public class UserController {
 			session.setAttribute("user", user);
 		}
 
-		return "userhome";
+		return "redirect:userhome.do";
 
 	}
 
@@ -63,7 +63,7 @@ public class UserController {
 		LocalDate uDate = LocalDate.parse(date1);
 		user.setBirthDate(uDate);
 		User user1 = (User) session.getAttribute("user");
-		
+
 		if (user1 == null || user1.getId() == 0) {
 			userdao.createUser(user);
 			session.setAttribute("user", user);
@@ -71,24 +71,23 @@ public class UserController {
 			session.setAttribute("user", userdao.updateUser(user1.getId(), user));
 		}
 
-		return "userhome";
+		return "redirect:userhome.do";
 
 	}
 
 	@RequestMapping(path = "createworkout.do")
-		public String createWorkoutMapToButton( HttpSession session, User user, Model model, Workout workout) {
-		User user1 = (User)session.getAttribute("user");
+	public String createWorkoutMapToButton(HttpSession session, User user, Model model, Workout workout) {
+		User user1 = (User) session.getAttribute("user");
 		List<Location> locations = dao.allLocation();
 		model.addAttribute("locations", locations);
-		
-		if(user1 == null ||user1.getId() == 0) {
+
+		if (user1 == null || user1.getId() == 0) {
 			return "redirect:createupdateuser.do";
 		} else {
 			return "createworkout";
 		}
 
 	}
-
 
 	@RequestMapping(path = "logout.do")
 	public String logout(HttpSession session, User user, Model model) {
@@ -100,6 +99,35 @@ public class UserController {
 	@RequestMapping(path = "userhome.do")
 	public String userHome(HttpSession session, User user, Model model) {
 		User user1 = (User) session.getAttribute("user");
+		user1 =  dao.findById(user1.getId());
+		List<Workout> guestworkouts = user1.getGuestWorkouts();
+		
+		;
+		if(guestworkouts != null) {
+			
+		for (Workout workout : guestworkouts) {
+			if (workout.getActive() == true) {
+				int workCount = 0;
+				workCount +=1;
+				if (workCount > 0) {
+					model.addAttribute("activeGuestWorkout", "activeGuestWorkouts");
+				}
+			}
+		}
+		}
+		List<Workout> workouts = user1.getWorkouts();
+		if(workouts != null) {
+			
+		for (Workout workout : workouts) {
+			if (workout.getActive() == true) {
+				int workCount1 = 0;
+				workCount1 +=1;
+				if (workCount1 > 0) {
+					model.addAttribute("activeWorkout", "activeWorkouts");
+				}
+			}
+		}
+		}
 		if (user1.getId() > 0) {
 			return "userhome";
 		} else {
@@ -108,4 +136,3 @@ public class UserController {
 
 	}
 }
-
