@@ -87,22 +87,57 @@ input {
 
 
 
-.modal {
-/* 	Hidden by default 
- */	position : fixed; 
-/* 	Stay in place 
- */	z-index: 1; 
-/*  Sit on top  */
+/*  	.modal {
+	Hidden by default 
+	position : fixed; 
+	Stay in place 
+	z-index: 1; 
+ Sit on top 
 	padding-top : 100px;
-/* 	Location of the box 
- */	left : 0;
+	Location of the box 
+
+	left : 0;
 	top: 0;
 	width: 100%;
 	Fullwidthheight: 100%;
 	Fullheightoverflow: auto;
 	Enablescrollifneededbackground-color: rgb(0, 0, 0);
 	Fallbackcolorbackground-color: rgba(0, 0, 0, 0.4);
+}  */
+ .modal {
+  text-align: center;
+  padding: 0!important;
+   
+  position: fixed;
+  
+ left: 50%;
+  top: 50%; 
+  transform: translate(-50%, -50%);
+
+} 
+.formy{
+	  border: solid;
+    background-color: currentColor;
+    font-size: larger;
+    font-family: sans-serif;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+ 
+	
 }
+/*  .modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+} */
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+} 
 
 
 Modal Content

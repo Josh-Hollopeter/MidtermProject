@@ -143,7 +143,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 											</select><br><br>
 											
 											Date: <input name="workoutdate" type="date"
-															path="workout date" required><br>
+																path="workout date" required><br>
 															
 										</div>
 										<br>
@@ -157,16 +157,20 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 										a Location</button>
 
 									<!-- The Modal -->
+									
+   											 <div class="col-6">
 									<div id="myModal" class="modal">
 
 										<!-- Modal content -->
+										
 										<div class="modal-content">
-										<div class ="input-form">
-											<form action="newLocation.do">
+										<div class="model-dialog">
+										<div class="modal-body">
+											<form action="newLocation.do"  class ="formy">
 
 
 												<span class="close" data-dismiss="modal">&times;</span> Name: <input name="name"
-													type="text" placeholder="Your wonderfull workout"
+													type="text" placeholder="Your wonderful workout"
 													name="street"><br> Street: <input type="text"
 													placeholder="123 abc street" name="street"><br>
 												City: <input type="text" placeholder="Denver" name="city">
@@ -234,15 +238,21 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 
 									</div>
-
-
+									</div>
+	
+	
+</div>
 
 								</div>
 							</div>
 						</div>
+						
 					</div>
+					
 				</div>
+				
 			</div>
+			
 		</section>
 	</main> 
 	<footer>
