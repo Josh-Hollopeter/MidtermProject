@@ -60,16 +60,15 @@
 		<div class="card text-white bg-secondary mb-3 text-center"
 			style="max-width: 30rem; text-align: center; margin: auto;">
 			<div class="card-body">
-				<h5 class="card-title">Secondary card title</h5>
-				<p class="card-text">Some quick example text to build on the
-					card title and make up the bulk of the card's content.</p>
+				<h5 class="card-title">Join The Community</h5>
+				<p class="card-text">Find a Workout Partner!</p>
 			</div>
 		</div>
 		<br>
 
 		<div class="card-deck">
 			<c:choose>
-				<c:when test="${!empty sessionScope.user}">
+				<c:when test="${sessionScope.user.id > 0}">
 					<div class="card fade" style="background-color: #556B2F;">
 						<a href="workoutsearchresults.do?searchterm=Boxing"> <img
 							class="card-img-top"
@@ -103,7 +102,7 @@
 			</c:choose>
 
 			<c:choose>
-				<c:when test="${!empty sessionScope.user}">
+				<c:when test="${sessionScope.user.id > 0}">
 					<div class="card fade">
 						<a href="workoutsearchresults.do?searchterm=Yoga"> <img
 							class="card-img-top"
@@ -137,7 +136,7 @@
 			</c:choose>
 
 			<c:choose>
-				<c:when test="${!empty sessionScope.user}">
+				<c:when test="${sessionScope.user.id > 0}">
 					<div class="card bg-info fade">
 						<a href="workoutsearchresults.do?searchterm=Running"> <img
 							class="card-img-top"
@@ -175,7 +174,7 @@
 
 		<div class="card-deck">
 			<c:choose>
-				<c:when test="${!empty sessionScope.user}">
+				<c:when test="${sessionScope.user.id > 0}">
 					<div class="card fade" style="background-color: #556B2F;">
 						<a href="workoutsearchresults.do?searchterm=weight+lifting"> <img
 							class="card-img-top"
@@ -211,7 +210,7 @@
 			</c:choose>
 
 			<c:choose>
-				<c:when test="${!empty sessionScope.user}">
+				<c:when test="${sessionScope.user.id > 0}">
 					<div class="card fade">
 						<a href="workoutsearchresults.do?searchterm=hiking"> <img
 							class="card-img-top"
@@ -248,9 +247,9 @@
 
 
 			<c:choose>
-				<c:when test="${!empty sessionScope.user}">
+				<c:when test="${sessionScope.user.id > 0}">
 					<div class="card bg-info fade">
-						<a href="workoutsearchresults.do?searchterm==snowboarding"> <img
+						<a href="workoutsearchresults.do?searchterm=snowboarding"> <img
 							class="card-img-top"
 							src="https://www.thesnowcentre.com/snowsure/uploads/articles/thumbs/BSM_L2A.jpg"
 							alt="Card image cap">
@@ -290,7 +289,7 @@
 		<div class="card-deck">
 
 			<c:choose>
-				<c:when test="${!empty sessionScope.user}">
+				<c:when test="${sessionScope.user.id > 0}">
 					<div class="card fade" style="background-color: #556B2F;">
 						<a href="workoutsearchresults.do?searchterm=roller+blading"> <img
 							class="card-img-top"
@@ -327,7 +326,7 @@
 
 
 			<c:choose>
-				<c:when test="${!empty sessionScope.user}">
+				<c:when test="${sessionScope.user.id > 0}">
 					<div class="card fade">
 						<a href="workoutsearchresults.do?searchterm=ice+skating"> <img
 							class="card-img-top"
@@ -363,7 +362,7 @@
 			</c:choose>
 
 			<c:choose>
-				<c:when test="${!empty sessionScope.user}">
+				<c:when test="${sessionScope.user.id > 0}">
 					<div class="card bg-info fade">
 						<a href="workoutsearchresults.do?searchterm=tai+chi"> <img
 							class="card-img-top"

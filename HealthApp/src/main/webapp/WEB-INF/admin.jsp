@@ -41,10 +41,10 @@
 
 </ul>
 <c:if test="${! empty sessionScope.user}">
-					<a href="logout.do"> Logout </a></li>
+					<a href="logout.do"> Logout </a>
 				</c:if>
 <c:if test="${! empty sessionScope.user}">
-					<a href="index.do"> Logout </a></li>
+					<a href="index.do"> Home </a>
 				</c:if>
 
 
