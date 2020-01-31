@@ -25,23 +25,20 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
+			<c:if test="${! empty sessionScope.user}">
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
-				<c:if test="${! empty sessionScope.user.firstName}">
 					<li class="nav-item active"><a class="nav-link"
 						href="userhome.do"> ${sessionScope.user.firstName}'s Profile<span class="sr-only"></span></a></li>
-				</c:if>
 					<li class="nav-item"><a class="nav-link"
 						href="createupdateuser.do">Update Account</a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="createworkout.do"> Create Workout </a></li>
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="finishedworkout.do">Workout History</a></li>
-				<c:if test="${! empty sessionScope.user.firstName}">
 					<li class="nav-item dropdown"><a class="nav-link"
 						href="logout.do"> Logout </a></li>
-				</c:if>
+				
 
 
 				</ul>
@@ -57,6 +54,7 @@
 					<a href="workoutlistallresults.do"><input type="button" value="Show All Workouts"
 					class="btn-success"></a> -->
 			</div>
+			</c:if>
 		</nav>
 	</header>
 <body class="bg-info ">

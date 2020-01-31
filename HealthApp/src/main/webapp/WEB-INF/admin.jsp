@@ -40,7 +40,12 @@
 
 
 </ul>
-
+<c:if test="${! empty sessionScope.user}">
+					<a href="logout.do"> Logout </a></li>
+				</c:if>
+<c:if test="${! empty sessionScope.user}">
+					<a href="index.do"> Logout </a></li>
+				</c:if>
 
 
 </body>
