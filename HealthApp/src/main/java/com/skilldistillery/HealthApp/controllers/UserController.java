@@ -71,7 +71,7 @@ public class UserController {
 		if (user1 == null || user1.getId() == 0) {
 			if(userdao.createUser(user) == null) {
 				
-				session.setAttribute("error", "User already exists");
+				session.setAttribute("errors", "User already exists");
 				return"createupdateuser";
 			}
 			
