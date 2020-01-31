@@ -186,7 +186,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `healthtogetherdb`;
-INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (1, 'admin', 'admin', NULL, NULL, 1, 'ADMIN', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (1, 'admin', 'admin', 'Admin', 'Admin', 1, 'ADMIN', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (2, 'Will', 'Will', 'Will', 'Ferrell', 1, 'USER', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (3, 'Scarlett', 'Scarlett', 'Scarlett', 'Johansson', 1, 'USER', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `active`, `role`, `birth_date`, `email`, `gender`, `photo`, `create_date`) VALUES (4, 'Leonardo', 'Leonardo', 'Leonardo', 'DiCaprio', 1, 'USER', NULL, NULL, NULL, NULL, NULL);
