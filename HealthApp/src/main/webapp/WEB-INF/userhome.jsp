@@ -76,7 +76,7 @@
 
 		<c:if test="${!empty activeWorkout}">
 		<div class="card mb-3"
-			style="max-width: 30rem; text-align: center; margin: auto;">
+			style="max-width: 30rem; text-align: center; margin: auto; ">
 			<img class="card-img-top go-hard"
 				src="https://i1.sndcdn.com/avatars-000369555311-i351q4-t500x500.jpg"
 				alt="Card image cap" style="max-height: 150px;">
@@ -102,7 +102,7 @@
 
 					<div class="card" style="width: 23rem;">
 						<img class="card-img-top" src="${myworkout.activity.image}"
-							alt="Card image cap">
+							alt="Card image cap" style="max-height: 205px">
 						<div class="card-body">
 							<h5 class="card-title">${myworkout.title}</h5>
 							<p class="card-text"></p>
@@ -167,9 +167,9 @@
 				<c:if test="${myworkout.active}">
 					<c:if test="${myworkout.title ne 'D0NTEVER$HOW' }">
 
-						<div class="card" style="width: 23rem;">
+						<div class="card" style="width: 23rem">
 							<img class="card-img-top" src="${myworkout.activity.image}"
-								alt="Card image cap">
+								alt="Card image cap" style="max-height: 205px" >
 							<div class="card-body">
 								<h5 class="card-title">${myworkout.title}</h5>
 								<p class="card-text"></p>
