@@ -92,7 +92,7 @@
 					<c:if test="${myworkout.title ne 'D0NTEVER$HOW' }">
 						<div class="card" style="width: 23rem;">
 							<img class="card-img-top" src="${myworkout.activity.image}"
-								alt="Card image cap">
+								alt="Card image cap" style="max-height: 205px">
 							<div class="card-body">
 								<h5 class="card-title">${myworkout.title}</h5>
 								<p class="card-text"></p>
@@ -142,7 +142,7 @@
 
 						<div class="card" style="width: 23rem;">
 							<img class="card-img-top" src="${myworkout.activity.image}"
-								alt="Card image cap">
+								alt="Card image cap" style="max-height: 205px">
 							<div class="card-body">
 								<h5 class="card-title">${myworkout.title}</h5>
 								<p class="card-text"></p>

@@ -28,7 +28,9 @@
 
 			<div class="form-group justify-content-center" id="log"
 				style="margin: inherit;">
-				<c:if test="${!empty error }"><p>${error}</p></c:if>
+				<c:if test="${!empty error }">
+					<p>${error}</p>
+				</c:if>
 				<form:form action="login.do" modelAttribute="user"
 					class="justify-content-center">
 					<c:if
@@ -60,8 +62,12 @@
 		<div class="card text-white bg-secondary mb-3 text-center"
 			style="max-width: 30rem; text-align: center; margin: auto;">
 			<div class="card-body">
-				<h5 class="card-title">Join The Community</h5>
-				<p class="card-text">Find a Workout Partner!</p>
+				<h5 class="card-title">
+					<strong>Join The Community</strong>
+				</h5>
+				<p class="card-text">Want to workout but don't have any friends
+					that like fitness. Join Health Together and find friends working
+					out near you!!</p>
 			</div>
 		</div>
 		<br>
@@ -78,8 +84,9 @@
 						<div class="card-body">
 							<h5 class="card-title">Boxing</h5>
 							<p class="card-text">Sometimes you just want to hit
-								something! Boxing is a great way to alleviate that stress in a
-								healthy way.</p>
+								something! Hold the mitts up for your partner, call out combos
+								or hit the heavy bag. Boxing is a great way to alleviate stress
+								in a healthy way.</p>
 							<p class="card-text"></p>
 						</div>
 					</div>
@@ -93,8 +100,9 @@
 						<div class="card-body">
 							<h5 class="card-title">Boxing</h5>
 							<p class="card-text">Sometimes you just want to hit
-								something! Boxing is a great way to alleviate that stress in a
-								healthy way.</p>
+								something! Hold the mitts up for your partner, call out combos
+								or hit the heavy bag. Boxing is a great way to alleviate stress
+								in a healthy way..</p>
 							<p class="card-text"></p>
 						</div>
 					</div>
@@ -183,10 +191,10 @@
 						</a>
 						<div class="card-body">
 							<h5 class="card-title">Weight Lifting</h5>
-							<p class="card-text">Running is an excellent way to
-								strengthen the heart and ensure the efficient flow of blood and
-								oxygen throughout the body. Benefits include improved posture,
-								better sleep, gaining bone density, maintaining weight loss</p>
+							<p class="card-text">Looking for your swolemate? Tired of
+								skipping leg day? Weightlifting boost strength and builds
+								confidence through resistance training with weights. Who does
+								cardio anyways?</p>
 							<p class="card-text"></p>
 						</div>
 					</div>
@@ -199,10 +207,10 @@
 						</a>
 						<div class="card-body">
 							<h5 class="card-title">Weight Lifting</h5>
-							<p class="card-text">Running is an excellent way to
-								strengthen the heart and ensure the efficient flow of blood and
-								oxygen throughout the body. Benefits include improved posture,
-								better sleep, gaining bone density, maintaining weight loss</p>
+							<p class="card-text">Looking for your swolemate? Tired of
+								skipping leg day? Weightlifting boost strength and builds
+								confidence through resistance training with weights. Who does
+								cardio anyways?</p>
 							<p class="card-text"></p>
 						</div>
 					</div>
@@ -219,10 +227,9 @@
 						</a>
 						<div class="card-body">
 							<h5 class="card-title">Hiking</h5>
-							<p class="card-text">Our lives are busier than ever. Nine to
-								five jobs, full social calendars and everyday life admin is
-								enough to keep us at a permanent level of stress below the
-								surface.</p>
+							<p class="card-text">We all spend too much time on computers
+								and indoors under fluorescent lights or texting and watching TV
+								(often texting while watching TV). Get outside and explore.</p>
 							<p class="card-text"></p>
 						</div>
 					</div>
@@ -235,10 +242,9 @@
 						</a>
 						<div class="card-body">
 							<h5 class="card-title">Hiking</h5>
-							<p class="card-text">Our lives are busier than ever. Nine to
-								five jobs, full social calendars and everyday life admin is
-								enough to keep us at a permanent level of stress below the
-								surface.</p>
+							<p class="card-text">We all spend too much time on computers
+								and indoors under fluorescent lights or texting and watching TV
+								(often texting while watching TV). Get outside and explore.</p>
 							<p class="card-text"></p>
 						</div>
 					</div>
@@ -257,9 +263,8 @@
 						<div class="card-body">
 							<h5 class="card-title">Snowboarding</h5>
 							<p class="card-text">Shred it Bro! Snowboarding is a
-								recreational activity and Winter Olympic and Paralympic sport
-								that involves descending a snow-covered slope while standing on
-								a snowboard attached to a rider's feet.</p>
+								recreational sport that involves descending a snow-covered slope
+								while standing on a snowboard attached to a rider's feet.</p>
 							<p class="card-text"></p>
 						</div>
 					</div>
@@ -273,9 +278,8 @@
 						<div class="card-body">
 							<h5 class="card-title">Snowboarding</h5>
 							<p class="card-text">Shred it Bro! Snowboarding is a
-								recreational activity and Winter Olympic and Paralympic sport
-								that involves descending a snow-covered slope while standing on
-								a snowboard attached to a rider's feet.</p>
+								recreational sport that involves descending a snow-covered slope
+								while standing on a snowboard attached to a rider's feet.</p>
 							<p class="card-text"></p>
 						</div>
 					</div>
@@ -300,8 +304,7 @@
 							<h5 class="card-title">Roller Blading</h5>
 							<p class="card-text">An extreme sport involving straping
 								rollerblades on your feet and doing stunts on urban environment.
-								rollerblading is very underground in The United States, only
-								know about by rollerbladers skateboards and some bikers.</p>
+								rollerblading is very underground sport in The United States.</p>
 							<p class="card-text"></p>
 						</div>
 					</div>
@@ -316,8 +319,7 @@
 							<h5 class="card-title">Roller Blading</h5>
 							<p class="card-text">An extreme sport involving straping
 								rollerblades on your feet and doing stunts on urban environment.
-								rollerblading is very underground in The United States, only
-								know about by rollerbladers skateboards and some bikers.</p>
+								rollerblading is very underground sport in The United States.</p>
 							<p class="card-text"></p>
 						</div>
 					</div>
@@ -371,7 +373,7 @@
 						</a>
 						<div class="card-body">
 							<h5 class="card-title">Tai Chi</h5>
-							<p class="card-text">Tai Chi is a mind-body practice that
+							<p class="card-text">Tai chi is a mind-body practice that
 								involves a series of slow, flowing exercises that combine
 								movement, meditation, and rhythmic breathing.</p>
 							<p class="card-text"></p>
