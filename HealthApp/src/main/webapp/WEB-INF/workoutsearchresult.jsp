@@ -83,7 +83,7 @@
 										<td><strong>Date:</strong> ${myworkout.workoutDate}</td>
 									</tr>
 									<tr>
-										<td><strong>Workout Name:</strong>
+										<td><strong>Location: </strong>
 											${myworkout.location.name}</td>
 									</tr>
 									<tr>

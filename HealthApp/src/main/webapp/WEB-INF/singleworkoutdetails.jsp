@@ -84,8 +84,10 @@
           				<li>Workout Date: ${workout.workoutDate}</li>
           				<li>Workout Time: ${workout.title}</li>
           				<li>Description: ${workout.description}</li>
-          				<li>Post Date: ${workout.postdate}</li>
-						
+          				<li>Location: ${workout.location.name }</li>
+						<li>State: ${workout.location.address.state }</li>
+						<li>City: ${workout.location.address.city }</li>
+						<li>Street: ${workout.location.address.street }</li>
 
 
           			</ul>
@@ -104,10 +106,12 @@
           	</c:choose>
           	<c:if test="${! empty workout}">
     
+    			<c:if test="${workout.active }">
           		<form action="addguesttoworkout.do">
           			<input type="hidden" name="workout" value="${workout.id}" /> <input
           				type="submit" name="Join" value="Join" />
           		</form>
+          		</c:if>
           	
           	</c:if>
 
