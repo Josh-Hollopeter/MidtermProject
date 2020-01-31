@@ -69,7 +69,12 @@ public class UserController {
 		User user1 = (User) session.getAttribute("user");
 
 		if (user1 == null || user1.getId() == 0) {
-			userdao.createUser(user);
+			if(userdao.createUser(user) == null) {
+				
+				session.setAttribute("error", "User already exists");
+				return"createupdateuser";
+			}
+			
 			session.setAttribute("user", user);
 		} else {
 			session.setAttribute("user", userdao.updateUser(user1.getId(), user));

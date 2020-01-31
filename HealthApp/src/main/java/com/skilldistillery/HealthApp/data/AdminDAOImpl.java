@@ -4,9 +4,12 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceException;
 import javax.transaction.Transactional;
+import javax.validation.ConstraintViolationException;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.UnexpectedRollbackException;
 
 import com.skilldistillery.HealthApp.entities.Activity;
 import com.skilldistillery.HealthApp.entities.Address;
@@ -30,11 +33,19 @@ public class AdminDAOImpl implements AdminDAO {
 
 	@Override
 	public User createUser(User user) {
-		user.setActive(true);
-
-		em.persist(user);
-
-		em.flush();
+		String query = "select u from User u where u.username=:name";
+		List <User> userCheck = em.createQuery(query, User.class).setParameter("name", user.getUsername()).getResultList();
+		if(userCheck.size() > 0) {
+			user = null;
+			return user;
+		}
+			
+		
+			user.setActive(true);
+			em.persist(user);
+			em.flush();
+			
+		
 
 		return user;
 	}

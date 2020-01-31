@@ -75,6 +75,7 @@
 		<c:if test="${empty sessionScope.user ||sessionScope.user.id == 0 }">
         Username: <input type="text" name="username" value ="${sessionScope.user.username}" required  maxlength="255" class="form-control text-center bg-dark text-light"> <br> 
       </c:if>
+      <c:if test="${! empty error }"><p> ${error}</p> </c:if>
         Password: <input type="password" name="password"  value="${sessionScope.user.password}" required class="form-control text-center bg-dark text-light" > <br>
         First Name: <input type="text" name="firstName" value="${sessionScope.user.firstName }" required class="form-control text-center bg-dark text-light" > <br> 
         Last Name: <input type="text" value="${sessionScope.user.lastName}" name="lastName" required class="form-control text-center bg-dark text-light"> <br>
