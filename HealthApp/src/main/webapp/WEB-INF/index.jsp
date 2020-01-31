@@ -371,7 +371,7 @@
 						</a>
 						<div class="card-body">
 							<h5 class="card-title">Tai Chi</h5>
-							<p class="card-text">Tai chi is a mind-body practice that
+							<p class="card-text">Tai Chi is a mind-body practice that
 								involves a series of slow, flowing exercises that combine
 								movement, meditation, and rhythmic breathing.</p>
 							<p class="card-text"></p>
