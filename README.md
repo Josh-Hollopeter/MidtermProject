@@ -3,7 +3,7 @@
 Want to hit the gym but don’t have any friends that like to work out.
 Join Health Together and find friends working out near you!
 
-## DEMO
+## Demo
 
 https://youtu.be/-gG9usN2ZtQ
 
@@ -41,7 +41,7 @@ Application has full CRUD operations on user enittys and workouts.
 * JSPS.
 * HTML, CSS, Javascript, Bootstrap
 
-### Difficulties overcome
+### Difficulties Overcome
 
 This was all our first project working together we had issues early on creating new branches and learning to push/pull/merge we had issues early on over overriding code. We halted production of the site and taught each other the process of branching and set inn place a system so that two team members would review another teammate’s pull request before merge the code to master. This solved out mistakes early and allowed us to push forward.
 
