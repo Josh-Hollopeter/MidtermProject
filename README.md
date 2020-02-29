@@ -9,8 +9,8 @@ https://youtu.be/-gG9usN2ZtQ
 
 ## Home & Create User Page
 
-<img src="images/Screen%20Shot%202020-02-28%20at%2010.27.18%20PM.png" height="200">
-<img src="images/Screen%20Shot%202020-02-28%20at%2010.27.29%20PM.png" height="200">
+<img src="images/Screen%20Shot%202020-02-28%20at%2010.27.18%20PM.png" height="275">
+<img src="images/Screen%20Shot%202020-02-28%20at%2010.27.29%20PM.png" height="275">
 
 ## Live Website
 
