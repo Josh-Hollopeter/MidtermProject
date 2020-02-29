@@ -8,7 +8,7 @@ Join Health Together and find friends working out near you!
 https://youtu.be/-gG9usN2ZtQ
 
 ## Images
-<img src="images/creen Shot 2020-02-28 at 10.27.08 PM.png" width="100" height="100>
+<img src="images/creen Shot 2020-02-28 at 10.27.08 PM.png">
 
 ## Live Website
 
