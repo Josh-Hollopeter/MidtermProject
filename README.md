@@ -1,40 +1,45 @@
+## Healthy Together
 
+Want to hit the gym but don’t have any friends that like to work out.
+Join Health Together and find friends working out near you!
 
-##   Healthy Together
-Want to hit the gym but don’t have any friends that like to work out. Join Health Together and find friends working out near you!
+## DEMO
 
+https://youtu.be/-gG9usN2ZtQ
 
-### skeleton infection mid term project
+##Images
 
-Project Owner
- * George
- * Joshua
- * Matthew
- * Kai
+## Live Website
+
+http://mattaldrete.com:8080/HealthApp/
+
+### Mid Term Project
+
+- Matt
+- Joshua
+- George
+- Kai
 
 ### Description
-How to use the site:
-1. Click on an image or click Create Account (you with be directed to the create account page)
-2. Fill out the information and submit (you will be directed to the user home page)
-3. Use top navigation bar to create or search workout based on activity.
 
-3a. Create Workout page allows you to create a new workout.
-3b. Search Page allows you to find workouts based on your search and join workouts created by other users.
-3c. after you finish the workout mark complete on the workout card to archive the workout.
+The application is built to allow users to find friends who waant to join you for a workout.
+A user creates an account and then create an event with a activity, location, and description.
+A user can search for workouts by activity or description and can join workouts.
+Application has full CRUD operations on user enittys and workouts.
 
 ### Tech knowledge & Tools
+
 Trello
 Java
 Spring Boot
 Gradle
 JPA SQL
 MySQL
+JSPS
 HTML, CSS, Javascript, Bootstrap
-
-### Highlights
-
 
 ### Difficulties overcome
 
+This was all our first project working together we had issues early on creating new branches and learning to push/pull/merge we had issues early on over overriding code. We halted production of the site and taught each other the process of branching and set inn place a system so that two team members would review another teammate’s pull request before merge the code to master. This solved out mistakes early and allowed us to push forward.
 
-### Potential improvements
+Another difficulty we overcame was trying to use modals early on. We ran into many issues with the modal for our account register page. Eventually we were able to get it to work but the feature was very time consuming and almost ended up not being implemented. Going forward when an issue like this arises making an assessment early on and being realistic would enable us to get more done and leave features like this one as stretch goals if given time then we would implement.

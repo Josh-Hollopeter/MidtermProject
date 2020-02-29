@@ -76,7 +76,7 @@
                 <c:choose>
           		<c:when test="${! empty workout }">
           			<img class="card-img-top" src="${workout.activity.image}"
-          				alt="Card image cap">
+          				alt="Card image cap" style="max-height: 105px;">
           				<br>
           			<ul>
           				<li>Host: ${workout.user.firstName} ${workout.user.lastName}</li>
