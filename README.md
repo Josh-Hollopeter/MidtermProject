@@ -14,7 +14,7 @@ https://youtu.be/-gG9usN2ZtQ
 
 ## Live Website
 
-http://mattaldrete.com:8080/HealthApp/
+http://mattaldrete.com/apps/HealthApp/
 
 ### Mid Term Project
 
