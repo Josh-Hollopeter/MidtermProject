@@ -7,8 +7,10 @@ Join Health Together and find friends working out near you!
 
 https://youtu.be/-gG9usN2ZtQ
 
-## Images
-<img src="images/creen Shot 2020-02-28 at 10.27.08 PM.png">
+## Home & Create User Page
+
+<img src="images/Screen%20Shot%202020-02-28%20at%2010.27.18%20PM.png" height="200">
+<img src="images/Screen%20Shot%202020-02-28%20at%2010.27.29%20PM.png" height="200">
 
 ## Live Website
 
