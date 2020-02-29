@@ -32,14 +32,14 @@ Application has full CRUD operations on user enittys and workouts.
 
 ### Tech knowledge & Tools
 
-Trello,
-Java,
-Spring Boot,
-Gradle,
-JPA, SQL,
-MySQL,
-JSPS.
-HTML, CSS, Javascript, Bootstrap
+* Trello,
+* Java,
+* Spring Boot,
+* Gradle,
+* JPA, SQL,
+* MySQL,
+* JSPS.
+* HTML, CSS, Javascript, Bootstrap
 
 ### Difficulties overcome
 
