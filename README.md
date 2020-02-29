@@ -1,4 +1,4 @@
-## Healthy Together
+## Health Together
 
 Want to hit the gym but don’t have any friends that like to work out.
 Join Health Together and find friends working out near you!
@@ -16,12 +16,12 @@ https://youtu.be/-gG9usN2ZtQ
 
 http://mattaldrete.com/apps/HealthApp/
 
-### Mid Term Project
+### Team Members
 
-- Matt
-- Joshua
-- George
-- Kai
+- Matt       -- Scrum Master/ Developer
+- Joshua     -- Developer
+- George     -- DBA/Developer
+- Kai        -- Developer
 
 ### Description
 
@@ -30,7 +30,7 @@ A user creates an account and then create an event with a activity, location, an
 A user can search for workouts by activity or description and can join workouts.
 Application has full CRUD operations on user enittys and workouts.
 
-### Tech knowledge & Tools
+### Technologies & Tools Used
 
 * Trello,
 * Java,
