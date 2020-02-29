@@ -7,6 +7,8 @@ Join Health Together and find friends working out near you!
 
 https://youtu.be/-gG9usN2ZtQ
 
+##Images
+
 ## Live Website
 
 http://mattaldrete.com:8080/HealthApp/
