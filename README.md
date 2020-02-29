@@ -16,7 +16,7 @@ https://youtu.be/-gG9usN2ZtQ
 
 http://mattaldrete.com/apps/HealthApp/
 
-### Team Members
+## Team Members
 
 - Matt       -- Scrum Master/ Developer
 - Joshua     -- Developer
